@@ -31,8 +31,15 @@ public class Person4 {
      */
     private String calc(String input) {
       //Person 4 put your implementation here
-      return null;
-    }
+        String output = "";
+        for (char ch : input.toCharArray()){
+            int ascii = (int) ch;
+            ascii++;
+            ch = (char) ascii;
+            output += ch;
+        }
+        return(output);
+    }    
     
     /**
      * Return a string rep of this object
