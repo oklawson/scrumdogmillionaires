@@ -31,10 +31,15 @@ public class Person5 {
 	 */
 	private String calc(String input) {
 	  //Person 5 put your implementation here
-      String first = test.substring(0,2);
-      String last = test.substring(2, input.length());
-      String output = last + first;
-      return output;
+        String test = input;
+
+        String first = test.substring(0,2);
+
+        String yes = test.substring(2, test.length());
+
+        String fin = yes + first;
+
+        return fin;
 	}
 
 	/**
