@@ -36,8 +36,8 @@ public class Person2 {
 		int stringLength = userInput.length();
 		String randomizedInput = "";
 		ArrayList<Character> characters = new ArrayList<Character>(stringLength);
-		Random rand = new Random();
 		char randomChar;
+		Random rand = new Random();
 		for (int i = 0; i < stringLength; i++) {
 			characters.add(userInput.charAt(i));
 		}
