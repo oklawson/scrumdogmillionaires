@@ -36,9 +36,9 @@ public class Person4 {
             int ascii = (int) ch;
             ascii++;
             ch = (char) ascii;
-            output += ch;
+            output = output + ch;
         }
-        return(output);
+        return(output);  
     }    
     
     /**
