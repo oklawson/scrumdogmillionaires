@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         private EditText Password;
         private Button Login;
         private Button Cancel;
+        private TextView invalidLogin;
 
 
         @Override
@@ -62,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
             Password = (EditText)findViewById(R.id.etPassword);
             Login = (Button)findViewById(R.id.btnLogin);
             Cancel = (Button) findViewById(R.id.cancelButton);
+            invalidLogin =(TextView)findViewById(R.id.invalidLoginMessage);
 
 
             Login.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             } else {
-
+                invalidLogin.setVisibility(View.VISIBLE);
             }
         }
 
