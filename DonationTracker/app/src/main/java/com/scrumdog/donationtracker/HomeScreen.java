@@ -1,9 +1,5 @@
 package com.scrumdog.donationtracker;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.content.Intent;
-import android.view.View;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -48,15 +44,29 @@ import org.w3c.dom.Text;
 
 public class HomeScreen extends AppCompatActivity {
 
+    private Button Login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-    }
 
-    public void login(View view) {
-        // Do something in response to button click
-        Intent intent = new Intent(HomeScreen.this, LoginActivity.class);
-        startActivity(intent);
+        Login = (Button) findViewById(R.id.loginButton);
+
+
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeScreen.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
+
+//    public void login(View view) {
+//        // Do something in response to button click
+//        Intent intent = new Intent(HomeScreen.this, LoginActivity.class);
+//        startActivity(intent);
+//    }
+
