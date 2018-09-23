@@ -71,19 +71,21 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-                Cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(LoginActivity.this, HomeScreen.class);
-                        startActivity(intent);
-                    }
-                });
-            }
+            Cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(LoginActivity.this, HomeScreen.class);
+                    startActivity(intent);
+                }
+            });
+        }
 
         private void validate(String userName, String userPassword){
             if((userName.equals("user")) && (userPassword.equals("pass"))){
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+            } else {
+
             }
         }
 
