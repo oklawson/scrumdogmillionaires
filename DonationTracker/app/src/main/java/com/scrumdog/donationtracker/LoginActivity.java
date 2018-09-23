@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
 
         private void validate(String userName, String userPassword){
             if((userName.equals("user")) && (userPassword.equals("pass"))){
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainScreen.class);
                 startActivity(intent);
             }else{
                 counter--;
