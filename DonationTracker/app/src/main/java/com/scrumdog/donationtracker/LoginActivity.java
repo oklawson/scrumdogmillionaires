@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         private EditText Name;
         private EditText Password;
         private Button Login;
+        private Button Cancel;
 
 
         @Override
@@ -60,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             Name = (EditText)findViewById(R.id.etName);
             Password = (EditText)findViewById(R.id.etPassword);
             Login = (Button)findViewById(R.id.btnLogin);
+            Cancel = (Button) findViewById(R.id.cancelButton);
 
 
             Login.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +70,15 @@ public class LoginActivity extends AppCompatActivity {
                     validate(Name.getText().toString(), Password.getText().toString());
                 }
             });
-        }
+
+                Cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(LoginActivity.this, HomeScreen.class);
+                        startActivity(intent);
+                    }
+                });
+            }
 
         private void validate(String userName, String userPassword){
             if((userName.equals("user")) && (userPassword.equals("pass"))){

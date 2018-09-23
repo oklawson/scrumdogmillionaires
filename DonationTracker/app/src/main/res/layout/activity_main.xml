@@ -14,5 +14,13 @@
         android:text="This is inside the application"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="197dp" />
+        tools:layout_editor_absoluteY="109dp" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="logout"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="257dp" />
 </android.support.constraint.ConstraintLayout>
