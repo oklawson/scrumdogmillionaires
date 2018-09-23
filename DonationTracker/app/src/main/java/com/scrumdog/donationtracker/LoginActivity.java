@@ -49,9 +49,8 @@ public class LoginActivity extends AppCompatActivity {
 
         private EditText Name;
         private EditText Password;
-        private TextView Info;
         private Button Login;
-        private int counter = 5;
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -73,17 +72,10 @@ public class LoginActivity extends AppCompatActivity {
 
         private void validate(String userName, String userPassword){
             if((userName.equals("user")) && (userPassword.equals("pass"))){
-                Intent intent = new Intent(LoginActivity.this, MainScreen.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
-            }else{
-                counter--;
-
-                Info.setText("No of attempts remaining: " + String.valueOf(counter));
-
-                if(counter == 0){
-                    Login.setEnabled(false);
-                }
             }
         }
+
 }
 
