@@ -11,4 +11,6 @@ public class DetailedLocation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_location);
     }
+
+    //shows all detailed information for one specific location
 }
