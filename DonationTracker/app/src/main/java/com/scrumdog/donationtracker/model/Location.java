@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Location {
 
-    public static ArrayList<Location> _locations = new ArrayList<>();
+    public static ArrayList<Location> locations = new ArrayList<>();
 
     private String _locationName;
     private String _locationType;
     private double _longitude;
     private double _latitude;
     private String _address;
-    private int _phoneNumber;
+    private String _phoneNumber;
 
     public String getName() { return _locationName; }
     public void setName(String name) { _locationName = name; }
@@ -29,26 +29,26 @@ public class Location {
     public double getLatitude() { return _latitude; }
     public void setLatitude(double latitude) { _latitude = latitude; }
 
-    public int getPhoneNumber() { return _phoneNumber; }
-    public void setPhoneNumber(int phoneNumber) { _phoneNumber = phoneNumber; }
+    public String getPhoneNumber() { return _phoneNumber; }
+    public void setPhoneNumber(String phoneNumber) { _phoneNumber = phoneNumber; }
 
-    public Location(String name, String type, double longitude, double latitude, String address, int phoneNumber) {
+    public Location(String name, String type, double longitude, double latitude, String address, String phoneNumber) {
         _locationName = name;
         _locationType = type;
         _longitude = longitude;
         _latitude = latitude;
         _address = address;
         _phoneNumber = phoneNumber;
-        _locations.add(this);
+        //_locations.add(this);
     }
 
     public Location() {
-        this("Enter new name", "Enter type", 0, 0, "Enter address", 0);
+        this("Enter new name", "Enter type", 0, 0, "Enter address", null);
     }
 
     @Override
     public String toString() {
-        return _locationName + " ," + _locationType;
+        return _locationName + " ," + _locationType + ", " + _longitude + ", " + +_latitude + ", " + _address + ", " + _phoneNumber;
     }
 
 
