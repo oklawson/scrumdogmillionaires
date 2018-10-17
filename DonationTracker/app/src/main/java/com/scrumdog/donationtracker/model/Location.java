@@ -1,11 +1,14 @@
 package com.scrumdog.donationtracker.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Location {
 
     public static ArrayList<Location> locations = new ArrayList<>();
+
+    public static List<String> legalLocations = Arrays.asList();
 
     private String _locationName;
     private String _locationType;
@@ -39,7 +42,7 @@ public class Location {
         _latitude = latitude;
         _address = address;
         _phoneNumber = phoneNumber;
-        //_locations.add(this);
+        //legalLocations.add(this._locationName);
     }
 
     public Location() {
