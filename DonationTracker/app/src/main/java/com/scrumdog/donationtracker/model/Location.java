@@ -8,7 +8,7 @@ public class Location {
 
     public static ArrayList<Location> locations = new ArrayList<>();
 
-    public static List<String> legalLocations = Arrays.asList();
+    //public static List<String> legalLocations = Arrays.asList();
 
     private String _locationName;
     private String _locationType;
