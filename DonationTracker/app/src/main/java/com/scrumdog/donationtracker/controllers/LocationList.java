@@ -184,7 +184,7 @@ public class LocationList extends AppCompatActivity {
             newLocation.setAddress(tokens[4]);
             newLocation.setPhoneNumber(tokens[9]);
             Location.locations.add(newLocation);
-            Location.legalLocations.add(newLocation.getName());
+            //Location.legalLocations.add(newLocation.getName());
 
         }
         br.close();
