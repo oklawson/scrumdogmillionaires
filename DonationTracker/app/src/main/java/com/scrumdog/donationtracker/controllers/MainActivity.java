@@ -26,11 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        try {
-//            readSDFile();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

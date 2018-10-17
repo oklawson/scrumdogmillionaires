@@ -26,6 +26,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         private EditText Password;
         private EditText userID;
         private Spinner accountTypeSpinner;
+        private Spinner specificLocationSpinner;
         private Button Register;
         private Button Cancel;
         private TextView invalidRegistration;
@@ -41,6 +42,7 @@ public class RegistrationActivity extends AppCompatActivity  {
             Password = (EditText)findViewById(R.id.etPassword);
             userID = (EditText)findViewById(R.id.etID);
             accountTypeSpinner = (Spinner)findViewById(R.id.accountTypeSpinner);
+            specificLocationSpinner = (Spinner)findViewById(R.id.specificLocationSpinner);
             Register = (Button)findViewById(R.id.btnRegister);
             Cancel = (Button) findViewById(R.id.cancelButton);
             invalidRegistration =(TextView)findViewById(R.id.invalidRegistrationMessage);
@@ -50,6 +52,10 @@ public class RegistrationActivity extends AppCompatActivity  {
             ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, User.legalUsers);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             accountTypeSpinner.setAdapter(adapter);
+
+//            ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, User.legalUsers);
+//            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//            accountTypeSpinner.setAdapter(adapter);
 
 
             Register.setOnClickListener(new OnClickListener() {
