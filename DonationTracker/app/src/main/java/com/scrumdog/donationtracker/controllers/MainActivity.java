@@ -22,12 +22,42 @@ import java.nio.charset.StandardCharsets;
 public class MainActivity extends AppCompatActivity {
     private Button Logout;
     private Button ViewLocations;
+    private Button EnterDonations;
     static ArrayList<Location> locations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ViewLocations = (Button) findViewById(R.id.viewLocationsButton);
+
+        ViewLocations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LocationList.class);
+                startActivity(intent);
+            }
+        });
+
+        //adding middle button to access data entry for donations page
+        EnterDonations = (Button) findViewById(R.id.viewDonationEntryPage);
+        EnterDonations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DonationEntryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        ViewLocations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LocationList.class);
+                startActivity(intent);
+            }
+        });
 
         Logout = (Button) findViewById(R.id.logoutButton);
 
@@ -39,15 +69,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ViewLocations = (Button) findViewById(R.id.viewLocationsButton);
-
-        ViewLocations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LocationList.class);
-                startActivity(intent);
-            }
-        });
     }
 
 }
