@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.Location;
+import com.scrumdog.donationtracker.model.User;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -43,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         //adding middle button to access data entry for donations page
         EnterDonations = (Button) findViewById(R.id.viewDonationEntryPage);
 
+        if(User.getCurrentUser().getUserType().equals("Location Employee")) {
+            EnterDonations.setVisibility(View.VISIBLE);
+        }
+
         EnterDonations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //If the current user is an Employee, show the Add Donation Button
-//        if (User.getUserType() = "Location Employee") {
-//            EnterDonations.setVisibility(View.VISIBLE);
-//        }
+        //if (User.getUserType().equals("Location Employee")){
+            //EnterDonations.setVisibility(View.VISIBLE);
+        //}
 
 
         ViewLocations.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                User.setCurrentUser(null);
                 Intent intent = new Intent(MainActivity.this, HomeScreen.class);
                 startActivity(intent);
             }

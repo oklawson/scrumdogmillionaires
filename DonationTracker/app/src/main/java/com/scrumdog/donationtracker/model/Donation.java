@@ -24,6 +24,9 @@ public class Donation {
     /** this items comment */
     private String _comments;
 
+    /** this items location */
+    private Location _location;
+
     /** the list of all items at a location */
     public static ArrayList<Donation> _donation = new ArrayList<>();
 
@@ -45,8 +48,11 @@ public class Donation {
     public String getComments() { return _comments; }
     public void setComments(String comments) { _comments = comments; }
 
+    public Location getItemLocation() { return _location; }
+    public void setItemLocation(Location location) { _location = location; }
+
     /**
-     * Make a new user
+     * Make a new donation
      * @param shortDescription      the donation's shortDescription
      * @param dollarValue    the donation's dollarValue
      * @param category  the donation's category
@@ -59,6 +65,7 @@ public class Donation {
         _category = category;
         _fullDescription = fullDescription;
         _comments = comments;
+        _location = null;
         _donation.add(this);
     }
 

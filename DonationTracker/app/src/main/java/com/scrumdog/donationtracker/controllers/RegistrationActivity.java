@@ -33,6 +33,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         private TextView invalidRegistration;
         private TextView invalidUsername;
         private String usertype;
+        public User newUser;
 
 
         @Override
@@ -63,7 +64,6 @@ public class RegistrationActivity extends AppCompatActivity  {
             accountTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    //usertype = parent.getItemAtPosition(position).toString();
                     if (position == 1) {
                         specificLocationSpinner.setVisibility(View.VISIBLE);
                     }
@@ -84,7 +84,8 @@ public class RegistrationActivity extends AppCompatActivity  {
                     if(validate(userID.getText().toString()) == false) {
                         String userType = accountTypeSpinner.getSelectedItem().toString();
                         String userLocation = specificLocationSpinner.getSelectedItem().toString();
-                        User newUser = new User(Name.getText().toString(), userID.getText().toString(), Password.getText().toString(), userType, userLocation);
+                        newUser = new User(Name.getText().toString(), userID.getText().toString(), Password.getText().toString(), userType, userLocation);
+                        User.setCurrentUser(newUser);
                         Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                         startActivity(intent);
                     } else {

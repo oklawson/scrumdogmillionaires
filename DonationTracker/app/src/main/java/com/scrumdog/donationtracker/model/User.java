@@ -34,6 +34,8 @@ public class User {
     /** the list of all registered users */
     public static ArrayList<User> _users = new ArrayList<>();
 
+    public static User currentUser;
+
 
     /* **********************
      * Getters and setters
@@ -104,6 +106,13 @@ public class User {
     @Override
     public String toString() {
         return _name + " ," + _ID + " ," + _userType + " ," + _userLocation;
+    }
+
+    public static void setCurrentUser(User curr) {
+        currentUser = curr;
+    }
+    public static User getCurrentUser() {
+        return currentUser;
     }
 
 

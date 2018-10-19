@@ -25,7 +25,9 @@ public class LoginActivity extends AppCompatActivity {
         private EditText Password;
         private Button Login;
         private Button Cancel;
+        private Button AddDonation;
         private TextView invalidLogin;
+        public User currentUser;
 
 
         @Override
@@ -38,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
             Login = (Button)findViewById(R.id.btnLogin);
             Cancel = (Button) findViewById(R.id.cancelButton);
             invalidLogin =(TextView)findViewById(R.id.invalidLoginMessage);
+            AddDonation = (Button) findViewById(R.id.viewDonationEntryPage);
 
 
             Login.setOnClickListener(new View.OnClickListener() {
@@ -72,11 +75,9 @@ public class LoginActivity extends AppCompatActivity {
 
         private void validate(String userName, String userPassword){
             try {
-                User currentUser = findUserById(userName);
+                currentUser = findUserById(userName);
                 if (userPassword.equals(currentUser.getPassword())) {
-                    //if (currentUser instanceof LocationEmployee) {
-                        //locationList.setVisibility(View.VISIBLE);
-                    //}
+                    User.setCurrentUser(currentUser);
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {
