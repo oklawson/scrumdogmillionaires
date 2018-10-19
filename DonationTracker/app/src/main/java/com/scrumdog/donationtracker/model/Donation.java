@@ -3,13 +3,14 @@ package com.scrumdog.donationtracker.model;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Date;
 
 public class Donation {
 
     //what are categories??
     public static List<String> theCategories = Arrays.asList("Clothing", "Hat", "Kitchen", "Electronics", "Household", "Other");
 
-    /** this items short descripnt */
+    /** this items short description */
     private String _shortDescription;
 
     /** this items price */
@@ -27,8 +28,15 @@ public class Donation {
     /** this items location */
     private Location _location;
 
+    private Date timeStamp;
+
+    private String _locationS;
+
+    private boolean _listed;
+
+
     /** the list of all items at a location */
-    public static ArrayList<Donation> _donation = new ArrayList<>();
+    //public static ArrayList<Donation> _donation = new ArrayList<>();
 
 
     //**Getters and Setters**//
@@ -48,8 +56,16 @@ public class Donation {
     public String getComments() { return _comments; }
     public void setComments(String comments) { _comments = comments; }
 
+    public String getItemLocationS() { return _locationS; }
+    public void setItemLocationS(String location) { _locationS = location; }
+
     public Location getItemLocation() { return _location; }
     public void setItemLocation(Location location) { _location = location; }
+
+    public boolean getListed() { return _listed; }
+    public void setListed(boolean listed) { _listed = listed; }
+
+    public Date getTimeStamp() { return timeStamp; }
 
     /**
      * Make a new donation
@@ -65,8 +81,11 @@ public class Donation {
         _category = category;
         _fullDescription = fullDescription;
         _comments = comments;
-        _location = null;
-        _donation.add(this);
+        _locationS = User.getCurrentUser().getUserLocation();
+        _location = findLocationByName(User.getCurrentUser().getUserLocation());
+        _listed = false;
+        timeStamp = new Date();
+        //_donation.add(this);
     }
 
     /**
@@ -75,6 +94,16 @@ public class Donation {
      */
     public Donation() {
         this("enter new name" , "NA", "NA", "NA", "NA");
+    }
+
+
+    public static Location findLocationByName(String location) {
+        for (Location l : Location.locations) {
+            if (location.equals(l.getName())) {
+                return l;
+            }
+        }
+        return null;
     }
 
     /**

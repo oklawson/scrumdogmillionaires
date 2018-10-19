@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.util.Log;
 import java.util.List;
 import java.util.ArrayList;
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     private Button Logout;
     private Button ViewLocations;
     private Button EnterDonations;
+    private Button ViewDonationList;
+    private TextView textview;
+
     static ArrayList<Location> locations;
 
     @Override
@@ -32,7 +36,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        textview = (TextView) findViewById(R.id.textView);
+
+        if(User.getCurrentUser().getUserType().equals("Location Employee")) {
+            textview.setText("My Location: " + User.getCurrentUser().getUserLocation());
+        }
+
+
         ViewLocations = (Button) findViewById(R.id.viewLocationsButton);
+
+        if(User.getCurrentUser().getUserType().equals("Location Employee")) {
+            ViewLocations.setText("View Other Locations");
+        }
 
         ViewLocations.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,9 +59,11 @@ public class MainActivity extends AppCompatActivity {
 
         //adding middle button to access data entry for donations page
         EnterDonations = (Button) findViewById(R.id.viewDonationEntryPage);
+        ViewDonationList = (Button) findViewById(R.id.viewDonationList);
 
         if(User.getCurrentUser().getUserType().equals("Location Employee")) {
             EnterDonations.setVisibility(View.VISIBLE);
+            ViewDonationList.setVisibility(View.VISIBLE);
         }
 
         EnterDonations.setOnClickListener(new View.OnClickListener() {
@@ -57,10 +74,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //If the current user is an Employee, show the Add Donation Button
-        //if (User.getUserType().equals("Location Employee")){
-            //EnterDonations.setVisibility(View.VISIBLE);
-        //}
+        ViewDonationList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DonationList.class);
+                startActivity(intent);
+            }
+        });
 
 
         ViewLocations.setOnClickListener(new View.OnClickListener() {

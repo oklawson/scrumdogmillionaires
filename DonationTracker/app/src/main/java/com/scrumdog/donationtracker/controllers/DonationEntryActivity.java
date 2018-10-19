@@ -35,6 +35,8 @@ public class DonationEntryActivity extends AppCompatActivity {
     //make a LocationList Dropdown
     //add a picture upload category?
 
+    public static ArrayList<Donation> donations = new ArrayList<>();
+
 
 
     @Override
@@ -65,10 +67,10 @@ public class DonationEntryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                     String categoryName = category.getSelectedItem().toString();
-                    Donation newDonation = new Donation(shortDescription.getText().toString(), fullDescription.getText().toString(), dollarValue.getText().toString(), comments.getText().toString(), categoryName);
-
+                    Donation newDonation = new Donation(shortDescription.getText().toString(), dollarValue.getText().toString(), categoryName, fullDescription.getText().toString(), comments.getText().toString());
+                    donations.add(newDonation);
                     //display "added!"
-                    addedMessage.setVisibility(View.VISIBLE);
+                    //addedMessage.setVisibility(View.VISIBLE);
 
                     Intent intent = new Intent(DonationEntryActivity.this, MainActivity.class);
                     startActivity(intent);
