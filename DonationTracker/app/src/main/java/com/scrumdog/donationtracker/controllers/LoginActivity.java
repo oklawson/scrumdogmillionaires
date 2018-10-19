@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.content.Intent;
 
 import com.scrumdog.donationtracker.model.Location;
-import com.scrumdog.donationtracker.model.LocationEmployee;
+//import com.scrumdog.donationtracker.model.LocationEmployee;
 import com.scrumdog.donationtracker.model.User;
 
 import com.scrumdog.donationtracker.R;

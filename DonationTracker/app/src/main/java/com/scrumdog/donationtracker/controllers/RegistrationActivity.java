@@ -53,9 +53,9 @@ public class RegistrationActivity extends AppCompatActivity  {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             accountTypeSpinner.setAdapter(adapter);
 
-//            ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, User.legalUsers);
-//            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//            accountTypeSpinner.setAdapter(adapter);
+            ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, User.legalUsersLocations);
+            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            specificLocationSpinner.setAdapter(adapter2);
 
 
             Register.setOnClickListener(new OnClickListener() {
@@ -64,7 +64,8 @@ public class RegistrationActivity extends AppCompatActivity  {
                     //username doesn't exist, so create new user
                     if(validate(userID.getText().toString()) == false) {
                         String userType = accountTypeSpinner.getSelectedItem().toString();
-                        User newUser = new User(Name.getText().toString(), userID.getText().toString(), Password.getText().toString(), userType);
+                        String userLocation = specificLocationSpinner.getSelectedItem().toString();
+                        User newUser = new User(Name.getText().toString(), userID.getText().toString(), Password.getText().toString(), userType, userLocation);
                         Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                         startActivity(intent);
                     } else {

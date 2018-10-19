@@ -57,3 +57,20 @@ public class Location {
 
 
 }
+
+//LOCATION EMPLOYEE CLASS
+//package com.scrumdog.donationtracker.model;
+//
+//public class LocationEmployee extends User {
+//
+//    Location _employeeLocation;
+//
+//    public LocationEmployee(String name, String ID, String password, String userType, String userLocation) {
+//        super(name, ID, password, userType, userLocation);
+//        _employeeLocation = userLocation;
+//    }
+//
+//    public Location getLocation() { return _employeeLocation; }
+//    public void setLocation(Location location) { _employeeLocation = location; }
+//
+//}

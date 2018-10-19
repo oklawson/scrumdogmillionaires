@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         //adding middle button to access data entry for donations page
         EnterDonations = (Button) findViewById(R.id.viewDonationEntryPage);
+
         EnterDonations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //If the current user is an Employee, show the Add Donation Button
+//        if (User.getUserType() = "Location Employee") {
+//            EnterDonations.setVisibility(View.VISIBLE);
+//        }
 
 
         ViewLocations.setOnClickListener(new View.OnClickListener() {
