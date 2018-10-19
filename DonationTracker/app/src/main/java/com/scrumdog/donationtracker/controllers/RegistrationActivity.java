@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.SimpleAdapter;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -31,6 +32,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         private Button Cancel;
         private TextView invalidRegistration;
         private TextView invalidUsername;
+        private String usertype;
 
 
         @Override
@@ -53,9 +55,26 @@ public class RegistrationActivity extends AppCompatActivity  {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             accountTypeSpinner.setAdapter(adapter);
 
-            ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, User.legalUsersLocations);
+            ArrayAdapter<String> adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, User.legalUsersLocations);
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             specificLocationSpinner.setAdapter(adapter2);
+
+
+            accountTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    //usertype = parent.getItemAtPosition(position).toString();
+                    if (position == 1) {
+                        specificLocationSpinner.setVisibility(View.VISIBLE);
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
+
+
 
 
             Register.setOnClickListener(new OnClickListener() {

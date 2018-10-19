@@ -7,19 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Spinner;
 
 import android.content.Intent;
 
-import com.scrumdog.donationtracker.model.Location;
-//import com.scrumdog.donationtracker.model.LocationEmployee;
 import com.scrumdog.donationtracker.model.User;
 
-import com.scrumdog.donationtracker.R;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
+import com.scrumdog.donationtracker.R;
 
 /**
  * A login screen that offers login via email/password.
@@ -80,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                 User currentUser = findUserById(userName);
                 if (userPassword.equals(currentUser.getPassword())) {
                     //if (currentUser instanceof LocationEmployee) {
-                        //location dropdown menu goes here
+                        //locationList.setVisibility(View.VISIBLE);
                     //}
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);

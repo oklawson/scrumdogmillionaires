@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.Location;
 import com.scrumdog.donationtracker.model.User;
+import com.scrumdog.donationtracker.model.Donation;
 
 
 import java.io.BufferedReader;
@@ -63,8 +64,8 @@ public class DonationEntryActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    String category = category.getSelectedItem().toString();
-                    Donation newDonation = new Donation(shortDescription.getText().toString(), fullDescription.getText().toString(), dollarValue.getText().toString(), comments.getText().toString(),category);
+                    String categoryName = category.getSelectedItem().toString();
+                    Donation newDonation = new Donation(shortDescription.getText().toString(), fullDescription.getText().toString(), dollarValue.getText().toString(), comments.getText().toString(), categoryName);
 
                     //display "added!"
                     addedMessage.setVisibility(View.VISIBLE);
@@ -72,7 +73,6 @@ public class DonationEntryActivity extends AppCompatActivity {
                     Intent intent = new Intent(DonationEntryActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
-            }
         });
     }
 

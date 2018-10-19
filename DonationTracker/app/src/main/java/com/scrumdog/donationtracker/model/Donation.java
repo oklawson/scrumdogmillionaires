@@ -25,7 +25,7 @@ public class Donation {
     private String _comments;
 
     /** the list of all items at a location */
-    public static ArrayList<User> _donation = new ArrayList<>();
+    public static ArrayList<Donation> _donation = new ArrayList<>();
 
 
     //**Getters and Setters**//
