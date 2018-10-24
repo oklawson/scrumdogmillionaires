@@ -35,14 +35,16 @@ public class SearchActivity extends AppCompatActivity {
     private TextView CategoryText;
     private Spinner CategorySpinner;
 
-    private String userSearchWord;
-    private String searchFilter;
-    private String searchLocation;
-    private Location searchLoc;
-    private String category;
+    public static String userSearchWord;
+    public static String searchFilter;
+    public static String searchLocation;
+    private static Location searchLoc;
+    public static String searchCategory;
 
-    private boolean userSearchEntered = false;
-    private boolean searchClicked = false;
+    public static boolean userSearchEntered = false;
+    public static boolean locationSelected = false;
+    public static boolean categorySelected = false;
+    public static boolean itemNameSelected = false;
 
     public static List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
     public static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministires", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
@@ -80,8 +82,9 @@ public class SearchActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 searchLocation = LocationSpinner.getSelectedItem().toString();
                 if (searchLocation.equals("All Locations")) {
-                    searchLoc = null;
+                    locationSelected = false;
                 } else {
+                    locationSelected = true;
                     searchLoc = Donation.findLocationByName(searchLocation);
                 }
             }
@@ -96,8 +99,18 @@ public class SearchActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 searchFilter = FilterSpinner.getSelectedItem().toString();
                 if (searchFilter.equals("Category")) {
+                    categorySelected = true;
                     CategoryText.setVisibility(View.VISIBLE);
                     CategorySpinner.setVisibility(View.VISIBLE);
+                } else if (searchFilter.equals("ItemName")) {
+                    itemNameSelected = true;
+                    CategoryText.setVisibility(View.INVISIBLE);
+                    CategorySpinner.setVisibility(View.INVISIBLE);
+                } else {
+                    CategoryText.setVisibility(View.INVISIBLE);
+                    CategorySpinner.setVisibility(View.INVISIBLE);
+                    categorySelected = false;
+                    itemNameSelected = false;
                 }
             }
 
@@ -109,7 +122,7 @@ public class SearchActivity extends AppCompatActivity {
         CategorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                category = CategorySpinner.getSelectedItem().toString();
+                searchCategory = CategorySpinner.getSelectedItem().toString();
             }
 
             @Override
@@ -134,10 +147,10 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (!SearchBar.getText().toString().equals("What are you searching for?") && SearchBar.getText().toString() != null && !SearchBar.getText().toString().equals("")) {
-                    userSearchWord = SearchBar.getText().toString();
                     userSearchEntered = true;
+                    userSearchWord = SearchBar.getText().toString().toLowerCase();
                 } else {
-                    return;
+                    userSearchEntered = false;
                 }
 
             }

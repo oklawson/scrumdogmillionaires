@@ -18,6 +18,14 @@ public class DonationDetails extends AppCompatActivity {
     private TextView TimeStamp;
     private TextView Comments;
 
+    private TextView sShortDescription;
+    private TextView sFullDescription;
+    private TextView sLocation;
+    private TextView sCategory;
+    private TextView sValue;
+    private TextView sTimeStamp;
+    private TextView sComments;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +39,14 @@ public class DonationDetails extends AppCompatActivity {
         TimeStamp = (TextView)findViewById(R.id.timestamp);
         Comments = (TextView)findViewById(R.id.comments);
 
+        sShortDescription = (TextView)findViewById(R.id.shortDescription);
+        sFullDescription = (TextView)findViewById(R.id.fullDescription);
+        sLocation = (TextView)findViewById(R.id.Location);
+        sCategory = (TextView)findViewById(R.id.category);
+        sValue = (TextView)findViewById(R.id.price);
+        sTimeStamp = (TextView)findViewById(R.id.timestamp);
+        sComments = (TextView)findViewById(R.id.comments);
+
 
         ShortDescription.setText(DonationList.ShortDescription);
         FullDescription.setText(DonationList.FullDescription);
@@ -39,6 +55,14 @@ public class DonationDetails extends AppCompatActivity {
         Value.setText(DonationList.Val);
         TimeStamp.setText(DonationList.TimeStamp);
         Comments.setText(DonationList.Comments);
+
+        sShortDescription.setText(SearchList.ShortDescription);
+        sFullDescription.setText(SearchList.FullDescription);
+        sLocation.setText(SearchList.Loc);
+        sCategory.setText(SearchList.Category);
+        sValue.setText(SearchList.Val);
+        sTimeStamp.setText(SearchList.TimeStamp);
+        sComments.setText(SearchList.Comments);
 
     }
 
