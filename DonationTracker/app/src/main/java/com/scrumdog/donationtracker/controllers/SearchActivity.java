@@ -14,8 +14,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Spinner;
+import android.text.TextWatcher;
+import android.text.Editable;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,8 +41,12 @@ public class SearchActivity extends AppCompatActivity {
     private Location searchLoc;
     private String category;
 
+    private boolean userSearchEntered = false;
+    private boolean searchClicked = false;
+
     public static List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
     public static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministires", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,13 +118,41 @@ public class SearchActivity extends AppCompatActivity {
         });
 
 
+        SearchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!SearchBar.getText().toString().equals("What are you searching for?") && SearchBar.getText().toString() != null && !SearchBar.getText().toString().equals("")) {
+                    userSearchWord = SearchBar.getText().toString();
+                    userSearchEntered = true;
+                } else {
+                    return;
+                }
+
+            }
+        });
+
+
         //read in user search from search bar
 
         SearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //when search button is clicked, display search results
+                Intent intent = new Intent(SearchActivity.this, SearchList.class);
+                startActivity(intent);
             }
         });
+
     }
 }

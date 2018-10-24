@@ -1,21 +1,18 @@
 package com.scrumdog.donationtracker.controllers;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-import com.scrumdog.donationtracker.R;
-import com.scrumdog.donationtracker.model.Donation;
-import com.scrumdog.donationtracker.model.User;
-import com.scrumdog.donationtracker.model.Location;
-import java.util.ArrayList;
+import android.widget.TextView;
 
-public class DonationList extends AppCompatActivity {
+import com.scrumdog.donationtracker.R;
+import com.scrumdog.donationtracker.model.User;
+
+public class SearchList extends AppCompatActivity {
 
     public static String ShortDescription;
     public static String FullDescription;
@@ -59,7 +56,7 @@ public class DonationList extends AppCompatActivity {
                 Val = DonationEntryActivity.donations.get(id).getdollarValue();
                 TimeStamp = DonationEntryActivity.donations.get(id).getTimeStamp().toString();
                 Comments = DonationEntryActivity.donations.get(id).getComments();
-                Intent intent = new Intent(DonationList.this, DonationDetails.class);
+                Intent intent = new Intent(SearchList.this, DonationDetails.class);
                 startActivity(intent);
             }
         };
@@ -94,7 +91,7 @@ public class DonationList extends AppCompatActivity {
         if (DonationEntryActivity.donations.size() > 0) {
 
             for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
-                if (DonationEntryActivity.donations.get(i).getItemLocationS().equals(User.getCurrentUser().getUserLocation())) {
+                if (DonationEntryActivity.donations.get(i).getCategory().equals("Clothing")) {
                     //DonationEntryActivity.donations.get(i).setListed(true);
                     LinearLayout row = new LinearLayout(this);
                     row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));

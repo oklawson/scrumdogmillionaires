@@ -31,6 +31,7 @@
         <activity android:name=".controllers.DonationEntryActivity" />
         <activity android:name=".controllers.DonationDetails" />
         <activity android:name=".controllers.DonationList" />
+        <activity android:name=".controllers.SearchList" />
         <activity android:name=".controllers.SearchActivity"></activity>
     </application>
 
