@@ -12,6 +12,8 @@ import android.widget.Spinner;
 import android.content.Intent;
 
 import com.scrumdog.donationtracker.model.User;
+import com.scrumdog.donationtracker.model.UserManagement;
+import com.scrumdog.donationtracker.model.UserManager;
 
 
 import com.scrumdog.donationtracker.R;
@@ -27,8 +29,6 @@ public class LoginActivity extends AppCompatActivity {
         private Button Cancel;
         private Button AddDonation;
         private TextView invalidLogin;
-        public User currentUser;
-
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,8 @@ public class LoginActivity extends AppCompatActivity {
             Login.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    validate(Username.getText().toString(), Password.getText().toString());
+                    UserManagement umt = UserManagement.getInstance();
+                    umt.doLogin(Username.getText().toString(), Password.getText().toString());
                 }
             });
 
@@ -58,36 +59,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
         }
-
-        /**
-        * Finds a user using O(n) linear search given a unique user ID
-        * @param userID
-        * @return
-        */
-        public static User findUserById(String userID) {
-            for (User u : User._users) {
-                if (userID.equals(u.getID())) {
-                 return u;
-                }
-            }
-            return null;
-        }
-
-        private void validate(String userName, String userPassword){
-            try {
-                currentUser = findUserById(userName);
-                if (userPassword.equals(currentUser.getPassword())) {
-                    User.setCurrentUser(currentUser);
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                } else {
-                    invalidLogin.setVisibility(View.VISIBLE);
-                }
-            } catch (Exception e) {
-                invalidLogin.setVisibility(View.VISIBLE);
-                return;
-            }
-        }
-
 }
 

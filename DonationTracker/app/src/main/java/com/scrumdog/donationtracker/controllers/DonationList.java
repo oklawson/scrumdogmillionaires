@@ -13,6 +13,8 @@ import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.Donation;
 import com.scrumdog.donationtracker.model.User;
 import com.scrumdog.donationtracker.model.Location;
+import com.scrumdog.donationtracker.model.UserManagement;
+
 import java.util.ArrayList;
 
 public class DonationList extends AppCompatActivity {
@@ -24,6 +26,8 @@ public class DonationList extends AppCompatActivity {
     public static String Val;
     public static String TimeStamp;
     public static String Comments;
+
+    UserManagement umt = UserManagement.getInstance();
 
 
 //    public static void findNumDonations() {
@@ -94,7 +98,7 @@ public class DonationList extends AppCompatActivity {
         if (DonationEntryActivity.donations.size() > 0) {
 
             for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
-                if (DonationEntryActivity.donations.get(i).getItemLocationS().equals(User.getCurrentUser().getUserLocation())) {
+                if (DonationEntryActivity.donations.get(i).getItemLocationS().equals(umt.getCurrentUser().getUserLocation())) {
                     //DonationEntryActivity.donations.get(i).setListed(true);
                     LinearLayout row = new LinearLayout(this);
                     row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));

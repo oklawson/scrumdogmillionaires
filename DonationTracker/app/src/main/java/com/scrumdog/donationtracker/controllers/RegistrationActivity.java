@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.User;
 import com.scrumdog.donationtracker.controllers.LoginActivity;
+import com.scrumdog.donationtracker.model.UserManagement;
 
 /**
  * A screen that offers registration via email/password.
@@ -35,6 +36,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         private String usertype;
         public User newUser;
 
+        UserManagement umt = UserManagement.getInstance();
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +87,7 @@ public class RegistrationActivity extends AppCompatActivity  {
                         String userType = accountTypeSpinner.getSelectedItem().toString();
                         String userLocation = specificLocationSpinner.getSelectedItem().toString();
                         newUser = new User(Name.getText().toString(), userID.getText().toString(), Password.getText().toString(), userType, userLocation);
-                        User.setCurrentUser(newUser);
+                        umt.doLogin(userID.getText().toString(), Password.getText().toString());
                         Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                         startActivity(intent);
                     } else {
@@ -107,7 +109,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         //check if username already exists
         private boolean validate(String userID) {
             //if username does not already exist, return false
-            if(LoginActivity.findUserById(userID) == null) {
+            if(umt.getUserByID(userID) == null) {
                 return false;
             //if username does exist, return true
             } else {

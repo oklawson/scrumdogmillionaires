@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1066201120054",
+    "firebase_url": "https://donationtracker-a6a14.firebaseio.com",
+    "project_id": "donationtracker-a6a14",
+    "storage_bucket": "donationtracker-a6a14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066201120054:android:6992a345a454ce96",
+        "android_client_info": {
+          "package_name": "com.scrumdog.donationtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066201120054-ullfeq5jq4f6aq70n0csusgk5abhjgig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDju2aI1uYhhGvICi1RbNKs3h4-mgg3RMg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
