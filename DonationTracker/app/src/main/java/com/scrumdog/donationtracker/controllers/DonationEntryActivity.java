@@ -16,6 +16,10 @@ import com.scrumdog.donationtracker.model.Location;
 import com.scrumdog.donationtracker.model.User;
 import com.scrumdog.donationtracker.model.Donation;
 
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.File.*;
+
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -36,7 +40,6 @@ public class DonationEntryActivity extends AppCompatActivity {
     //add a picture upload category?
 
     public static ArrayList<Donation> donations = new ArrayList<>();
-
 
 
     @Override

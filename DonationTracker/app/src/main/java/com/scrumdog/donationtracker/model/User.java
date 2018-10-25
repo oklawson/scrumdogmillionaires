@@ -3,9 +3,13 @@ package com.scrumdog.donationtracker.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+
+import java.io.*;
+import java.lang.String.*;
 
 //implements Parcelable
 public class User {
@@ -115,62 +119,10 @@ public class User {
         return currentUser;
     }
 
-
-    /* *********************************
-     * These methods are required by the Parcelable interface
-     * I just wanted to demo how to pass information from one activity
-     * to another through an intent.   If this were a real project, I
-     * would probably have the facade maintain information about the
-     * currently selected student which would remove the need to
-     * pass the student object in an intent, which would remove the need
-     * to implement the Parcelable interface and these methods.
-     */
-
-//    /**
-//     * Constructor used by Parcel to make a new student out of the
-//     * parceled information
-//     *
-//     * @param in  the parcel containing the student information
-//     */
-//    private Student(Parcel in) {
-//        _name = in.readString();
-//        _major = in.readString();
-//        _id = in.readInt();
-//
-//
-//    }
-//
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
-//
-//    /* *************************
-//       If you add new instance vars to Student, you will need to add them to the write
-//       Be sure the order you write information matches the order that the constructor above
-//       reads them.
-//     */
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeString(_name);
-//        dest.writeString(_major);
-//        dest.writeInt(_id);
-//
-//
-//    }
-//
-//    /**
-//     * Should not have to edit this method if the constructor and write method are
-//     * working correctly.
-//     */
-//    public static final Parcelable.Creator<Student> CREATOR
-//            = new Parcelable.Creator<Student>() {
-//        public Student createFromParcel(Parcel in) {
-//            return new Student(in);
-//        }
-//
-//        public Student[] newArray(int size) {
-//            return new Student[size];
-//        }
-//    };
 }
+
+
+
+
+
+

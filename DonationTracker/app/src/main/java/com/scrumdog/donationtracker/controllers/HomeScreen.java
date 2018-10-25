@@ -9,8 +9,29 @@ import android.widget.Button;
 import android.content.Intent;
 
 import com.scrumdog.donationtracker.R;
+import com.scrumdog.donationtracker.model.User;
+
+import com.google.gson.Gson;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.util.List;
 
 public class HomeScreen extends AppCompatActivity {
+
+    public final static String DEFAULT_BINARY_FILE_NAME = "data.bin";
+    public final static String DEFAULT_TEXT_FILE_NAME = "data.txt";
+    public final static String DEFAULT_JSON_FILE_NAME = "data.json";
+    private User sm;
+
 
     private Button Login;
     private Button Register;
