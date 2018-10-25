@@ -1,7 +1,6 @@
 package com.scrumdog.donationtracker.model;
 
 import android.util.Log;
-
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -15,6 +14,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.List;
+import com.scrumdog.donationtracker.R;
 
 
 public class UserManagement {
@@ -65,11 +65,14 @@ public class UserManagement {
 
     public boolean doLogin(final String ID, final String password) {
         currentUser = um.doLogin(ID, password);
+        System.out.println(currentUser);
         return (currentUser != null);
     }
 
-    public User getCurrentUser() {
-        return currentUser;
+    public User getCurrentUser() { return currentUser; }
+
+    public void setCurrentUser(User user) {
+        this.currentUser = user;
     }
 
     public void doLogout(){

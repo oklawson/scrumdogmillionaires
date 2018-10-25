@@ -18,6 +18,7 @@ import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.User;
 import com.scrumdog.donationtracker.controllers.LoginActivity;
 import com.scrumdog.donationtracker.model.UserManagement;
+import java.io.File;
 
 /**
  * A screen that offers registration via email/password.
@@ -87,7 +88,11 @@ public class RegistrationActivity extends AppCompatActivity  {
                         String userType = accountTypeSpinner.getSelectedItem().toString();
                         String userLocation = specificLocationSpinner.getSelectedItem().toString();
                         newUser = new User(Name.getText().toString(), userID.getText().toString(), Password.getText().toString(), userType, userLocation);
-                        umt.doLogin(userID.getText().toString(), Password.getText().toString());
+                        System.out.println(newUser.toString());
+                        umt.setCurrentUser(newUser);
+                        //String name, String ID, String userType, String userLocation, String password, File file
+                        umt.addNewUser(newUser.getName(), newUser.getID(), newUser.getUserType(), newUser.getUserLocation(), Password.getText().toString());
+                        //umt.doLogin(userID.getText().toString(), Password.getText().toString());
                         Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                         startActivity(intent);
                     } else {

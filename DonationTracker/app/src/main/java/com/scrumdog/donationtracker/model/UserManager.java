@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -53,15 +54,16 @@ public class UserManager {
         userMap.put(ID, user);
 
         try {
-            PrintWriter writer = new PrintWriter(file);
+            FileWriter writer = new FileWriter(file);
             Gson gson = new Gson();
             // convert our objects to a string for output
-            writer.println(gson.toJson(user));
+            writer.append(gson.toJson(user));
             writer.close();
         } catch (FileNotFoundException e) {
             Log.e("UserManagementFacade", "Failed to save user to json file for output");
+        } catch (IOException e) {
+            Log.e("UserManagementFacade", "Failed to save user to json file for output");
         }
-
 
     }
 
@@ -78,6 +80,8 @@ public class UserManager {
         User user = userMap.get(ID);
         //if that user id not there, return null
         if (user == null) return null;
+
+
         //we have a good user at this point, so check their password
         if (user.checkPassword(password)) return user;
         //return null if a bad password
