@@ -26,6 +26,7 @@ public class DonationDetails extends AppCompatActivity {
     private TextView sTimeStamp;
     private TextView sComments;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

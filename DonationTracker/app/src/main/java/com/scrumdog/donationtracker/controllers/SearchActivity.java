@@ -25,7 +25,7 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
-    private EditText SearchBar;
+    public EditText SearchBar;
     private Button SearchButton;
     private TextView SearchTitle;
     private Spinner FilterSpinner;
@@ -34,6 +34,7 @@ public class SearchActivity extends AppCompatActivity {
     private TextView LocationFilterText;
     private TextView CategoryText;
     private Spinner CategorySpinner;
+
 
     public static String userSearchWord;
     public static String searchFilter;
@@ -45,6 +46,7 @@ public class SearchActivity extends AppCompatActivity {
     public static boolean locationSelected = false;
     public static boolean categorySelected = false;
     public static boolean itemNameSelected = false;
+    public static boolean nameSearch = false;
 
     public static List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
     public static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministires", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
@@ -85,8 +87,7 @@ public class SearchActivity extends AppCompatActivity {
                     locationSelected = false;
                 } else {
                     locationSelected = true;
-                    searchLoc = Donation.findLocationByName(searchLocation);
-                }
+             }
             }
 
             @Override
@@ -102,8 +103,13 @@ public class SearchActivity extends AppCompatActivity {
                     categorySelected = true;
                     CategoryText.setVisibility(View.VISIBLE);
                     CategorySpinner.setVisibility(View.VISIBLE);
-                } else if (searchFilter.equals("ItemName")) {
+                    if (!SearchBar.getText().toString().equals("What are you searching for?") && SearchBar.getText().toString() != null && !SearchBar.getText().toString().equals("")) {
+                        userSearchWord = SearchBar.getText().toString().toLowerCase();
+                        nameSearch = true;
+                    }
+                } else if (searchFilter.equals("Item Name")) {
                     itemNameSelected = true;
+                    userSearchWord = SearchBar.getText().toString().toLowerCase();
                     CategoryText.setVisibility(View.INVISIBLE);
                     CategorySpinner.setVisibility(View.INVISIBLE);
                 } else {
@@ -131,41 +137,16 @@ public class SearchActivity extends AppCompatActivity {
         });
 
 
-        SearchBar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (!SearchBar.getText().toString().equals("What are you searching for?") && SearchBar.getText().toString() != null && !SearchBar.getText().toString().equals("")) {
-                    userSearchEntered = true;
-                    userSearchWord = SearchBar.getText().toString().toLowerCase();
-                } else {
-                    userSearchEntered = false;
-                }
-
-            }
-        });
-
-
         //read in user search from search bar
 
         SearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SearchActivity.this, SearchList.class);
-                startActivity(intent);
+                    Intent intent = new Intent(SearchActivity.this, SearchList.class);
+                    startActivity(intent);
             }
         });
 
     }
+
 }
