@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.Location;
 import com.scrumdog.donationtracker.model.User;
+import com.scrumdog.donationtracker.model.UserManager;
+import com.scrumdog.donationtracker.model.UserManagement;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     static ArrayList<Location> locations;
 
+    UserManagement umt = UserManagement.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,14 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
         textview = (TextView) findViewById(R.id.textView);
 
-        if(User.getCurrentUser().getUserType().equals("Location Employee")) {
-            textview.setText("My Location: " + User.getCurrentUser().getUserLocation());
+        if(umt.getCurrentUser().getUserType().equals("Location Employee")) {
+            textview.setText("My Location: " + umt.getCurrentUser().getUserLocation());
         }
 
 
         ViewLocations = (Button) findViewById(R.id.viewLocationsButton);
 
-        if(User.getCurrentUser().getUserType().equals("Location Employee")) {
+        if(umt.getCurrentUser().getUserType().equals("Location Employee")) {
             ViewLocations.setText("View Other Locations");
         }
 
@@ -76,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         EnterDonations = (Button) findViewById(R.id.viewDonationEntryPage);
         ViewDonationList = (Button) findViewById(R.id.viewDonationList);
 
-        if(User.getCurrentUser().getUserType().equals("Location Employee")) {
+        if(umt.getCurrentUser().getUserType().equals("Location Employee")) {
             EnterDonations.setVisibility(View.VISIBLE);
             ViewDonationList.setVisibility(View.VISIBLE);
         }
@@ -111,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User.setCurrentUser(null);
+                umt.doLogout();
                 Intent intent = new Intent(MainActivity.this, HomeScreen.class);
                 startActivity(intent);
             }

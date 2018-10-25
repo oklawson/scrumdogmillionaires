@@ -1,18 +1,13 @@
 package com.scrumdog.donationtracker.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
-import java.io.*;
-import java.lang.String.*;
 
-//implements Parcelable
-public class User {
+public class User implements Serializable {
 
     /** a demonstration of using something other than an enum for holding choices */
     public static List<String> legalUsers = Arrays.asList("User", "Location Employee", "Admin");
@@ -20,109 +15,106 @@ public class User {
     /** a demonstration of using something other than an enum for holding choices */
     public static List<String> legalUsersLocations = Arrays.asList("AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministires", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
 
-    /** this users ID - can be email or id */
-    private String _ID;
-
     /** this users name */
-    private String _name;
+    private String name;
+
+    /** this users ID - can be email or id */
+    private String ID;
 
     /** this users type */
-    private String _userType;
+    private String userType;
 
     /** this users location */
-    private String _userLocation;
+    // using String for read/write purposes, will fix later
+    private String userLocation;
 
     /** this users password */
-    private String _password;
-
-    /** the list of all registered users */
-    public static ArrayList<User> _users = new ArrayList<>();
+    private String password;
 
     public static User currentUser;
 
-
-    /* **********************
-     * Getters and setters
-     */
-    public String getName() { return _name; }
-    public void setName(String name) { _name = name; }
-
-    //no setter for this.  id is a read only field
-    public String getID() { return _ID; }
-    public void setID(String ID) { _ID = ID; }
-
-    public String getUserType() {return _userType; }
-    public void set_userType(String userType) { _userType = userType; }
-
-    public String getPassword() {return _password; }
-    public void setPassword(String password) { _password = password; }
-
-    public String getUserLocation() {return _userLocation; }
-    public void setUserLocation(String userLocation) { _userLocation = userLocation; }
-
     /**
-     * Lookup a user type based on its code.  Returns the postion of that
-     * user type in the array
-     *
-     * @param code the user type to find
-     *
-     * @return the index of the array that corresponds to the submitted major
+     * make a new user
+     * @param n name
+     * @param id user id
+     * @param t user type
+     * @param l user location
+     * @param p password
      */
-//    public static int findPosition(String code) {
-//        int i = 0;
-//        while (i < legalUsers.size()) {
-//            if (code.equals(legalUsers.get(i))) return i;
-//            ++i;
-//        }
-//        return 0;
-//    }
-
-
-    /**
-     * Make a new user
-     * @param name      the user's name
-     * @param ID    the user's id
-     * @param password  the user's password
-     * @param userType  the user's type
-     * @param userLocation the user's location
-     */
-    public User(String name, String ID, String password, String userType, String userLocation) {
-        _name = name;
-        _ID = ID;
-        _password = password;
-        _userType = userType;
-        _userLocation = userLocation;
-        _users.add(this);
+    public User(final String n, final String id, final String t, final String l, final String p) {
+        name = n;
+        ID = id;
+        userType = t;
+        userLocation = l;
+        password = p;
     }
 
     /**
-     * No param constructor -- DO NOT CALL NORMALLY
-     * This constructor only for GUI use in edit/new student dialog
+     * check an entered password for a match
+     *
+     * @pre pwd is not null
+     * @param pwd the password to check
+     * @return true is passwords match, false otherwise
      */
-    public User() {
-        this("enter new name" , "NA", "NA", "NA", "NA");
+    public boolean checkPassword(String pwd) {
+        return getPassword().equals(pwd);
     }
 
-    /**
-     *
-     * @return the display string representation
-     */
+    public String getName() {
+        return name;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public String getUserLocation() { return userLocation; }
+
+    private String getPassword() {
+        return password;
+    }
+
     @Override
     public String toString() {
-        return _name + " ," + _ID + " ," + _userType + " ," + _userLocation;
+        return "User: " + name + " " + ID + " " + userType + " " + userLocation + " " + password;
     }
 
-    public static void setCurrentUser(User curr) {
-        currentUser = curr;
-    }
-    public static User getCurrentUser() {
-        return currentUser;
+
+    /**
+     * Save this class in a custom save format
+     *
+     * @param writer the file to write this user to
+     */
+    public void saveAsText(PrintWriter writer) {
+        System.out.println("Student saving student: " + name);
+        writer.println(name + "\t" + ID + "\t" + userType + "\t" + userLocation + "\t" + password);
     }
 
+
+    /**
+     * This is a static factory method that constructs a student given a text line in the correct format.
+     * It assumes that a student is in a single string with each attribute separated by a tab character
+     * The order of the data is assumed to be:
+     *
+     * 0 - name
+     * 1 - ID
+     * 2 - type
+     * 3 - location
+     * 4 - password
+     *
+     * @param line  the text line containing the data
+     * @return the user object
+     */
+    public static User parseEntry(String line) {
+        assert line != null;
+        String[] tokens = line.split("\t");
+        assert tokens.length == 5;
+        User u = new User(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4]);
+
+        return u;
+    }
 }
-
-
-
-
-
-

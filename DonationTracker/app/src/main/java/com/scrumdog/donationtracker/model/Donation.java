@@ -34,6 +34,8 @@ public class Donation {
 
     private boolean _listed;
 
+    // user management
+    UserManagement umt = UserManagement.getInstance();
 
     /** the list of all items at a location */
     //public static ArrayList<Donation> _donation = new ArrayList<>();
@@ -81,8 +83,8 @@ public class Donation {
         _category = category;
         _fullDescription = fullDescription;
         _comments = comments;
-        _locationS = User.getCurrentUser().getUserLocation();
-        _location = findLocationByName(User.getCurrentUser().getUserLocation());
+        _locationS = umt.getCurrentUser().getUserLocation();
+        _location = findLocationByName(umt.getCurrentUser().getUserLocation());
         _listed = false;
         timeStamp = new Date();
         //_donation.add(this);
