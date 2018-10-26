@@ -90,6 +90,7 @@ public class RegistrationActivity extends AppCompatActivity  {
                         newUser = new User(Name.getText().toString(), userID.getText().toString(), Password.getText().toString(), userType, userLocation);
                         System.out.println(newUser.toString());
                         umt.setCurrentUser(newUser);
+                        System.out.println(umt.getCurrentUser().toString());
                         //String name, String ID, String userType, String userLocation, String password, File file
                         umt.addNewUser(newUser.getName(), newUser.getID(), newUser.getUserType(), newUser.getUserLocation(), Password.getText().toString());
                         //umt.doLogin(userID.getText().toString(), Password.getText().toString());
