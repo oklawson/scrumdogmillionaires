@@ -87,7 +87,7 @@ public class RegistrationActivity extends AppCompatActivity  {
                     if(validate(userID.getText().toString()) == false) {
                         String userType = accountTypeSpinner.getSelectedItem().toString();
                         String userLocation = specificLocationSpinner.getSelectedItem().toString();
-                        newUser = new User(Name.getText().toString(), userID.getText().toString(), Password.getText().toString(), userType, userLocation);
+                        newUser = new User(Name.getText().toString(), userID.getText().toString(), userType, userLocation, Password.getText().toString());
                         System.out.println(newUser.toString());
                         umt.setCurrentUser(newUser);
                         System.out.println(umt.getCurrentUser().toString());
