@@ -18,7 +18,7 @@ import com.scrumdog.donationtracker.R;
 
 
 public class UserManagement {
-    public final static String DEFAULT_JSON_FILE_NAME = "data.json";
+    public final static String DEFAULT_JSON_FILE_NAME = "userdata.json";
 
     /**
      * the facade maintains references to any required model classes
@@ -60,12 +60,11 @@ public class UserManagement {
 
     public void addNewUser(final String name, final String ID, final String type,
                            final String location, final String password) {
-        um.addUser(name, ID, type, location, password, new File("userdata.json"));
+        um.addUser(name, ID, type, location, password);
     }
 
     public boolean doLogin(final String ID, final String password) {
         currentUser = um.doLogin(ID, password);
-        System.out.println(currentUser);
         return (currentUser != null);
     }
 
@@ -73,6 +72,14 @@ public class UserManagement {
 
     public void setCurrentUser(User user) {
         this.currentUser = user;
+    }
+
+    void addUser(User user) {
+        um.addUser(user);
+    }
+
+    void removeUser(User user) {
+        um.removeUser(user);
     }
 
     public void doLogout(){
@@ -105,17 +112,6 @@ public class UserManagement {
 
         try {
             PrintWriter writer = new PrintWriter(file);
-            /*
-                We are using the Google Gson library to make things easy.  You will need to add the
-                following line to your gradle file so the proper dependencies are set up:
-                compile 'com.google.code.gson:gson:2.3'
-
-                Gson, like object serialization will take a single object and save all the objects
-                it refers to.  You can save everything by one reference, as long as it is the
-                top-level reference.
-
-
-             */
             Gson gson = new Gson();
             // convert our objects to a string for output
             String outString = gson.toJson(um);

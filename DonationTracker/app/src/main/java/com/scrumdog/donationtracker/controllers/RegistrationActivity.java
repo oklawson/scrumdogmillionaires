@@ -88,6 +88,8 @@ public class RegistrationActivity extends AppCompatActivity  {
                         String userType = accountTypeSpinner.getSelectedItem().toString();
                         String userLocation = specificLocationSpinner.getSelectedItem().toString();
                         newUser = new User(Name.getText().toString(), userID.getText().toString(), userType, userLocation, Password.getText().toString());
+                        File file = new File(getApplicationContext().getFilesDir(), UserManagement.DEFAULT_JSON_FILE_NAME);
+                        umt.saveJson(file);
                         System.out.println(newUser.toString());
                         umt.setCurrentUser(newUser);
                         System.out.println(umt.getCurrentUser().toString());

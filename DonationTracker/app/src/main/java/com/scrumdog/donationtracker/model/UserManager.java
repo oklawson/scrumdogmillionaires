@@ -5,6 +5,7 @@ import android.util.Log;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.io.FileWriter;
@@ -13,8 +14,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.io.File;
+import java.io.*;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import android.content.Context;
 
 import com.google.gson.Gson;
+import com.scrumdog.donationtracker.R;
 
 /**
  * This class manages the list of users in the model
@@ -46,25 +52,11 @@ public class UserManager {
      * @param userType the user type
      * @param userLocation the user location
      * @param password the user password
-     * @param file userdata file (JSON)
      */
-    void addUser(String name, String ID, String userType, String userLocation, String password, File file) {
+    void addUser(String name, String ID, String userType, String userLocation, String password) {
         User user = new User(name, ID, userType, userLocation, password);
         users.add(user);
         userMap.put(ID, user);
-
-        try {
-            FileWriter writer = new FileWriter(file);
-            Gson gson = new Gson();
-            // convert our objects to a string for output
-            writer.append(gson.toJson(user));
-            writer.close();
-        } catch (FileNotFoundException e) {
-            Log.e("UserManagementFacade", "Failed to save user to json file for output");
-        } catch (IOException e) {
-            Log.e("UserManagementFacade", "Failed to save user to json file for output");
-        }
-
     }
 
 
