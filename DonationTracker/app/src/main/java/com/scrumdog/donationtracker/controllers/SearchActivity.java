@@ -109,7 +109,7 @@ public class SearchActivity extends AppCompatActivity {
                     }
                 } else if (searchFilter.equals("Item Name")) {
                     itemNameSelected = true;
-                    userSearchWord = SearchBar.getText().toString().toLowerCase();
+                    userSearchWord = SearchBar.getText().toString();
                     CategoryText.setVisibility(View.INVISIBLE);
                     CategorySpinner.setVisibility(View.INVISIBLE);
                 } else {
