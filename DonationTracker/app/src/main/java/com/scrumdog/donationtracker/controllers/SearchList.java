@@ -57,125 +57,114 @@ public class SearchList extends AppCompatActivity {
         NoItemsText.setVisibility(View.VISIBLE);
 
         //user doesn't select location or filter or enter any search -> SHOW ALL ITEMS
-//        if (!SearchActivity.locationSelected && !SearchActivity.categorySelected) {
-//            if (DonationEntryActivity.donations.size() > 0) {
-//
-//                for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
-//                    count++;
-//                    LinearLayout row = new LinearLayout(this);
-//                    row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-//
-//                    //for (int j = 0; j < 2; j++) {
-//                    TextView tvTag = new TextView(this);
-//                    tvTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                    tvTag.setText(DonationEntryActivity.donations.get(i).toString());
-//                    tvTag.setId(i);
-//                    row.addView(tvTag);
-//                    Button btnTag = new Button(this);
-//                    btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                    btnTag.setText("View Details");
-//                    btnTag.setId(i);
-//                    row.addView(btnTag);
-//                    btnTag.setOnClickListener(getOnClickDoSomething(btnTag));
-//
-//                    layout.addView(row);
-//                    //}
-//                }
-////                if(count == 0) {
-////                    NoItemsText.setVisibility(View.VISIBLE);
-////                } else {
-////                    Intent intent = new Intent(SearchList.this, DonationDetails.class);
-////                    startActivity(intent);
-////                }
-//                setContentView(layout);
-//            }
-//            SearchActivity.userSearchEntered = false;
-//            SearchActivity.locationSelected = false;
-//            SearchActivity.categorySelected = false;
-//            SearchActivity.itemNameSelected = false;
-//        }
+        if (!SearchActivity.locationSelected && !SearchActivity.categorySelected) {
+            if (DonationEntryActivity.donations.size() > 0) {
 
-//        //user only selects a location -> SHOW ALL ITEMS AT THAT LOCATION
-//        if (SearchActivity.locationSelected && !SearchActivity.categorySelected) {
-//            if (DonationEntryActivity.donations.size() > 0) {
-//
-//                for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
-//                    if (DonationEntryActivity.donations.get(i).getItemLocationS().equals(SearchActivity.searchLocation)) {
-//                        count++;
-//                        LinearLayout row = new LinearLayout(this);
-//                        row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-//
-//                        //for (int j = 0; j < 2; j++) {
-//                        TextView tvTag = new TextView(this);
-//                        tvTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                        tvTag.setText(DonationEntryActivity.donations.get(i).toString());
-//                        tvTag.setId(i);
-//                        row.addView(tvTag);
-//                        Button btnTag = new Button(this);
-//                        btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                        btnTag.setText("View Details");
-//                        btnTag.setId(i);
-//                        row.addView(btnTag);
-//                        btnTag.setOnClickListener(getOnClickDoSomething(btnTag));
-//
-//                        layout.addView(row);
-//                    }
-//                }
-////                if(count == 0) {
-////                    NoItemsText.setVisibility(View.VISIBLE);
-////                } else {
-////                    Intent intent = new Intent(SearchList.this, DonationDetails.class);
-////                    startActivity(intent);
-////                }
-//                setContentView(layout);
-//            }
-//            SearchActivity.userSearchEntered = false;
-//            SearchActivity.locationSelected = false;
-//            SearchActivity.categorySelected = false;
-//            SearchActivity.itemNameSelected = false;
-//        }
-//
-//        //user only selects a category -> SHOW ALL ITEMS IN THAT CATEGORY
-//        if (!SearchActivity.locationSelected && SearchActivity.categorySelected) {
-//            if (DonationEntryActivity.donations.size() > 0) {
-//
-//                for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
-//                    if (DonationEntryActivity.donations.get(i).getCategory().equals(SearchActivity.searchCategory)) {
-//                        //DonationEntryActivity.donations.get(i).setListed(true);
-//                        count++;
-//                        LinearLayout row = new LinearLayout(this);
-//                        row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-//
-//                        //for (int j = 0; j < 2; j++) {
-//                        TextView tvTag = new TextView(this);
-//                        tvTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                        tvTag.setText(DonationEntryActivity.donations.get(i).toString());
-//                        tvTag.setId(i);
-//                        row.addView(tvTag);
-//                        Button btnTag = new Button(this);
-//                        btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                        btnTag.setText("View Details");
-//                        btnTag.setId(i);
-//                        row.addView(btnTag);
-//                        btnTag.setOnClickListener(getOnClickDoSomething(btnTag));
-//
-//                        layout.addView(row);
-//                    }
-//                }
-////                if(count == 0) {
-////                    NoItemsText.setVisibility(View.VISIBLE);
-////                } else {
-////                    Intent intent = new Intent(SearchList.this, DonationDetails.class);
-////                    startActivity(intent);
-////                }
-//                setContentView(layout);
-//            }
-//            SearchActivity.userSearchEntered = false;
-//            SearchActivity.locationSelected = false;
-//            SearchActivity.categorySelected = false;
-//            SearchActivity.itemNameSelected = false;
-//        }
-//
+                for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
+                    count++;
+                    LinearLayout row = new LinearLayout(this);
+                    row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+                    //for (int j = 0; j < 2; j++) {
+                    TextView tvTag = new TextView(this);
+                    tvTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                    tvTag.setText(DonationEntryActivity.donations.get(i).toString());
+                    tvTag.setId(i);
+                    row.addView(tvTag);
+                    Button btnTag = new Button(this);
+                    btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                    btnTag.setText("View Details");
+                    btnTag.setId(i);
+                    row.addView(btnTag);
+                    btnTag.setOnClickListener(getOnClickDoSomething(btnTag));
+
+                    layout.addView(row);
+                    //}
+                }
+
+                setContentView(layout);
+            }
+            SearchActivity.userSearchEntered = false;
+            SearchActivity.locationSelected = false;
+            SearchActivity.categorySelected = false;
+            SearchActivity.itemNameSelected = false;
+        }
+
+        //user only selects a location -> SHOW ALL ITEMS AT THAT LOCATION
+        if (SearchActivity.locationSelected && !SearchActivity.categorySelected) {
+            if (DonationEntryActivity.donations.size() > 0) {
+
+                for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
+                    if (DonationEntryActivity.donations.get(i).getItemLocationS().equals(SearchActivity.searchLocation)) {
+                        count++;
+                        LinearLayout row = new LinearLayout(this);
+                        row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+                        //for (int j = 0; j < 2; j++) {
+                        TextView tvTag = new TextView(this);
+                        tvTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                        tvTag.setText(DonationEntryActivity.donations.get(i).toString());
+                        tvTag.setId(i);
+                        row.addView(tvTag);
+                        Button btnTag = new Button(this);
+                        btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                        btnTag.setText("View Details");
+                        btnTag.setId(i);
+                        row.addView(btnTag);
+                        btnTag.setOnClickListener(getOnClickDoSomething(btnTag));
+
+                        layout.addView(row);
+                    }
+                }
+
+                setContentView(layout);
+            }
+            SearchActivity.userSearchEntered = false;
+            SearchActivity.locationSelected = false;
+            SearchActivity.categorySelected = false;
+            SearchActivity.itemNameSelected = false;
+        }
+
+        //user only selects a category -> SHOW ALL ITEMS IN THAT CATEGORY
+        if (!SearchActivity.locationSelected && SearchActivity.categorySelected) {
+            if (DonationEntryActivity.donations.size() > 0) {
+
+                for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
+                    if (DonationEntryActivity.donations.get(i).getCategory().equals(SearchActivity.searchCategory)) {
+                        //DonationEntryActivity.donations.get(i).setListed(true);
+                        count++;
+                        LinearLayout row = new LinearLayout(this);
+                        row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+                        //for (int j = 0; j < 2; j++) {
+                        TextView tvTag = new TextView(this);
+                        tvTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                        tvTag.setText(DonationEntryActivity.donations.get(i).toString());
+                        tvTag.setId(i);
+                        row.addView(tvTag);
+                        Button btnTag = new Button(this);
+                        btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                        btnTag.setText("View Details");
+                        btnTag.setId(i);
+                        row.addView(btnTag);
+                        btnTag.setOnClickListener(getOnClickDoSomething(btnTag));
+
+                        layout.addView(row);
+                    }
+                }
+                if(count > 0) {
+                    NoItemsText.setVisibility(View.INVISIBLE);
+                } else {
+                    NoItemsText.setVisibility(View.VISIBLE);
+                }
+                setContentView(layout);
+            }
+            SearchActivity.userSearchEntered = false;
+            SearchActivity.locationSelected = false;
+            SearchActivity.categorySelected = false;
+            SearchActivity.itemNameSelected = false;
+        }
+
         //user only selects a category and location -> SHOW ALL ITEMS IN THAT CATEGORY AT THAT LOCATION
         if (SearchActivity.locationSelected && SearchActivity.categorySelected) {
             NoItemsText.setVisibility(View.VISIBLE);
@@ -309,48 +298,43 @@ public class SearchList extends AppCompatActivity {
 //        }
 
 
-//        //user selects item name search and location -> SHOW ALL ITEMS WITH THAT CRITERIA
-//        if (SearchActivity.locationSelected && SearchActivity.itemNameSelected) {
-//            if (DonationEntryActivity.donations.size() > 0) {
-//
-//                for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
-//                    if (DonationEntryActivity.donations.get(i).getshortDescription().toLowerCase().equals(SearchActivity.userSearchWord)
-//                            && DonationEntryActivity.donations.get(i).getItemLocationS().equals(SearchActivity.searchLocation)) {
-//                        //DonationEntryActivity.donations.get(i).setListed(true);
-//                        count++;
-//                        LinearLayout row = new LinearLayout(this);
-//                        row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-//
-//                        //for (int j = 0; j < 2; j++) {
-//                        TextView tvTag = new TextView(this);
-//                        tvTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                        tvTag.setText(DonationEntryActivity.donations.get(i).toString());
-//                        tvTag.setId(i);
-//                        row.addView(tvTag);
-//                        Button btnTag = new Button(this);
-//                        btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                        btnTag.setText("View Details");
-//                        btnTag.setId(i);
-//                        row.addView(btnTag);
-//                        btnTag.setOnClickListener(getOnClickDoSomething(btnTag));
-//
-//                        layout.addView(row);
-//                    }
-//                }
-////                    if(count == 0) {
-////                        NoItemsText.setVisibility(View.VISIBLE);
-////                    } else {
-////                        Intent intent = new Intent(SearchList.this, DonationDetails.class);
-////                        startActivity(intent);
-////                    }
-//                setContentView(layout);
-//            }
-//
-//            SearchActivity.userSearchEntered = false;
-//            SearchActivity.locationSelected = false;
-//            SearchActivity.categorySelected = false;
-//            SearchActivity.itemNameSelected = false;
-//        }
+        //THIS DOESNT WORK
+        //user selects item name search and location -> SHOW ALL ITEMS WITH THAT CRITERIA
+        if (SearchActivity.itemNameSelected && SearchActivity.locationSelected) {
+            if (DonationEntryActivity.donations.size() > 0) {
+
+                for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
+                    if (DonationEntryActivity.donations.get(i).getshortDescription().equals(SearchActivity.userSearchWord)
+                            && DonationEntryActivity.donations.get(i).getItemLocationS().equals(SearchActivity.searchLocation)) {
+                        //DonationEntryActivity.donations.get(i).setListed(true);
+                        count++;
+                        LinearLayout row = new LinearLayout(this);
+                        row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+
+                        //for (int j = 0; j < 2; j++) {
+                        TextView tvTag = new TextView(this);
+                        tvTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                        tvTag.setText(DonationEntryActivity.donations.get(i).toString());
+                        tvTag.setId(i);
+                        row.addView(tvTag);
+                        Button btnTag = new Button(this);
+                        btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                        btnTag.setText("View Details");
+                        btnTag.setId(i);
+                        row.addView(btnTag);
+                        btnTag.setOnClickListener(getOnClickDoSomething(btnTag));
+
+                        layout.addView(row);
+                    }
+                }
+                setContentView(layout);
+            }
+
+            SearchActivity.userSearchEntered = false;
+            SearchActivity.locationSelected = false;
+            SearchActivity.categorySelected = false;
+            SearchActivity.itemNameSelected = false;
+        }
     }
 
     @Override
