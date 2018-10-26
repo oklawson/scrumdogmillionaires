@@ -55,8 +55,11 @@ public class UserManager {
      */
     void addUser(String name, String ID, String userType, String userLocation, String password) {
         User user = new User(name, ID, userType, userLocation, password);
-        users.add(user);
-        userMap.put(ID, user);
+//        users.add(user);
+//        userMap.put(ID, user);
+        AddUserCommand cmd = new AddUserCommand(user);
+        CommandManager commandManager = AbstractCommand.manager;
+        commandManager.executeCommand(cmd);
     }
 
 
@@ -92,48 +95,6 @@ public class UserManager {
 
     User getUserByID(String ID) {
         return userMap.get(ID);
-    }
-
-    /**
-     *
-     * @param writer
-     */
-    void saveAsText(PrintWriter writer) {
-        System.out.println("Manager saving: " + users.size() + " users" );
-        writer.println(users.size());
-        for(User u : users) {
-            u.saveAsText(writer);
-        }
-    }
-
-    /**
-     * load the model from a custom text file
-     *
-     * @param reader  the file to read from
-     */
-    void loadFromText(BufferedReader reader) {
-        System.out.println("Loading Text File");
-        userMap.clear();
-        users.clear();
-        try {
-            String countStr = reader.readLine();
-            assert countStr != null;
-            int count = Integer.parseInt(countStr);
-
-            //then read in each user to model
-            for (int i = 0; i < count; ++i) {
-                String line = reader.readLine();
-                User u = User.parseEntry(line);
-                users.add(u);
-                userMap.put(u.getID(), u);
-            }
-            //be sure and close the file
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Done loading text file with " + users.size() + " users");
-
     }
 
 
