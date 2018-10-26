@@ -50,7 +50,7 @@ public class UserManagement {
      */
     public static UserManagement getInstance() { return instance; }
 
-    public List<User> getStudentsAsList() {
+    public List<User> getUsersAsList() {
         return um.getUsers();
     }
 
@@ -97,7 +97,7 @@ public class UserManagement {
             Gson gson = new Gson();
 
             um = gson.fromJson(inString, UserManager.class);
-
+            um.regenMap();
             input.close();
         } catch (IOException e) {
             Log.e("UserManagementFacade", "Failed to open/read the buffered reader for json");

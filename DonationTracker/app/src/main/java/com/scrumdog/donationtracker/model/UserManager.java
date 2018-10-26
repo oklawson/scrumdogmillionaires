@@ -55,8 +55,8 @@ public class UserManager {
      */
     void addUser(String name, String ID, String userType, String userLocation, String password) {
         User user = new User(name, ID, userType, userLocation, password);
-//        users.add(user);
-//        userMap.put(ID, user);
+        //users.add(user);
+        //userMap.put(ID, user);
         AddUserCommand cmd = new AddUserCommand(user);
         CommandManager commandManager = AbstractCommand.manager;
         commandManager.executeCommand(cmd);
@@ -75,11 +75,12 @@ public class UserManager {
         User user = userMap.get(ID);
         //if that user id not there, return null
         if (user == null) return null;
-
+        System.out.println("user does not exist");
 
         //we have a good user at this point, so check their password
         if (user.checkPassword(password)) return user;
         //return null if a bad password
+        System.out.println("password incorrect");
         return null;
     }
 

@@ -87,15 +87,9 @@ public class RegistrationActivity extends AppCompatActivity  {
                     if(validate(userID.getText().toString()) == false) {
                         String userType = accountTypeSpinner.getSelectedItem().toString();
                         String userLocation = specificLocationSpinner.getSelectedItem().toString();
-                        newUser = new User(Name.getText().toString(), userID.getText().toString(), userType, userLocation, Password.getText().toString());
-                        File file = new File(getApplicationContext().getFilesDir(), UserManagement.DEFAULT_JSON_FILE_NAME);
-                        umt.saveJson(file);
-                        System.out.println(newUser.toString());
-                        umt.setCurrentUser(newUser);
-                        System.out.println(umt.getCurrentUser().toString());
-                        //String name, String ID, String userType, String userLocation, String password, File file
-                        umt.addNewUser(newUser.getName(), newUser.getID(), newUser.getUserType(), newUser.getUserLocation(), Password.getText().toString());
-                        //umt.doLogin(userID.getText().toString(), Password.getText().toString());
+                        umt.addNewUser(Name.getText().toString(), userID.getText().toString(), userType, userLocation, Password.getText().toString());
+                        umt.saveJson(new File(getApplicationContext().getFilesDir(), UserManagement.DEFAULT_JSON_FILE_NAME));
+                        umt.doLogin(userID.getText().toString(), Password.getText().toString());
                         Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                         startActivity(intent);
                     } else {

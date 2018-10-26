@@ -3,6 +3,7 @@ package com.scrumdog.donationtracker.controllers;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,8 +48,10 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     UserManagement umt = UserManagement.getInstance();
+                    Log.d("MYAPP","check umt login user: " + Username.getText().toString() + " pass: " + Password.getText().toString());
                     if (umt.doLogin(Username.getText().toString(), Password.getText().toString())) {
-                        umt.setCurrentUser(umt.getUserByID(Username.getText().toString()));
+                        Log.d("MYAPP","login success");
+                        //umt.setCurrentUser(umt.getUserByID(Username.getText().toString()));
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                     }
