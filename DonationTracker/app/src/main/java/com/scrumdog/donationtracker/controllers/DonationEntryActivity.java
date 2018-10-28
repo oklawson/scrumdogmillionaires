@@ -12,10 +12,13 @@ import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 
 import com.scrumdog.donationtracker.R;
+import com.scrumdog.donationtracker.model.DonationManagement;
 import com.scrumdog.donationtracker.model.Location;
 import com.scrumdog.donationtracker.model.User;
 import com.scrumdog.donationtracker.model.Donation;
+import com.scrumdog.donationtracker.model.UserManagement;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.File.*;
@@ -38,6 +41,8 @@ public class DonationEntryActivity extends AppCompatActivity {
     private Button addButton;
     //make a LocationList Dropdown
     //add a picture upload category?
+
+    DonationManagement dmt = DonationManagement.getInstance();
 
     public static ArrayList<Donation> donations = new ArrayList<>();
 
@@ -72,6 +77,9 @@ public class DonationEntryActivity extends AppCompatActivity {
                     String categoryName = category.getSelectedItem().toString();
                     Donation newDonation = new Donation(shortDescription.getText().toString(), dollarValue.getText().toString(), categoryName, fullDescription.getText().toString(), comments.getText().toString());
                     donations.add(newDonation);
+                    dmt.addNewDonation(newDonation.getshortDescription(), newDonation.getdollarValue(), newDonation.getCategory(), newDonation.getFullDescription(), newDonation.getComments());
+                    dmt.saveJson(new File(getApplicationContext().getFilesDir(), DonationManagement.DEFAULT_JSON_FILE_NAME));
+                    dmt.registerDonation(newDonation.getshortDescription());
                     //display "added!"
                     //addedMessage.setVisibility(View.VISIBLE);
 
