@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Button ViewDonationList;
     private Button Search;
     private TextView textview;
+    private Button ViewMap;
 
     static ArrayList<Location> locations;
 
@@ -112,6 +113,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LocationList.class);
+                startActivity(intent);
+            }
+        });
+
+        ViewMap = (Button) findViewById(R.id.ViewMap);
+
+        ViewMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
