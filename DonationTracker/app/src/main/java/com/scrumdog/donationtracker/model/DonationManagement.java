@@ -1,5 +1,6 @@
 package com.scrumdog.donationtracker.model;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -34,8 +35,6 @@ public class DonationManagement {
      */
     private DonationManagement() {
         dm = new DonationManager();
-        //dm = new DonationManager();
-        //lm = new LocationManager();
     }
 
     /**
@@ -59,16 +58,16 @@ public class DonationManagement {
         dm.addDonation(shortDescription, dollarValue, category, fullDescription, comments);
     }
 
-    public boolean registerDonation(final String shortDescription) {
-        currentDonation = dm.registerDonation(shortDescription);
-        return (currentDonation != null);
-    }
+//    public boolean registerDonation(final String shortDescription) {
+//        currentDonation = dm.registerDonation(shortDescription);
+//        return (currentDonation != null);
+//    }
 
-    public Donation getCurrentDonation() { return currentDonation; }
-
-    public void setCurrentDonation(Donation d) {
-        this.currentDonation = d;
-    }
+//    public Donation getCurrentDonation() { return currentDonation; }
+//
+//    public void setCurrentDonation(Donation d) {
+//        this.currentDonation = d;
+//    }
 
     void addDonation(Donation d) {
         dm.addDonation(d);
@@ -78,17 +77,15 @@ public class DonationManagement {
         dm.removeDonation(donation);
     }
 
-//    public void doLogout(){
-//        currentUser = null;
-//    }
 
     // add write to text file
+    @SuppressLint("LongLogTag")
     public boolean loadJson(File file) {
         try {
             BufferedReader input = new BufferedReader(new FileReader(file));
             //Since we saved the json as a string, we just read in the string normally
             String inString = input.readLine();
-            Log.d("DEBUG", "JSON: " + inString);
+            Log.d("DEBUG", "Donation JSON: " + inString);
             //Then we use the Gson library to recreate the object references and links automagically
             Gson gson = new Gson();
 
@@ -104,6 +101,7 @@ public class DonationManagement {
 
     }
 
+    @SuppressLint("LongLogTag")
     public boolean saveJson(File file) {
 
         try {
@@ -111,7 +109,7 @@ public class DonationManagement {
             Gson gson = new Gson();
             // convert our objects to a string for output
             String outString = gson.toJson(dm);
-            Log.d("DEBUG", "JSON Saved: " + outString);
+            Log.d("DEBUG", " Donation JSON Saved: " + outString);
             //then just write the string
             writer.println(outString);
             writer.close();

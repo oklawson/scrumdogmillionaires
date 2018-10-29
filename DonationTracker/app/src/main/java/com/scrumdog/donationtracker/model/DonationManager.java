@@ -49,11 +49,9 @@ public class DonationManager {
      */
     void addDonation(String comments, String price, String category, String longDescription, String shortDescription) {
         Donation donation = new Donation(comments, price, category, longDescription, shortDescription);
-        //users.add(user);
-        //userMap.put(ID, user);
         AddDonationCommand dmd = new AddDonationCommand(donation);
         CommandManager commandManager = AbstractCommand.manager;
-        commandManager.executeCommand(dmd);
+        commandManager.executeDonationCommand(dmd);
     }
 
 

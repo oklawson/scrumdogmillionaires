@@ -79,7 +79,6 @@ public class DonationEntryActivity extends AppCompatActivity {
                     donations.add(newDonation);
                     dmt.addNewDonation(newDonation.getshortDescription(), newDonation.getdollarValue(), newDonation.getCategory(), newDonation.getFullDescription(), newDonation.getComments());
                     dmt.saveJson(new File(getApplicationContext().getFilesDir(), DonationManagement.DEFAULT_JSON_FILE_NAME));
-                    dmt.registerDonation(newDonation.getshortDescription());
                     //display "added!"
                     //addedMessage.setVisibility(View.VISIBLE);
 

@@ -59,7 +59,7 @@ public class UserManager {
         //userMap.put(ID, user);
         AddUserCommand cmd = new AddUserCommand(user);
         CommandManager commandManager = AbstractCommand.manager;
-        commandManager.executeCommand(cmd);
+        commandManager.executeUserCommand(cmd);
     }
 
 

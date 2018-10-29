@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.content.Intent;
 
 import com.scrumdog.donationtracker.R;
+import com.scrumdog.donationtracker.model.DonationManagement;
 import com.scrumdog.donationtracker.model.User;
 
 import com.google.gson.Gson;
@@ -38,15 +39,20 @@ public class HomeScreen extends AppCompatActivity {
     private Button Login;
     private Button Register;
     UserManagement umt = UserManagement.getInstance();
+    DonationManagement dmt = DonationManagement.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        File file = new File(getApplicationContext().getFilesDir(), UserManagement.DEFAULT_JSON_FILE_NAME);
-        umt.loadJson(file);
+        File file1 = new File(getApplicationContext().getFilesDir(), UserManagement.DEFAULT_JSON_FILE_NAME);
+        File file2 = new File(getApplicationContext().getFilesDir(), DonationManagement.DEFAULT_JSON_FILE_NAME);
+        umt.loadJson(file1);
         Log.d("MYAPP","Loaded json");
         Log.d("MYAPP", "user list: " + umt.getUsersAsList());
+        dmt.loadJson(file2);
+        Log.d("MYAPP","Loaded json 2");
+        Log.d("MYAPP", "donation list: " + dmt.getDonationsAsList());
         Login = (Button) findViewById(R.id.loginButton);
 
 

@@ -83,8 +83,8 @@ public class Donation {
         _category = category;
         _fullDescription = fullDescription;
         _comments = comments;
-        _locationS = umt.getCurrentUser().getUserLocation();
-        _location = findLocationByName(umt.getCurrentUser().getUserLocation());
+//        _locationS = umt.getCurrentUser().getUserLocation();
+//        _location = findLocationByName(umt.getCurrentUser().getUserLocation());
         _listed = false;
         timeStamp = new Date();
         //_donation.add(this);

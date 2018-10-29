@@ -81,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
         EnterDonations = (Button) findViewById(R.id.viewDonationEntryPage);
         ViewDonationList = (Button) findViewById(R.id.viewDonationList);
 
+//        if(umt.getCurrentUser().getUserType().equals("Admin")) {
+//            EnterDonations.setVisibility(View.VISIBLE);
+//            ViewDonationList.setVisibility(View.VISIBLE);
+//        }
+
         if(umt.getCurrentUser().getUserType().equals("Location Employee")) {
             EnterDonations.setVisibility(View.VISIBLE);
             ViewDonationList.setVisibility(View.VISIBLE);
