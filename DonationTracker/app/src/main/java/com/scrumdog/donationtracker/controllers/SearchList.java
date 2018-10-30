@@ -58,7 +58,8 @@ public class SearchList extends AppCompatActivity {
         NoItemsText.setVisibility(View.VISIBLE);
 
         //user doesn't select location or filter or enter any search -> SHOW ALL ITEMS
-        if (!SearchActivity.locationSelected && !SearchActivity.categorySelected) {
+        if (!SearchActivity.locationSelected && !SearchActivity.categorySelected && !SearchActivity.itemNameSelected) {
+            System.out.println("entered 1");
             if (DonationEntryActivity.donations.size() > 0) {
 
                 for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
@@ -92,7 +93,8 @@ public class SearchList extends AppCompatActivity {
         }
 
         //user only selects a location -> SHOW ALL ITEMS AT THAT LOCATION
-        if (SearchActivity.locationSelected && !SearchActivity.categorySelected) {
+        if (SearchActivity.locationSelected && !SearchActivity.categorySelected && !SearchActivity.itemNameSelected) {
+            System.out.println("entered 2");
             if (DonationEntryActivity.donations.size() > 0) {
 
                 for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
@@ -127,7 +129,8 @@ public class SearchList extends AppCompatActivity {
         }
 
         //user only selects a category -> SHOW ALL ITEMS IN THAT CATEGORY
-        if (!SearchActivity.locationSelected && SearchActivity.categorySelected) {
+        if (!SearchActivity.locationSelected && SearchActivity.categorySelected && !SearchActivity.itemNameSelected) {
+            System.out.println("entered 3");
             if (DonationEntryActivity.donations.size() > 0) {
 
                 for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
@@ -167,7 +170,8 @@ public class SearchList extends AppCompatActivity {
         }
 
         //user only selects a category and location -> SHOW ALL ITEMS IN THAT CATEGORY AT THAT LOCATION
-        if (SearchActivity.locationSelected && SearchActivity.categorySelected) {
+        if (SearchActivity.locationSelected && SearchActivity.categorySelected && !SearchActivity.itemNameSelected) {
+            System.out.println("entered 4");
             NoItemsText.setVisibility(View.VISIBLE);
             if (DonationEntryActivity.donations.size() > 0) {
 
@@ -209,7 +213,8 @@ public class SearchList extends AppCompatActivity {
         }
 
         //user selects item name search and enters name in search bar -> SHOW ALL ITEMS WITH THAT NAME
-        if (SearchActivity.itemNameSelected && !SearchActivity.locationSelected) {
+        if (SearchActivity.itemNameSelected && !SearchActivity.locationSelected && !SearchActivity.categorySelected) {
+            System.out.println("entered 5");
             NoItemsText.setVisibility(View.VISIBLE);
             System.out.println("Entered if statement bc item name search is TRUE");
             if (DonationEntryActivity.donations.size() > 0) {
@@ -301,7 +306,8 @@ public class SearchList extends AppCompatActivity {
 
         //THIS DOESNT WORK
         //user selects item name search and location -> SHOW ALL ITEMS WITH THAT CRITERIA
-        if (SearchActivity.itemNameSelected && SearchActivity.locationSelected) {
+        if (SearchActivity.itemNameSelected && SearchActivity.locationSelected && !SearchActivity.categorySelected) {
+            System.out.println("entered 6");
             if (DonationEntryActivity.donations.size() > 0) {
 
                 for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {

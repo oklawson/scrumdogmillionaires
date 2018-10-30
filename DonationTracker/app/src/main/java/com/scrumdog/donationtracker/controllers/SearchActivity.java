@@ -103,20 +103,21 @@ public class SearchActivity extends AppCompatActivity {
                     categorySelected = true;
                     CategoryText.setVisibility(View.VISIBLE);
                     CategorySpinner.setVisibility(View.VISIBLE);
-                    if (!SearchBar.getText().toString().equals("What are you searching for?") && SearchBar.getText().toString() != null && !SearchBar.getText().toString().equals("")) {
-                        userSearchWord = SearchBar.getText().toString().toLowerCase();
-                        nameSearch = true;
-                    }
-                } else if (searchFilter.equals("Item Name")) {
-                    itemNameSelected = true;
-                    userSearchWord = SearchBar.getText().toString();
-                    CategoryText.setVisibility(View.INVISIBLE);
-                    CategorySpinner.setVisibility(View.INVISIBLE);
-                } else {
+                    //if (!SearchBar.getText().toString().equals("What are you searching for?") && SearchBar.getText().toString() != null && !SearchBar.getText().toString().equals("")) {
+                        //userSearchWord = SearchBar.getText().toString().toLowerCase();
+                        //nameSearch = true;
+                    //}
+                } else if (searchFilter.equals("None")) {
                     CategoryText.setVisibility(View.INVISIBLE);
                     CategorySpinner.setVisibility(View.INVISIBLE);
                     categorySelected = false;
                     itemNameSelected = false;
+                } else {
+                    itemNameSelected = true;
+                    categorySelected = false;
+                    userSearchWord = SearchBar.getText().toString();
+                    CategoryText.setVisibility(View.INVISIBLE);
+                    CategorySpinner.setVisibility(View.INVISIBLE);
                 }
             }
 
@@ -147,6 +148,12 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SearchActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

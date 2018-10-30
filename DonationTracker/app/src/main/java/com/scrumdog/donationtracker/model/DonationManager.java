@@ -20,6 +20,7 @@ import java.io.InputStreamReader;
 import android.content.Context;
 
 import com.google.gson.Gson;
+import com.scrumdog.donationtracker.controllers.DonationEntryActivity;
 
 public class DonationManager {
     /**
@@ -47,8 +48,8 @@ public class DonationManager {
      * @param longDescription
      * @param shortDescription
      */
-    void addDonation(String comments, String price, String category, String longDescription, String shortDescription) {
-        Donation donation = new Donation(comments, price, category, longDescription, shortDescription);
+    void addDonation(String comments, String price, String category, String longDescription, String shortDescription, String location) {
+        Donation donation = new Donation(comments, price, category, longDescription, shortDescription, location);
         AddDonationCommand dmd = new AddDonationCommand(donation);
         CommandManager commandManager = AbstractCommand.manager;
         commandManager.executeDonationCommand(dmd);
@@ -103,6 +104,7 @@ public class DonationManager {
             donationMap = new HashMap<>();
         for (Donation d : donations) {
             donationMap.put(d.getshortDescription(), d);
+            DonationEntryActivity.donations.add(d);
         }
     }
 

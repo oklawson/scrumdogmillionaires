@@ -77,14 +77,14 @@ public class Donation {
      * @param fullDescription  the donation's fullDescription
      * @param comments the donation's comments
      */
-    public Donation(String shortDescription, String dollarValue, String category, String fullDescription, String comments) {
+    public Donation(String shortDescription, String dollarValue, String category, String fullDescription, String comments, String location) {
         _shortDescription = shortDescription;
         _dollarValue = dollarValue;
         _category = category;
         _fullDescription = fullDescription;
         _comments = comments;
-//        _locationS = umt.getCurrentUser().getUserLocation();
-//        _location = findLocationByName(umt.getCurrentUser().getUserLocation());
+       _locationS = location;
+       // _location = findLocationByName(umt.getCurrentUser().getUserLocation());
         _listed = false;
         timeStamp = new Date();
         //_donation.add(this);
@@ -95,7 +95,8 @@ public class Donation {
      * This constructor only for GUI use in edit/new student dialog
      */
     public Donation() {
-        this("enter new name" , "NA", "NA", "NA", "NA");
+        this("enter new name" , "NA", "NA", "NA", "NA", "NA");
+        timeStamp = new Date();
     }
 
 

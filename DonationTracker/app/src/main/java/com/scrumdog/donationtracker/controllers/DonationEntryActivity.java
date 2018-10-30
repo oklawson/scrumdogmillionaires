@@ -35,6 +35,7 @@ public class DonationEntryActivity extends AppCompatActivity {
     private EditText shortDescription;
     private EditText fullDescription;
     private Spinner category;
+    private Spinner location;
     private EditText dollarValue;
     private EditText comments;
     private TextView addedMessage;
@@ -60,6 +61,7 @@ public class DonationEntryActivity extends AppCompatActivity {
         shortDescription = (EditText)findViewById(R.id.shortDescription);
         fullDescription = (EditText)findViewById(R.id.fullDescription);
         category = (Spinner)findViewById(R.id.category);
+        location = (Spinner)findViewById(R.id.LocationSpinner);
         dollarValue = (EditText)findViewById(R.id.dollarValue);
         comments = (EditText)findViewById(R.id.comments);
         addedMessage = (TextView)findViewById(R.id.addedMessage);  //idk why not working?
@@ -70,14 +72,19 @@ public class DonationEntryActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(adapter);
 
+        ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, User.legalUsersLocations);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        location.setAdapter(adapter2);
+
         //When click add button, adds item to ArrayList of Items
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                     String categoryName = category.getSelectedItem().toString();
-                    Donation newDonation = new Donation(shortDescription.getText().toString(), dollarValue.getText().toString(), categoryName, fullDescription.getText().toString(), comments.getText().toString());
+                    String locationName = location.getSelectedItem().toString();
+                    Donation newDonation = new Donation(shortDescription.getText().toString(), dollarValue.getText().toString(), categoryName, fullDescription.getText().toString(), comments.getText().toString(), locationName);
                     donations.add(newDonation);
-                    dmt.addNewDonation(newDonation.getshortDescription(), newDonation.getdollarValue(), newDonation.getCategory(), newDonation.getFullDescription(), newDonation.getComments());
+                    dmt.addNewDonation(newDonation.getshortDescription(), newDonation.getdollarValue(), newDonation.getCategory(), newDonation.getFullDescription(), newDonation.getComments(), newDonation.getItemLocationS());
                     dmt.saveJson(new File(getApplicationContext().getFilesDir(), DonationManagement.DEFAULT_JSON_FILE_NAME));
                     //display "added!"
                     //addedMessage.setVisibility(View.VISIBLE);

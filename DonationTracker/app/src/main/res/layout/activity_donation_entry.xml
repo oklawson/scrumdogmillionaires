@@ -161,4 +161,18 @@
         tools:layout_editor_absoluteX="131dp"
         tools:layout_editor_absoluteY="539dp" />
 
+    <Spinner
+        android:id="@+id/LocationSpinner"
+        android:layout_width="240dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/addedMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullDescription"
+        app:layout_constraintVertical_bias="0.121" />
+
 </android.support.constraint.ConstraintLayout>

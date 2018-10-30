@@ -83,13 +83,20 @@ public class RegistrationActivity extends AppCompatActivity  {
             Register.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    String userLocation;
                     //username doesn't exist, so create new user
                     if(validate(userID.getText().toString()) == false) {
                         String userType = accountTypeSpinner.getSelectedItem().toString();
-                        String userLocation = specificLocationSpinner.getSelectedItem().toString();
+                        if (!userType.equals("Location Employee")) {
+                            userLocation = null;
+                        } else {
+                            userLocation = specificLocationSpinner.getSelectedItem().toString();
+                        }
                         umt.addNewUser(Name.getText().toString(), userID.getText().toString(), userType, userLocation, Password.getText().toString());
+                        User newUser = new User(Name.getText().toString(), userID.getText().toString(), userType, userLocation, Password.getText().toString());
                         umt.saveJson(new File(getApplicationContext().getFilesDir(), UserManagement.DEFAULT_JSON_FILE_NAME));
-                        umt.doLogin(userID.getText().toString(), Password.getText().toString());
+                        //umt.doLogin(userID.getText().toString(), Password.getText().toString());
+                        umt.setCurrentUser(newUser);
                         Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                         startActivity(intent);
                     } else {

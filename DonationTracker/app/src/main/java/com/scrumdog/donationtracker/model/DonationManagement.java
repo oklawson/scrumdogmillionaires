@@ -54,8 +54,8 @@ public class DonationManagement {
     }
 
     public void addNewDonation(final String shortDescription, final String dollarValue, final
-        String category, final String fullDescription, final String comments) {
-        dm.addDonation(shortDescription, dollarValue, category, fullDescription, comments);
+        String category, final String fullDescription, final String comments, final String location) {
+        dm.addDonation(shortDescription, dollarValue, category, fullDescription, comments, location);
     }
 
 //    public boolean registerDonation(final String shortDescription) {

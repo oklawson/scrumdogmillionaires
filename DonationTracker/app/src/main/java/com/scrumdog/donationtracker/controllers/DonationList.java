@@ -94,11 +94,10 @@ public class DonationList extends AppCompatActivity {
 //            }
 
         //findNumDonations();
-
+        System.out.println(DonationEntryActivity.donations.size());
         if (DonationEntryActivity.donations.size() > 0) {
 
             for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
-                if (DonationEntryActivity.donations.get(i).getItemLocationS().equals(umt.getCurrentUser().getUserLocation())) {
                     //DonationEntryActivity.donations.get(i).setListed(true);
                     LinearLayout row = new LinearLayout(this);
                     row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
@@ -118,7 +117,6 @@ public class DonationList extends AppCompatActivity {
 
                     layout.addView(row);
                 }
-            }
             setContentView(layout);
         }
     }

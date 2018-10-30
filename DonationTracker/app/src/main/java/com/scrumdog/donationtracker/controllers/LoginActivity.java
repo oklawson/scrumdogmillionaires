@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("MYAPP","check umt login user: " + Username.getText().toString() + " pass: " + Password.getText().toString());
                     if (umt.doLogin(Username.getText().toString(), Password.getText().toString())) {
                         Log.d("MYAPP","login success");
-                        //umt.setCurrentUser(umt.getUserByID(Username.getText().toString()));
+                        umt.setCurrentUser(umt.getUserByID(Username.getText().toString()));
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                     }
