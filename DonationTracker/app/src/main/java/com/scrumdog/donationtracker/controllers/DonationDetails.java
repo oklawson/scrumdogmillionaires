@@ -32,38 +32,41 @@ public class DonationDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_details);
 
-        ShortDescription = (TextView)findViewById(R.id.shortDescription);
-        FullDescription = (TextView)findViewById(R.id.fullDescription);
-        Location = (TextView)findViewById(R.id.Location);
-        Category = (TextView)findViewById(R.id.category);
-        Value = (TextView)findViewById(R.id.price);
-        TimeStamp = (TextView)findViewById(R.id.timestamp);
-        Comments = (TextView)findViewById(R.id.comments);
+        String source = getIntent().getStringExtra("Source");
 
-        sShortDescription = (TextView)findViewById(R.id.shortDescription);
-        sFullDescription = (TextView)findViewById(R.id.fullDescription);
-        sLocation = (TextView)findViewById(R.id.Location);
-        sCategory = (TextView)findViewById(R.id.category);
-        sValue = (TextView)findViewById(R.id.price);
-        sTimeStamp = (TextView)findViewById(R.id.timestamp);
-        sComments = (TextView)findViewById(R.id.comments);
+        if (source.equals("from DonationList")) {
+            ShortDescription = (TextView) findViewById(R.id.shortDescription);
+            FullDescription = (TextView) findViewById(R.id.fullDescription);
+            Location = (TextView) findViewById(R.id.Location);
+            Category = (TextView) findViewById(R.id.category);
+            Value = (TextView) findViewById(R.id.price);
+            TimeStamp = (TextView) findViewById(R.id.timestamp);
+            Comments = (TextView) findViewById(R.id.comments);
 
+            ShortDescription.setText(DonationList.ShortDescription);
+            FullDescription.setText(DonationList.FullDescription);
+            Location.setText(DonationList.Loc);
+            Category.setText(DonationList.Category);
+            Value.setText(DonationList.Val);
+            TimeStamp.setText(DonationList.TimeStamp);
+            Comments.setText(DonationList.Comments);
+        } else {
+            sShortDescription = (TextView) findViewById(R.id.shortDescription);
+            sFullDescription = (TextView) findViewById(R.id.fullDescription);
+            sLocation = (TextView) findViewById(R.id.Location);
+            sCategory = (TextView) findViewById(R.id.category);
+            sValue = (TextView) findViewById(R.id.price);
+            sTimeStamp = (TextView) findViewById(R.id.timestamp);
+            sComments = (TextView) findViewById(R.id.comments);
 
-        ShortDescription.setText(DonationList.ShortDescription);
-        FullDescription.setText(DonationList.FullDescription);
-        Location.setText(DonationList.Loc);
-        Category.setText(DonationList.Category);
-        Value.setText(DonationList.Val);
-        TimeStamp.setText(DonationList.TimeStamp);
-        Comments.setText(DonationList.Comments);
-
-        sShortDescription.setText(SearchList.ShortDescription);
-        sFullDescription.setText(SearchList.FullDescription);
-        sLocation.setText(SearchList.Loc);
-        sCategory.setText(SearchList.Category);
-        sValue.setText(SearchList.Val);
-        sTimeStamp.setText(SearchList.TimeStamp);
-        sComments.setText(SearchList.Comments);
+            sShortDescription.setText(SearchList.ShortDescription);
+            sFullDescription.setText(SearchList.FullDescription);
+            sLocation.setText(SearchList.Loc);
+            sCategory.setText(SearchList.Category);
+            sValue.setText(SearchList.Val);
+            sTimeStamp.setText(SearchList.TimeStamp);
+            sComments.setText(SearchList.Comments);
+        }
 
     }
 

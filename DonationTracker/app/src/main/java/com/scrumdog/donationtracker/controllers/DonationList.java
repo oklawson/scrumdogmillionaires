@@ -63,7 +63,9 @@ public class DonationList extends AppCompatActivity {
                 Val = DonationEntryActivity.donations.get(id).getdollarValue();
                 TimeStamp = DonationEntryActivity.donations.get(id).getTimeStamp().toString();
                 Comments = DonationEntryActivity.donations.get(id).getComments();
+
                 Intent intent = new Intent(DonationList.this, DonationDetails.class);
+                intent.putExtra("Source", "from DonationList");
                 startActivity(intent);
             }
         };

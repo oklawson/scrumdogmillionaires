@@ -67,6 +67,8 @@ public class SearchActivity extends AppCompatActivity {
         CategoryText = (TextView) findViewById(R.id.CategoryText);
         CategorySpinner = (Spinner) findViewById(R.id.CategorySpinner);
 
+        userSearchWord = SearchBar.getText().toString();
+
         ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, filterOptions);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         FilterSpinner.setAdapter(adapter);
@@ -82,12 +84,12 @@ public class SearchActivity extends AppCompatActivity {
         LocationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                searchLocation = LocationSpinner.getSelectedItem().toString();
-                if (searchLocation.equals("All Locations")) {
+                if (position == 0) {
                     locationSelected = false;
                 } else {
                     locationSelected = true;
-             }
+                    searchLocation = LocationSpinner.getSelectedItem().toString();
+                }
             }
 
             @Override
@@ -98,26 +100,18 @@ public class SearchActivity extends AppCompatActivity {
         FilterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                searchFilter = FilterSpinner.getSelectedItem().toString();
-                if (searchFilter.equals("Category")) {
-                    categorySelected = true;
-                    CategoryText.setVisibility(View.VISIBLE);
-                    CategorySpinner.setVisibility(View.VISIBLE);
-                    //if (!SearchBar.getText().toString().equals("What are you searching for?") && SearchBar.getText().toString() != null && !SearchBar.getText().toString().equals("")) {
-                        //userSearchWord = SearchBar.getText().toString().toLowerCase();
-                        //nameSearch = true;
-                    //}
-                } else if (searchFilter.equals("None")) {
-                    CategoryText.setVisibility(View.INVISIBLE);
-                    CategorySpinner.setVisibility(View.INVISIBLE);
+                if (position == 0) {
                     categorySelected = false;
                     itemNameSelected = false;
+                } else if (position == 1) {
+                    categorySelected = true;
+                    itemNameSelected = false;
+                    CategoryText.setVisibility(View.VISIBLE);
+                    CategorySpinner.setVisibility(View.VISIBLE);
                 } else {
+                    userSearchWord = SearchBar.getText().toString();
                     itemNameSelected = true;
                     categorySelected = false;
-                    userSearchWord = SearchBar.getText().toString();
-                    CategoryText.setVisibility(View.INVISIBLE);
-                    CategorySpinner.setVisibility(View.INVISIBLE);
                 }
             }
 

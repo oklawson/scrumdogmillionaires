@@ -39,6 +39,10 @@ public class SearchList extends AppCompatActivity {
                 Val = DonationEntryActivity.donations.get(id).getdollarValue();
                 TimeStamp = DonationEntryActivity.donations.get(id).getTimeStamp().toString();
                 Comments = DonationEntryActivity.donations.get(id).getComments();
+
+                Intent intent = new Intent(SearchList.this, DonationDetails.class);
+                intent.putExtra("Source", "from SearchList");
+                startActivity(intent);
             }
         };
     }
@@ -50,6 +54,9 @@ public class SearchList extends AppCompatActivity {
         setContentView(R.layout.activity_donation_list);
 
         System.out.println("Entered onCreate method");
+        System.out.println(SearchActivity.locationSelected);
+        System.out.println(SearchActivity.itemNameSelected);
+        System.out.println(SearchActivity.categorySelected);
 
         NoItemsText = (TextView) findViewById(R.id.NoItemsText);
 
@@ -92,7 +99,7 @@ public class SearchList extends AppCompatActivity {
             SearchActivity.itemNameSelected = false;
         }
 
-        //user only selects a location -> SHOW ALL ITEMS AT THAT LOCATION
+//        //user only selects a location -> SHOW ALL ITEMS AT THAT LOCATION
         if (SearchActivity.locationSelected && !SearchActivity.categorySelected && !SearchActivity.itemNameSelected) {
             System.out.println("entered 2");
             if (DonationEntryActivity.donations.size() > 0) {
@@ -128,7 +135,7 @@ public class SearchList extends AppCompatActivity {
             SearchActivity.itemNameSelected = false;
         }
 
-        //user only selects a category -> SHOW ALL ITEMS IN THAT CATEGORY
+//        //user only selects a category -> SHOW ALL ITEMS IN THAT CATEGORY
         if (!SearchActivity.locationSelected && SearchActivity.categorySelected && !SearchActivity.itemNameSelected) {
             System.out.println("entered 3");
             if (DonationEntryActivity.donations.size() > 0) {
@@ -169,7 +176,7 @@ public class SearchList extends AppCompatActivity {
             SearchActivity.itemNameSelected = false;
         }
 
-        //user only selects a category and location -> SHOW ALL ITEMS IN THAT CATEGORY AT THAT LOCATION
+//        //user only selects a category and location -> SHOW ALL ITEMS IN THAT CATEGORY AT THAT LOCATION
         if (SearchActivity.locationSelected && SearchActivity.categorySelected && !SearchActivity.itemNameSelected) {
             System.out.println("entered 4");
             NoItemsText.setVisibility(View.VISIBLE);

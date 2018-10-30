@@ -90,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
         if(umt.getCurrentUser().getUserType().equals("Location Employee")) {
             EnterDonations.setVisibility(View.VISIBLE);
             ViewDonationList.setVisibility(View.VISIBLE);
+        } else {
+            EnterDonations.setVisibility(View.INVISIBLE);
+            ViewDonationList.setVisibility(View.INVISIBLE);
         }
 
         EnterDonations.setOnClickListener(new View.OnClickListener() {
