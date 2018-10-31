@@ -74,8 +74,10 @@ public class UserManager {
         //first lookup the user by their login id
         User user = userMap.get(ID);
         //if that user id not there, return null
-        if (user == null) return null;
-        System.out.println("user does not exist");
+        if (user == null) {
+            System.out.println("user does not exist");
+            return null;
+        }
 
         //we have a good user at this point, so check their password
         if (user.checkPassword(password)) return user;

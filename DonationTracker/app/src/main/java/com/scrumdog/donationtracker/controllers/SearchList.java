@@ -60,11 +60,12 @@ public class SearchList extends AppCompatActivity {
 
         NoItemsText = (TextView) findViewById(R.id.NoItemsText);
 
-        LinearLayout layout = new LinearLayout(this);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
         layout.setOrientation(LinearLayout.VERTICAL);  //Can also be done in xml by android:orientation="vertical"
         NoItemsText.setVisibility(View.VISIBLE);
 
         //user doesn't select location or filter or enter any search -> SHOW ALL ITEMS
+        // TODO need to check if something is in the search bar
         if (!SearchActivity.locationSelected && !SearchActivity.categorySelected && !SearchActivity.itemNameSelected) {
             System.out.println("entered 1");
             if (DonationEntryActivity.donations.size() > 0) {
@@ -90,8 +91,7 @@ public class SearchList extends AppCompatActivity {
                     layout.addView(row);
                     //}
                 }
-
-                setContentView(layout);
+                NoItemsText.setVisibility(View.INVISIBLE);
             }
             SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
@@ -127,7 +127,6 @@ public class SearchList extends AppCompatActivity {
                     }
                 }
 
-                setContentView(layout);
             }
             SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
@@ -167,8 +166,9 @@ public class SearchList extends AppCompatActivity {
                     NoItemsText.setVisibility(View.INVISIBLE);
                 } else {
                     NoItemsText.setVisibility(View.VISIBLE);
+                    System.out.println("somethings wrong");
+
                 }
-                setContentView(layout);
             }
             SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
@@ -211,7 +211,6 @@ public class SearchList extends AppCompatActivity {
                 } else {
                     NoItemsText.setVisibility(View.VISIBLE);
                 }
-                setContentView(layout);
             }
             SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
@@ -259,7 +258,6 @@ public class SearchList extends AppCompatActivity {
                 } else {
                     NoItemsText.setVisibility(View.VISIBLE);
                 }
-                setContentView(layout);
             }
             SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
@@ -341,7 +339,6 @@ public class SearchList extends AppCompatActivity {
                         layout.addView(row);
                     }
                 }
-                setContentView(layout);
             }
 
             SearchActivity.userSearchEntered = false;
