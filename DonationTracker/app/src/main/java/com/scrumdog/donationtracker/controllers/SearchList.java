@@ -60,9 +60,9 @@ public class SearchList extends AppCompatActivity {
 
         NoItemsText = (TextView) findViewById(R.id.NoItemsText);
 
-        LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.LinearLayout);
         layout.setOrientation(LinearLayout.VERTICAL);  //Can also be done in xml by android:orientation="vertical"
-        NoItemsText.setVisibility(View.VISIBLE);
+        NoItemsText.setVisibility(View.INVISIBLE);
 
         //user doesn't select location or filter or enter any search -> SHOW ALL ITEMS
         // TODO need to check if something is in the search bar
@@ -126,6 +126,11 @@ public class SearchList extends AppCompatActivity {
                         layout.addView(row);
                     }
                 }
+                if(count > 0) {
+                    NoItemsText.setVisibility(View.INVISIBLE);
+                } else {
+                    NoItemsText.setVisibility(View.VISIBLE);
+                }
 
             }
             SearchActivity.userSearchEntered = false;
@@ -167,7 +172,6 @@ public class SearchList extends AppCompatActivity {
                 } else {
                     NoItemsText.setVisibility(View.VISIBLE);
                     System.out.println("somethings wrong");
-
                 }
             }
             SearchActivity.userSearchEntered = false;
@@ -309,7 +313,6 @@ public class SearchList extends AppCompatActivity {
 //        }
 
 
-        //THIS DOESNT WORK
         //user selects item name search and location -> SHOW ALL ITEMS WITH THAT CRITERIA
         if (SearchActivity.itemNameSelected && SearchActivity.locationSelected && !SearchActivity.categorySelected) {
             System.out.println("entered 6");
@@ -339,6 +342,11 @@ public class SearchList extends AppCompatActivity {
                         layout.addView(row);
                     }
                 }
+                if(count > 0) {
+                    NoItemsText.setVisibility(View.INVISIBLE);
+                } else {
+                    NoItemsText.setVisibility(View.VISIBLE);
+                }
             }
 
             SearchActivity.userSearchEntered = false;
@@ -355,7 +363,6 @@ public class SearchList extends AppCompatActivity {
         SearchActivity.categorySelected = false;
         SearchActivity.itemNameSelected = false;
         SearchActivity.nameSearch = false;
-        NoItemsText.setVisibility(View.VISIBLE);
         count = 0;
         Intent intent = new Intent(SearchList.this, SearchActivity.class);
         startActivity(intent);
