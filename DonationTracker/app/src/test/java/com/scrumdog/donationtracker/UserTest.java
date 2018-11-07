@@ -22,8 +22,9 @@ public class UserTest {
     }
     @Test
     public void testParseEntry() {
+        assertEquals("Entries parsed incorrectly", testUser.parseEntry(null), null);
         assertEquals("Entries parsed incorrectly",  testUser.parseEntry("John Doe   johndoe@gmail.com   User    AFD Station 4   johndoe"),
-                new User("John Doe","johndoe@gmail.com", "User",
-                "AFD Station 4", "johndoe"));
+                testUser);
+
     }
 }
