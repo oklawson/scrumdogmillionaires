@@ -8,13 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Spinner;
+//import android.widget.Spinner;
 
 import android.content.Intent;
 
-import com.scrumdog.donationtracker.model.User;
+//import com.scrumdog.donationtracker.model.User;
 import com.scrumdog.donationtracker.model.UserManagement;
-import com.scrumdog.donationtracker.model.UserManager;
+//import com.scrumdog.donationtracker.model.UserManager;
 
 
 import com.scrumdog.donationtracker.R;

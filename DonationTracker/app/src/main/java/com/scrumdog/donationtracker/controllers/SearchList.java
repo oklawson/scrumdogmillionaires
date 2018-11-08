@@ -60,7 +60,7 @@ public class SearchList extends AppCompatActivity {
 
         NoItemsText = (TextView) findViewById(R.id.NoItemsText);
 
-        LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.LinearLayout);
         layout.setOrientation(LinearLayout.VERTICAL);  //Can also be done in xml by android:orientation="vertical"
         NoItemsText.setVisibility(View.INVISIBLE);
 

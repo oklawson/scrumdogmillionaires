@@ -48,7 +48,7 @@ public class DonationManager {
      * @param longDescription
      * @param shortDescription
      */
-    void addDonation(String comments, String price, String category, String longDescription, String shortDescription, String location) {
+    public void addDonation(String comments, String price, String category, String longDescription, String shortDescription, String location) {
         Donation donation = new Donation(comments, price, category, longDescription, shortDescription, location);
         AddDonationCommand dmd = new AddDonationCommand(donation);
         CommandManager commandManager = AbstractCommand.manager;
@@ -57,23 +57,20 @@ public class DonationManager {
 
 
     /**
-     * Attempt to login a user
+     * Attempt to register a donation
      *
      * @param shortDescription name of donation
-     * @return  the Student object is login successful, null otherwise
+     * @return  the Donation object exists successful, null otherwise
      */
     Donation registerDonation(String shortDescription) {
-        //first lookup the user by their login id
+        //first lookup the donation by the donation shortDescription
         Donation d = donationMap.get(shortDescription);
-        //if that user id not there, return null
-        if (d == null) return null;
-        System.out.println("donation does not exist");
-
-        //we have a good user at this point, so check their password
-//        if (d.checkPassword(password)) return user;
-//        //return null if a bad password
-//        System.out.println("password incorrect");
-        return null;
+        //if that donation shortDescription not there, return null
+        if (d == null) {
+            System.out.println("donation does not exist");
+            return null;
+        }
+        return d;
     }
 
 
@@ -113,12 +110,12 @@ public class DonationManager {
      *
      * @param donation the donation to add
      */
-    void addDonation(Donation donation) {
+    public void addDonation(Donation donation) {
         donations.add(donation);
         donationMap.put(donation.getshortDescription(), donation);
     }
 
-    void removeDonation(Donation donation) {
+    public void removeDonation(Donation donation) {
         donations.remove(donation);
         donationMap.remove(donation.getshortDescription());
     }

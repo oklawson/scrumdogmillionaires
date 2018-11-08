@@ -39,20 +39,38 @@ public class DonationManagement {
 
     /**
      * Singleton pattern accessor for instance
-     *
-     *
-     * @return the one and only one instance of this facade
+     * @return instance the one and only one instance of this facade
      */
     public static DonationManagement getInstance() { return instance; }
 
+    /**
+     * retrieves a list of the donations
+     * @return donList list of donations
+     */
     public List<Donation> getDonationsAsList() {
-        return dm.getDonations();
+        List<Donation> donList = dm.getDonations();
+        return donList;
     }
 
+    /**
+     * retrieves a donation by its name
+     * @param name the name of the donation
+     * @return don the donation
+     */
     public Donation getDonationByName(final String name) {
-        return dm.getDonationByName(name);
+        Donation don = dm.getDonationByName(name);
+        return don;
     }
 
+    /**
+     * adds a new donation
+     * @param shortDescription the donation's shortDescription
+     * @param dollarValue the donation's dollarValue
+     * @param category the donation's category
+     * @param fullDescription the donation's fullDescription
+     * @param comments the donation's comments
+     * @param location the donation's location
+     */
     public void addNewDonation(final String shortDescription, final String dollarValue, final
         String category, final String fullDescription, final String comments, final String location) {
         dm.addDonation(shortDescription, dollarValue, category, fullDescription, comments, location);
@@ -69,16 +87,28 @@ public class DonationManagement {
 //        this.currentDonation = d;
 //    }
 
+    /**
+     * adds a new donation
+     * @param d the donation added to the application
+     */
     void addDonation(Donation d) {
         dm.addDonation(d);
     }
 
+    /**
+     * removes a new donation
+     * @param donation the donation removed to the application
+     */
     void removeDonation(Donation donation) {
         dm.removeDonation(donation);
     }
 
 
-    // add write to text file
+    /**
+     * loads the JSON file storing the donation data
+     * @param file the JSON file
+     * @return true if the file is successfully loaded, false otherwise
+     */
     @SuppressLint("LongLogTag")
     public boolean loadJson(File file) {
         try {
@@ -101,6 +131,11 @@ public class DonationManagement {
 
     }
 
+    /**
+     * save data to the JSON file storing the donation data
+     * @param file the JSON file
+     * @return true if the data is successfully saved to the file, false otherwise
+     */
     @SuppressLint("LongLogTag")
     public boolean saveJson(File file) {
 

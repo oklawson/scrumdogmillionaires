@@ -3,10 +3,10 @@ package com.scrumdog.donationtracker.controllers;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.scrumdog.donationtracker.R;
-import com.scrumdog.donationtracker.controllers.DonationList;
+//import com.scrumdog.donationtracker.controllers.DonationList;
 import android.widget.TextView;
-import android.widget.Button;
-import android.view.View;
+//import android.widget.Button;
+//import android.view.View;
 
 public class DonationDetails extends AppCompatActivity {
 

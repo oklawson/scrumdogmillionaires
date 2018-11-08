@@ -19,7 +19,6 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -52,6 +51,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * If Google Play services is not installed on the device, the user will be prompted to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
+     *
+     * @param googleMap the GoogleMap object that will be used for the app's map display
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -124,6 +125,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newCameraPosition(camPos));
     }
 
+
+    /**
+     * makes new location on map
+     */
     private void readSDFile() throws Exception {
         //SimpleModel model = SimpleModel.INSTANCE;
 

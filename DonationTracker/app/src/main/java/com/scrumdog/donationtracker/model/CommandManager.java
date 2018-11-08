@@ -7,19 +7,19 @@ import java.util.List;
 public class CommandManager {
 
     /**
-     * This maintains a list of commands executed in order
+     * This maintains a list of user commands executed in order
      * Front of list is oldest command, tail is newest
      */
     private List<AbstractCommand> userhistory = new LinkedList<>();
 
     /**
-     * This maintains a list of commands executed in order
+     * This maintains a list of donation commands executed in order
      * Front of list is oldest command, tail is newest
      */
     private List<AbstractCommand> donationhistory = new LinkedList<>();
 
     /**
-     * This maintains a list of commands that have been undone
+     * This maintains a list of undo commands that have been undone
      * Front of list is oldest command, tail is most recent
      */
     private List<AbstractCommand> redoList = new LinkedList<> ();
@@ -52,9 +52,6 @@ public class CommandManager {
         }
     }
 
-    /**
-     * undo the most recent command executed
-     */
 //    public void undoCommand() {
 //        assert history.size() > 0;
 //        final AbstractCommand command = history.remove(history.size() - 1);
@@ -62,9 +59,7 @@ public class CommandManager {
 //        redoList.add(command);
 //    }
 //
-//    /**
-//     * execute the most recent command undone
-//     */
+
 //    public void redoCommand() {
 //        assert redoList.size() > 0;
 //        final AbstractCommand command = redoList.remove(redoList.size() - 1);

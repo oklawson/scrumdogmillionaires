@@ -5,17 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+//import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import com.scrumdog.donationtracker.R;
-import com.scrumdog.donationtracker.model.Donation;
-import com.scrumdog.donationtracker.model.User;
-import com.scrumdog.donationtracker.model.Location;
+//import com.scrumdog.donationtracker.model.Donation;
+//import com.scrumdog.donationtracker.model.User;
+//import com.scrumdog.donationtracker.model.Location;
 import com.scrumdog.donationtracker.model.UserManagement;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class DonationList extends AppCompatActivity {
 
@@ -52,6 +52,14 @@ public class DonationList extends AppCompatActivity {
 //        }
 //    }
 
+
+    /**
+     * Displays the donation's full information upon button click
+     *
+     * @param button the button ("View Details") clicked
+     *               to display more information about the donation
+     * @return v the a
+     */
     View.OnClickListener getOnClickDoSomething(final Button button)  {
         return new View.OnClickListener() {
             public void onClick(View v) {

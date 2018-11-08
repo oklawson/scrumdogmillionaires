@@ -7,18 +7,18 @@ import android.os.Bundle;
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.Donation;
 import com.scrumdog.donationtracker.model.Location;
-import com.scrumdog.donationtracker.model.User;
+//import com.scrumdog.donationtracker.model.User;
 
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+//import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Spinner;
-import android.text.TextWatcher;
-import android.text.Editable;
+//import android.text.TextWatcher;
+//import android.text.Editable;
 
 import java.util.Arrays;
 import java.util.List;

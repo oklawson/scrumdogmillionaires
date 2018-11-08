@@ -31,6 +31,7 @@ public class User implements Serializable {
     /** this users password */
     private String password;
 
+    /** this user */
     public static User currentUser;
 
     /**
@@ -60,20 +61,45 @@ public class User implements Serializable {
         return getPassword().equals(pwd);
     }
 
+    /**
+     * get user's name
+     *
+     * @return user's name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * get user's id
+     *
+     * @return user's id
+     */
     public String getID() {
         return ID;
     }
 
+    /**
+     * get user's type
+     *
+     * @return user's type
+     */
     public String getUserType() {
         return userType;
     }
 
+    /**
+     * get user's location
+     *
+     * @return user's location
+     */
     public String getUserLocation() { return userLocation; }
 
+    /**
+     * get user's password
+     *
+     * @return user's password
+     */
     private String getPassword() {
         return password;
     }
@@ -90,14 +116,14 @@ public class User implements Serializable {
      * @param writer the file to write this user to
      */
     public void saveAsText(PrintWriter writer) {
-        System.out.println("Student saving student: " + name);
+        System.out.println("User saving user: " + name);
         writer.println(name + "\t" + ID + "\t" + userType + "\t" + userLocation + "\t" + password);
     }
 
 
     /**
-     * This is a static factory method that constructs a student given a text line in the correct format.
-     * It assumes that a student is in a single string with each attribute separated by a tab character
+     * This is a static factory method that constructs a user given a text line in the correct format.
+     * It assumes that a user is in a single string with each attribute separated by a tab character
      * The order of the data is assumed to be:
      *
      * 0 - name
@@ -110,11 +136,36 @@ public class User implements Serializable {
      * @return the user object
      */
     public static User parseEntry(String line) {
-        assert line != null;
+        if (line == null) {
+            System.out.println("line is null");
+            return null;
+        }
+//        assert line != null;
         String[] tokens = line.split("\t");
-        assert tokens.length == 5;
+        if (tokens.length != 5) {
+            System.out.println("incorrect number of tokens");
+            return null;
+        }
+//        assert tokens.length == 5;
         User u = new User(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4]);
-
+        System.out.println("parsed user");
         return u;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof User)) {
+            return false;
+        }
+        User o = (User) other;
+        if (this.name.equals(o.getName()) && this.ID.equals(o.getID())
+                && this.userType.equals(o.getUserType()) && this.userLocation.equals(o.getUserLocation())
+                && this.password.equals(o.getPassword())) {
+            return true;
+        }
+        return false;
     }
 }

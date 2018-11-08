@@ -3,10 +3,10 @@ package com.scrumdog.donationtracker.controllers;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.SimpleAdapter;
+//import android.widget.SimpleAdapter;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
+//import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.User;
-import com.scrumdog.donationtracker.controllers.LoginActivity;
+//import com.scrumdog.donationtracker.controllers.LoginActivity;
 import com.scrumdog.donationtracker.model.UserManagement;
 import java.io.File;
 
@@ -115,7 +115,9 @@ public class RegistrationActivity extends AppCompatActivity  {
             });
         }
 
-        //check if username already exists
+    /**
+     * check if username already exists
+     */
         private boolean validate(String userID) {
             //if username does not already exist, return false
             if(umt.getUserByID(userID) == null) {

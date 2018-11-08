@@ -2,7 +2,7 @@ package com.scrumdog.donationtracker.model;
 
 public class Admin extends User {
     /**
-     * make a new user
+     * make a new admin user
      *
      * @param n  name
      * @param id user id

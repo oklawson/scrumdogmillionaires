@@ -6,27 +6,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.util.Log;
-import java.util.List;
+//import android.util.Log;
+//import java.util.List;
 import java.util.ArrayList;
 
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.Location;
-import com.scrumdog.donationtracker.model.User;
-import com.scrumdog.donationtracker.model.UserManager;
+//import com.scrumdog.donationtracker.model.User;
+//import com.scrumdog.donationtracker.model.UserManager;
 import com.scrumdog.donationtracker.model.UserManagement;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-
-import java.io.FileOutputStream;
-import java.io.FileInputStream;
-import java.io.File.*;
+//import java.io.BufferedReader;
+//import java.io.File;
+//import java.io.FileReader;
+//import java.io.IOException;
+//import java.io.InputStream;
+//import java.io.InputStreamReader;
+//import java.nio.charset.StandardCharsets;
+//
+//import java.io.FileOutputStream;
+//import java.io.FileInputStream;
+//import java.io.File.*;
 
 public class MainActivity extends AppCompatActivity {
     private Button Logout;

@@ -1,17 +1,14 @@
 package com.scrumdog.donationtracker.model;
 
-import com.scrumdog.donationtracker.controllers.DonationEntryActivity;
+//import com.scrumdog.donationtracker.controllers.DonationEntryActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+//import java.util.Arrays;
+//import java.util.List;
 
 public class Location {
 
     public static ArrayList<Location> locations = new ArrayList<>();
-
-    //public static List<String> legalLocations = Arrays.asList();
-
     private String _locationName;
     private String _locationType;
     private double _longitude;
@@ -19,24 +16,88 @@ public class Location {
     private String _address;
     private String _phoneNumber;
 
+    /**
+     * get the location's name
+     * @return _locationName the location's name
+     */
     public String getName() { return _locationName; }
+
+    /**
+     * set the location's name
+     * @param name the location's name
+     */
     public void setName(String name) { _locationName = name; }
 
+    /**
+     * get the location's type
+     * @return _location type the location's type
+     */
     public String getType() { return _locationType; }
+
+    /**
+     * set the location's type
+     * @param type type the location's type
+     */
     public void setType(String type) { _locationType = type; }
 
+    /**
+     * get the location's address
+     * @return _address type the location's address
+     */
     public String getAddress() { return _address; }
+
+    /**
+     * set the location's address
+     * @param address type the location's address
+     */
     public void setAddress(String address) { _address = address; }
 
+    /**
+     * get the location's longitutde
+     * @return _longitute type the location's longitude
+     */
     public double getLongitude() { return _longitude; }
+
+    /**
+     * set the location's longitutde
+     * @param longitude type the location's longitude
+     */
     public void setLongitude(double longitude) { _longitude = longitude; }
 
+    /**
+     * get the location's latitude
+     * @return _latitude type the location's latitude
+     */
     public double getLatitude() { return _latitude; }
+
+    /**
+     * set the location's latitude
+     * @param latitude type the location's latitude
+     */
     public void setLatitude(double latitude) { _latitude = latitude; }
 
+    /**
+     * get the location's phone number
+     * @return _phoneNumber type the location's phone number
+     */
     public String getPhoneNumber() { return _phoneNumber; }
+
+    /**
+     * set the location's phone number
+     * @param phoneNumber type the location's phone number
+     */
     public void setPhoneNumber(String phoneNumber) { _phoneNumber = phoneNumber; }
 
+
+    /**
+     * construct a new location
+     * @param name the location's name
+     * @param type the location's type
+     * @param longitude the location's longitude
+     * @param latitude the location's latitude
+     * @param address the location's address
+     * @param phoneNumber the location's phone number
+     */
     public Location(String name, String type, double longitude, double latitude, String address, String phoneNumber) {
         _locationName = name;
         _locationType = type;
@@ -47,6 +108,11 @@ public class Location {
         //legalLocations.add(this._locationName);
     }
 
+    /**
+     * No param constructor -- DO NOT CALL NORMALLY
+     * This constructor only for GUI use in edit/new student dialog
+     * Creates a new location
+     */
     public Location() {
         this("Enter new name", "Enter type", 0, 0, "Enter address", null);
     }

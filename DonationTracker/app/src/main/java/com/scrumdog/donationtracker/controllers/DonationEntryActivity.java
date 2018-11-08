@@ -9,19 +9,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Spinner;
-import android.widget.ArrayAdapter;
+//import android.widget.ArrayAdapter;
 
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.DonationManagement;
 import com.scrumdog.donationtracker.model.Location;
 import com.scrumdog.donationtracker.model.User;
 import com.scrumdog.donationtracker.model.Donation;
-import com.scrumdog.donationtracker.model.UserManagement;
+//import com.scrumdog.donationtracker.model.UserManagement;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileInputStream;
-import java.io.File.*;
+//import java.io.FileOutputStream;
+//import java.io.FileInputStream;
+//import java.io.File.*;
 
 
 import java.io.BufferedReader;
@@ -99,7 +99,9 @@ public class DonationEntryActivity extends AppCompatActivity {
 
 
 
-
+    /**
+     * make a new user
+     */
     private void readSDFile() throws Exception {
         //SimpleModel model = SimpleModel.INSTANCE;
 
