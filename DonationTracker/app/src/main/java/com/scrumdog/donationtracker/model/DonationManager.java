@@ -26,7 +26,7 @@ public class DonationManager {
     /**
      * A list of donations
      */
-    private final List<Donation> donations = new ArrayList<>();
+    public final List<Donation> donations = new ArrayList<>();
 
     /**
      * A map of donations by Key == name of item Value == Donation object
@@ -35,7 +35,7 @@ public class DonationManager {
      * It is derived from the students collection above, so it does not
      * need to be serialized.
      */
-    private transient Map<String, Donation> donationMap = new HashMap<>();
+    public transient Map<String, Donation> donationMap = new HashMap<>();
 
     // do we need this?
     //private Donation currentDonation = null;

@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
 import com.scrumdog.donationtracker.model.User;
+import com.scrumdog.donationtracker.model.DonationManager;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -14,7 +15,9 @@ import com.scrumdog.donationtracker.model.User;
 public class UserTest {
 
     private User testUser;
+    private DonationManager dm;
 
+    //Madison's methods
     @Before
     public void setUp() {
         testUser = new User("John Doe", "johndoe@gmail.com", "User",
@@ -27,4 +30,18 @@ public class UserTest {
                 testUser);
 
     }
+
+//    @Before
+//    public void setUpDM() {
+//        dm = new DonationManager();
+//        dm.donations.add()
+//    }
+//
+//    @Test
+//    public void testUserMap() {
+//
+//    }
+
+
+
 }
