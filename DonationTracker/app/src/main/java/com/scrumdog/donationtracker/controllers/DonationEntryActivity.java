@@ -65,7 +65,7 @@ public class DonationEntryActivity extends AppCompatActivity {
         location = (Spinner)findViewById(R.id.LocationSpinner);
         dollarValue = (EditText)findViewById(R.id.dollarValue);
         comments = (EditText)findViewById(R.id.comments);
-        addedMessage = (TextView)findViewById(R.id.addedMessage);  //idk why not working?
+//        addedMessage = (TextView)findViewById(R.id.addedMessage);  //idk why not working?
         addButton = (Button) findViewById(R.id.addButton);
 
         //make an array of available categories for drop down

@@ -116,12 +116,12 @@ public class RegistrationActivity extends AppCompatActivity  {
             });
         }
 
-    /**
-     * check if username already exists
-     *
-     * @param userID is a string of the User's username
-     */
-        private boolean validate(String userID) {
+        /**
+        * check if username already exists
+        *
+        * @param userID is a string of the User's username
+        */
+        public boolean validate(String userID) {
             //if username does not already exist, return false
             if(umt.getUserByID(userID) == null) {
                 return false;

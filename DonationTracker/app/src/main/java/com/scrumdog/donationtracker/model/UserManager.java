@@ -40,7 +40,7 @@ public class UserManager {
      * It is derived from the user collection above, so it does not
      * need to be serialized.
      */
-    private transient Map<String, User> userMap = new HashMap<>();
+    public transient Map<String, User> userMap = new HashMap<>();
 
 //    private User currentUser = null;
 
