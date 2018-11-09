@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.Before;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
 import com.scrumdog.donationtracker.model.User;
 
 /**
