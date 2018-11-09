@@ -20,6 +20,7 @@ import com.scrumdog.donationtracker.model.User;
 import com.scrumdog.donationtracker.model.UserManagement;
 import java.io.File;
 
+
 /**
  * A screen that offers registration via email/password.
  */

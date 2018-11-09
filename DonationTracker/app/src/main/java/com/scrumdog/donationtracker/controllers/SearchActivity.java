@@ -23,6 +23,7 @@ import android.widget.Spinner;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class SearchActivity extends AppCompatActivity {
 
     public EditText SearchBar;

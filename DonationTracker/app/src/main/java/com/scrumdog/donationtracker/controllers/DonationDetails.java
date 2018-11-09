@@ -8,6 +8,7 @@ import android.widget.TextView;
 //import android.widget.Button;
 //import android.view.View;
 
+
 public class DonationDetails extends AppCompatActivity {
 
     private TextView ShortDescription;

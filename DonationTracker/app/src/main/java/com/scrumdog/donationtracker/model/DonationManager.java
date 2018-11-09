@@ -1,25 +1,25 @@
 package com.scrumdog.donationtracker.model;
 
-import android.util.Log;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.Serializable;
-import java.io.FileWriter;
+//import android.util.Log;
+//
+//import java.io.BufferedReader;
+//import java.io.FileNotFoundException;
+//import java.io.IOException;
+//import java.io.OutputStreamWriter;
+//import java.io.PrintWriter;
+//import java.io.Serializable;
+//import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.io.File;
-import java.io.*;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import android.content.Context;
-
-import com.google.gson.Gson;
+//import java.io.File;
+//import java.io.*;
+//import java.io.InputStream;
+//import java.io.InputStreamReader;
+//import android.content.Context;
+//
+//import com.google.gson.Gson;
 import com.scrumdog.donationtracker.controllers.DonationEntryActivity;
 
 public class DonationManager {

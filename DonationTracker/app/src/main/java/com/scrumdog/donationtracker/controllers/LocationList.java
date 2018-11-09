@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 //import java.util.ArrayList;
 
+
 public class LocationList extends AppCompatActivity {
 
     private TextView Location1;

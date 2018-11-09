@@ -6,6 +6,7 @@ import java.util.ArrayList;
 //import java.util.Arrays;
 //import java.util.List;
 
+
 public class Location {
 
     public static ArrayList<Location> locations = new ArrayList<>();

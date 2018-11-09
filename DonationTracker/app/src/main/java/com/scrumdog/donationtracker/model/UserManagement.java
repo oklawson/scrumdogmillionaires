@@ -16,7 +16,6 @@ import java.io.PrintWriter;
 import java.util.List;
 //import com.scrumdog.donationtracker.R;
 
-
 public class UserManagement {
     public final static String DEFAULT_JSON_FILE_NAME = "userdata.json";
 

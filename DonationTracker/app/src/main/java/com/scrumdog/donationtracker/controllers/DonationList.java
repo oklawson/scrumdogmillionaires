@@ -17,6 +17,7 @@ import com.scrumdog.donationtracker.model.UserManagement;
 
 //import java.util.ArrayList;
 
+
 public class DonationList extends AppCompatActivity {
 
     public static String ShortDescription;

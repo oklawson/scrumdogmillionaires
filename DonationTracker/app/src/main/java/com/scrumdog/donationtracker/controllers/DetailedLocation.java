@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.scrumdog.donationtracker.R;
 
+
 public class DetailedLocation extends AppCompatActivity {
 
     private TextView LocationName;

@@ -20,6 +20,7 @@ import java.util.Map;
 //import com.google.gson.Gson;
 //import com.scrumdog.donationtracker.R;
 
+
 /**
  * This class manages the list of users in the model
  * It is all package vis because it should only be accessed from the facade, not directly

@@ -1,5 +1,6 @@
 package com.scrumdog.donationtracker.model;
 
+
 public class AddDonationCommand extends AbstractCommand {
     private Donation donation;
 

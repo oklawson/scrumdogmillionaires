@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
-
 public class User implements Serializable {
 
     /** a demonstration of using something other than an enum for holding choices */
@@ -168,4 +167,5 @@ public class User implements Serializable {
         }
         return false;
     }
+
 }

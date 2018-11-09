@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.controllers.SearchActivity;
 
+
 public class SearchList extends AppCompatActivity {
 
     public static String ShortDescription;
