@@ -11,13 +11,13 @@ public class CommandManager {
      * This maintains a list of user commands executed in order
      * Front of list is oldest command, tail is newest
      */
-    private List<AbstractCommand> userhistory = new LinkedList<>();
+    private List<AbstractCommand> userHistory = new LinkedList<>();
 
     /**
      * This maintains a list of donation commands executed in order
      * Front of list is oldest command, tail is newest
      */
-    private List<AbstractCommand> donationhistory = new LinkedList<>();
+    private List<AbstractCommand> donationHistory = new LinkedList<>();
 
     /**
      * This maintains a list of undo commands that have been undone
@@ -33,9 +33,9 @@ public class CommandManager {
      */
     public void executeUserCommand(final AbstractCommand command) {
         if (command.execute()) {
-            userhistory.add(command);
+            userHistory.add(command);
         } else {
-            userhistory.clear();
+            userHistory.clear();
         }
     }
 
@@ -47,9 +47,9 @@ public class CommandManager {
      */
     public void executeDonationCommand(final AbstractCommand command) {
         if (command.execute()) {
-            donationhistory.add(command);
+            donationHistory.add(command);
         } else {
-            donationhistory.clear();
+            donationHistory.clear();
         }
     }
 

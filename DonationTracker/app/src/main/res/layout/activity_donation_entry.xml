@@ -144,15 +144,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category" />
 
-    <TextView
-        android:id="@+id/addedMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Added!"
-        android:visibility="gone"
-        tools:layout_editor_absoluteX="195dp"
-        tools:layout_editor_absoluteY="514dp" />
-
     <Button
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
@@ -165,14 +156,12 @@
         android:id="@+id/LocationSpinner"
         android:layout_width="240dp"
         android:layout_height="29dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/addedMessage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullDescription"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintTop_toBottomOf="@+id/fullDescription" />
 
 </android.support.constraint.ConstraintLayout>
