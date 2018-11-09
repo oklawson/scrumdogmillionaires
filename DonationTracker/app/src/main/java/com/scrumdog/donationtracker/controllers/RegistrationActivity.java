@@ -118,6 +118,8 @@ public class RegistrationActivity extends AppCompatActivity  {
 
     /**
      * check if username already exists
+     *
+     * @param userID is a string of the User's username
      */
         private boolean validate(String userID) {
             //if username does not already exist, return false

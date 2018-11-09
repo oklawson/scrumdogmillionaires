@@ -115,6 +115,11 @@ public class DonationManager {
         donationMap.put(donation.getshortDescription(), donation);
     }
 
+    /**
+     * method that removes donation from donations map and array
+     *
+     * @param donation the inputted donation
+     */
     public void removeDonation(Donation donation) {
         donations.remove(donation);
         donationMap.remove(donation.getshortDescription());
