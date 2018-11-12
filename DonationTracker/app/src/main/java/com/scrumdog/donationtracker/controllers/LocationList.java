@@ -67,11 +67,11 @@ public class LocationList extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                locationName = Location.locations.get(0).getName();;
-                locationType = Location.locations.get(0).getType();;
-                longitude = Location.locations.get(0).getLongitude();;
-                latitude = Location.locations.get(0).getLatitude();;
-                address = Location.locations.get(0).getAddress();;
+                locationName = Location.locations.get(0).getName();
+                locationType = Location.locations.get(0).getType();
+                longitude = Location.locations.get(0).getLongitude();
+                latitude = Location.locations.get(0).getLatitude();
+                address = Location.locations.get(0).getAddress();
                 phoneNumber = Location.locations.get(0).getPhoneNumber();
                 Intent intent = new Intent(LocationList.this, DetailedLocation.class);
                 startActivity(intent);
@@ -81,11 +81,11 @@ public class LocationList extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                locationName = Location.locations.get(1).getName();;
-                locationType = Location.locations.get(1).getType();;
-                longitude = Location.locations.get(1).getLongitude();;
-                latitude = Location.locations.get(1).getLatitude();;
-                address = Location.locations.get(1).getAddress();;
+                locationName = Location.locations.get(1).getName();
+                locationType = Location.locations.get(1).getType();
+                longitude = Location.locations.get(1).getLongitude();
+                latitude = Location.locations.get(1).getLatitude();
+                address = Location.locations.get(1).getAddress();
                 phoneNumber = Location.locations.get(1).getPhoneNumber();
                 Intent intent = new Intent(LocationList.this, DetailedLocation.class);
                 startActivity(intent);
@@ -95,11 +95,11 @@ public class LocationList extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                locationName = Location.locations.get(2).getName();;
-                locationType = Location.locations.get(2).getType();;
-                longitude = Location.locations.get(2).getLongitude();;
-                latitude = Location.locations.get(2).getLatitude();;
-                address = Location.locations.get(2).getAddress();;
+                locationName = Location.locations.get(2).getName();
+                locationType = Location.locations.get(2).getType();
+                longitude = Location.locations.get(2).getLongitude();
+                latitude = Location.locations.get(2).getLatitude();
+                address = Location.locations.get(2).getAddress();
                 phoneNumber = Location.locations.get(2).getPhoneNumber();
                 Intent intent = new Intent(LocationList.this, DetailedLocation.class);
                 startActivity(intent);
@@ -109,11 +109,11 @@ public class LocationList extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                locationName = Location.locations.get(3).getName();;
-                locationType = Location.locations.get(3).getType();;
-                longitude = Location.locations.get(3).getLongitude();;
-                latitude = Location.locations.get(3).getLatitude();;
-                address = Location.locations.get(3).getAddress();;
+                locationName = Location.locations.get(3).getName();
+                locationType = Location.locations.get(3).getType();
+                longitude = Location.locations.get(3).getLongitude();
+                latitude = Location.locations.get(3).getLatitude();
+                address = Location.locations.get(3).getAddress();
                 phoneNumber = Location.locations.get(3).getPhoneNumber();
                 Intent intent = new Intent(LocationList.this, DetailedLocation.class);
                 startActivity(intent);
@@ -123,11 +123,11 @@ public class LocationList extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                locationName = Location.locations.get(4).getName();;
-                locationType = Location.locations.get(4).getType();;
-                longitude = Location.locations.get(4).getLongitude();;
-                latitude = Location.locations.get(4).getLatitude();;
-                address = Location.locations.get(4).getAddress();;
+                locationName = Location.locations.get(4).getName();
+                locationType = Location.locations.get(4).getType();
+                longitude = Location.locations.get(4).getLongitude();
+                latitude = Location.locations.get(4).getLatitude();
+                address = Location.locations.get(4).getAddress();
                 phoneNumber = Location.locations.get(4).getPhoneNumber();
                 Intent intent = new Intent(LocationList.this, DetailedLocation.class);
                 startActivity(intent);
@@ -137,11 +137,11 @@ public class LocationList extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                locationName = Location.locations.get(5).getName();;
-                locationType = Location.locations.get(5).getType();;
-                longitude = Location.locations.get(5).getLongitude();;
-                latitude = Location.locations.get(5).getLatitude();;
-                address = Location.locations.get(5).getAddress();;
+                locationName = Location.locations.get(5).getName();
+                locationType = Location.locations.get(5).getType();
+                longitude = Location.locations.get(5).getLongitude();
+                latitude = Location.locations.get(5).getLatitude();
+                address = Location.locations.get(5).getAddress();
                 phoneNumber = Location.locations.get(5).getPhoneNumber();
                 Intent intent = new Intent(LocationList.this, DetailedLocation.class);
                 startActivity(intent);
