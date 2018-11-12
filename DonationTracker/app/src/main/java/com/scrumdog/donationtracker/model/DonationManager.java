@@ -42,11 +42,11 @@ public class DonationManager {
 
     /**
      * add a user to the collection
-     * @param comments
-     * @param price
-     * @param category
-     * @param longDescription
-     * @param shortDescription
+     * @param comments comments of the donation
+     * @param price of the donation
+     * @param category certain category of the donation
+     * @param longDescription detailed description of the donation
+     * @param shortDescription quick description of the donation
      */
     public void addDonation(String comments, String price, String category, String longDescription, String shortDescription, String location) {
         Donation donation = new Donation(comments, price, category, longDescription, shortDescription, location);
@@ -77,7 +77,7 @@ public class DonationManager {
     /**
      * this is package vis because only model should be asking for this data
      *
-     * @return
+     * @return list of donations
      */
     List<Donation> getDonations() {
         return donations;

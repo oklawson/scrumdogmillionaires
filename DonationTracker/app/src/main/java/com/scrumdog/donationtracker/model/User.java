@@ -52,7 +52,7 @@ public class User implements Serializable {
     /**
      * check an entered password for a match
      *
-     * @pre pwd is not null
+     * @pwd pwd is not null
      * @param pwd the password to check
      * @return true is passwords match, false otherwise
      */
