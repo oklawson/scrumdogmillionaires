@@ -22,7 +22,7 @@ import java.util.Map;
 //import com.google.gson.Gson;
 import com.scrumdog.donationtracker.controllers.DonationEntryActivity;
 
-class DonationManager {
+public class DonationManager {
     /**
      * A list of donations
      */
@@ -94,7 +94,7 @@ class DonationManager {
      * This recomputes the user map which is derived from the user collection.
      *
      */
-    void regenMap() {
+    public void regenMap() {
         if (donationMap != null)
             donationMap.clear();
         else

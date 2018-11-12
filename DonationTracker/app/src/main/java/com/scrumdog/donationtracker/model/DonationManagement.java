@@ -34,7 +34,7 @@ public class DonationManagement {
     /**
      * private constructor for facade pattern
      */
-    private DonationManagement() {
+    public DonationManagement() {
         dm = new DonationManager();
     }
 

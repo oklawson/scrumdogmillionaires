@@ -40,7 +40,7 @@ public class UserManager {
      * It is derived from the user collection above, so it does not
      * need to be serialized.
      */
-    private transient Map<String, User> userMap = new HashMap<>();
+    public transient Map<String, User> userMap = new HashMap<>();
 
 //    private User currentUser = null;
 
@@ -111,7 +111,7 @@ public class UserManager {
      * This should only be called during serialization (reading in).
      * This recomputes the user map which is derived from the user collection.
      */
-    void regenMap() {
+    public void regenMap() {
         if (userMap != null)
             userMap.clear();
         else
