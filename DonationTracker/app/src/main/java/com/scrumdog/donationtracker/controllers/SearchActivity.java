@@ -27,12 +27,7 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity {
 
     private EditText SearchBar;
-    private Button SearchButton;
-    private TextView SearchTitle;
-    private Spinner FilterSpinner;
-    private TextView FilterByText;
     private Spinner LocationSpinner;
-    private TextView LocationFilterText;
     private TextView CategoryText;
     private Spinner CategorySpinner;
 
@@ -59,12 +54,12 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         SearchBar = (EditText)findViewById(R.id.searchBar);
-        SearchButton = (Button)findViewById(R.id.searchButton);
-        SearchTitle = (TextView) findViewById(R.id.SearchTitle);
-        FilterSpinner = (Spinner) findViewById(R.id.filterSpinner);
-        FilterByText = (TextView) findViewById(R.id.filterByText);
+        Button searchButton = (Button) findViewById(R.id.searchButton);
+        TextView searchTitle = (TextView) findViewById(R.id.SearchTitle);
+        Spinner filterSpinner = (Spinner) findViewById(R.id.filterSpinner);
+        TextView filterByText = (TextView) findViewById(R.id.filterByText);
         LocationSpinner = (Spinner) findViewById(R.id.LocationSpinner);
-        LocationFilterText = (TextView) findViewById(R.id.locationFilterText);
+        TextView locationFilterText = (TextView) findViewById(R.id.locationFilterText);
         CategoryText = (TextView) findViewById(R.id.CategoryText);
         CategorySpinner = (Spinner) findViewById(R.id.CategorySpinner);
 
@@ -72,7 +67,7 @@ public class SearchActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, filterOptions);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        FilterSpinner.setAdapter(adapter);
+        filterSpinner.setAdapter(adapter);
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, locationOptions);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -98,7 +93,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        FilterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        filterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
@@ -139,7 +134,7 @@ public class SearchActivity extends AppCompatActivity {
 
         //read in user search from search bar
 
-        SearchButton.setOnClickListener(new View.OnClickListener() {
+        searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                     Intent intent = new Intent(SearchActivity.this, SearchList.class);
