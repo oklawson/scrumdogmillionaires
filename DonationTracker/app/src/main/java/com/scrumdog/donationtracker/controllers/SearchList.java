@@ -33,11 +33,11 @@ public class SearchList extends AppCompatActivity {
         return new View.OnClickListener() {
             public void onClick(View v) {
                 int id = button.getId();
-                ShortDescription = DonationEntryActivity.donations.get(id).getshortDescription();
+                ShortDescription = DonationEntryActivity.donations.get(id).getShortDescription();
                 FullDescription = DonationEntryActivity.donations.get(id).getFullDescription();
                 Loc = DonationEntryActivity.donations.get(id).getItemLocationS();
                 Category = DonationEntryActivity.donations.get(id).getCategory();
-                Val = DonationEntryActivity.donations.get(id).getdollarValue();
+                Val = DonationEntryActivity.donations.get(id).getDollarValue();
                 TimeStamp = DonationEntryActivity.donations.get(id).getTimeStamp().toString();
                 Comments = DonationEntryActivity.donations.get(id).getComments();
 
@@ -233,8 +233,8 @@ public class SearchList extends AppCompatActivity {
                 for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
                     System.out.println("Inside of for loop");
                     System.out.println("User Search Word: " + SearchActivity.userSearchWord);
-                    System.out.println("Donation Name: " + DonationEntryActivity.donations.get(i).getshortDescription());
-                    if (DonationEntryActivity.donations.get(i).getshortDescription().equals(SearchActivity.userSearchWord)) {
+                    System.out.println("Donation Name: " + DonationEntryActivity.donations.get(i).getShortDescription());
+                    if (DonationEntryActivity.donations.get(i).getShortDescription().equals(SearchActivity.userSearchWord)) {
                         //DonationEntryActivity.donations.get(i).setListed(true);
                         System.out.println("Found something that matched the search -- entered if statement");
                         count++;
@@ -270,48 +270,6 @@ public class SearchList extends AppCompatActivity {
             SearchActivity.itemNameSelected = false;
         }
 
-//        //user enters in search bar, selects category, and location -> SHOW ALL ITEMS WITH THAT CRITERIA
-//        if (SearchActivity.nameSearch && SearchActivity.userSearchEntered && SearchActivity.locationSelected && SearchActivity.categorySelected) {
-//            if (DonationEntryActivity.donations.size() > 0) {
-//
-//                for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
-//                    if (DonationEntryActivity.donations.get(i).getshortDescription().equals(SearchActivity.userSearchWord)
-//                            && DonationEntryActivity.donations.get(i).getCategory().equals(SearchActivity.searchCategory)
-//                            && DonationEntryActivity.donations.get(i).getItemLocationS().equals(SearchActivity.searchLocation)) {
-//                        //DonationEntryActivity.donations.get(i).setListed(true);
-//                        count++;
-//                        LinearLayout row = new LinearLayout(this);
-//                        row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-//
-//                        //for (int j = 0; j < 2; j++) {
-//                        TextView tvTag = new TextView(this);
-//                        tvTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                        tvTag.setText(DonationEntryActivity.donations.get(i).toString());
-//                        tvTag.setId(i);
-//                        row.addView(tvTag);
-//                        Button btnTag = new Button(this);
-//                        btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//                        btnTag.setText("View Details");
-//                        btnTag.setId(i);
-//                        row.addView(btnTag);
-//                        btnTag.setOnClickListener(getOnClickDoSomething(btnTag));
-//
-//                        layout.addView(row);
-//                    }
-//                }
-////                    if(count == 0) {
-////                        NoItemsText.setVisibility(View.VISIBLE);
-////                    } else {
-////                        Intent intent = new Intent(SearchList.this, DonationDetails.class);
-////                        startActivity(intent);
-////                    }
-//                setContentView(layout);
-//            }
-//            SearchActivity.userSearchEntered = false;
-//            SearchActivity.locationSelected = false;
-//            SearchActivity.categorySelected = false;
-//            SearchActivity.itemNameSelected = false;
-//        }
 
 
         //user selects item name search and location -> SHOW ALL ITEMS WITH THAT CRITERIA
@@ -320,7 +278,7 @@ public class SearchList extends AppCompatActivity {
             if (DonationEntryActivity.donations.size() > 0) {
 
                 for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
-                    if (DonationEntryActivity.donations.get(i).getshortDescription().equals(SearchActivity.userSearchWord)
+                    if (DonationEntryActivity.donations.get(i).getShortDescription().equals(SearchActivity.userSearchWord)
                             && DonationEntryActivity.donations.get(i).getItemLocationS().equals(SearchActivity.searchLocation)) {
                         //DonationEntryActivity.donations.get(i).setListed(true);
                         count++;

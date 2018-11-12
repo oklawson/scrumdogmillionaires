@@ -54,13 +54,13 @@ public class Location {
     public void setAddress(String address) { _address = address; }
 
     /**
-     * get the location's longitutde
-     * @return _longitute type the location's longitude
+     * get the location's longitude
+     * @return _longitude type the location's longitude
      */
     public double getLongitude() { return _longitude; }
 
     /**
-     * set the location's longitutde
+     * set the location's longitude
      * @param longitude type the location's longitude
      */
     public void setLongitude(double longitude) { _longitude = longitude; }

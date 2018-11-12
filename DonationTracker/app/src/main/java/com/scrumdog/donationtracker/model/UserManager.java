@@ -97,7 +97,7 @@ public class UserManager {
     }
 
     /**
-     * Returns a user basesd on their id
+     * Returns a user based on their id
      *
      * @param ID the user's id
      * @return  the user instance

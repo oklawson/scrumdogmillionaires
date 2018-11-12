@@ -12,7 +12,7 @@ public class User implements Serializable {
     public static List<String> legalUsers = Arrays.asList("User", "Location Employee", "Admin");
 
     /** a demonstration of using something other than an enum for holding choices */
-    public static List<String> legalUsersLocations = Arrays.asList("AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministires", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
+    public static List<String> legalUsersLocations = Arrays.asList("AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
 
     /** this users name */
     private String name;

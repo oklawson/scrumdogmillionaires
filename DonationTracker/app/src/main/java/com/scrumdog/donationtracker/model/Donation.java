@@ -49,25 +49,25 @@ public class Donation {
      * get the donation's shortDescription
      * @return _shortDescription the shortDescription of the donation
      */
-    public String getshortDescription() { return _shortDescription; }
+    public String getShortDescription() { return _shortDescription; }
 
     /**
      * set the donation's shortDescription
      * @param shortDescription the shortDescription of the donation
      */
-    public void setshortDescription(String shortDescription) { _shortDescription = shortDescription; }
+    public void setShortDescription(String shortDescription) { _shortDescription = shortDescription; }
 
     /**
      * get the donation's dollarValue
-     * @return _dollarvalue the dollarValue of the donation
+     * @return _dollarValue the dollarValue of the donation
      */
-    public String getdollarValue() { return _dollarValue; }
+    public String getDollarValue() { return _dollarValue; }
 
     /**
      * set the donation's dollarValue
      * @param dollarValue the dollarValue of the donation
      */
-    public void setdollarValue(String dollarValue) { _dollarValue = dollarValue; }
+    public void setDollarValue(String dollarValue) { _dollarValue = dollarValue; }
 
     /**
      * get the donation's category

@@ -26,7 +26,7 @@ public class MapActivityTest {
             new ActivityTestRule<>(HomeScreen.class, true, false);
 
     /**
-     * Tests if LoginActivity properly transfers to RegitstrationActivity
+     * Tests if LoginActivity properly transfers to RegistrationActivity
      * when the button is clicked
      */
     @Test

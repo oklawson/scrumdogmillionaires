@@ -117,7 +117,7 @@ public class DonationManagement {
             //Since we saved the json as a string, we just read in the string normally
             String inString = input.readLine();
             Log.d("DEBUG", "Donation JSON: " + inString);
-            //Then we use the Gson library to recreate the object references and links automagically
+            //Then we use the Gson library to recreate the object references and links automatically
             Gson gson = new Gson();
 
             dm = gson.fromJson(inString, DonationManager.class);

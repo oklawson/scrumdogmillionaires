@@ -50,7 +50,7 @@ public class SearchActivity extends AppCompatActivity {
     public static boolean nameSearch = false;
 
     public static List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
-    public static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministires", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
+    public static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
 
 
     @Override
@@ -101,18 +101,22 @@ public class SearchActivity extends AppCompatActivity {
         FilterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                    categorySelected = false;
-                    itemNameSelected = false;
-                } else if (position == 1) {
-                    categorySelected = true;
-                    itemNameSelected = false;
-                    CategoryText.setVisibility(View.VISIBLE);
-                    CategorySpinner.setVisibility(View.VISIBLE);
-                } else {
-                    userSearchWord = SearchBar.getText().toString();
-                    itemNameSelected = true;
-                    categorySelected = false;
+                switch (position) {
+                    case 0:
+                        categorySelected = false;
+                        itemNameSelected = false;
+                        break;
+                    case 1:
+                        categorySelected = true;
+                        itemNameSelected = false;
+                        CategoryText.setVisibility(View.VISIBLE);
+                        CategorySpinner.setVisibility(View.VISIBLE);
+                        break;
+                    default:
+                        userSearchWord = SearchBar.getText().toString();
+                        itemNameSelected = true;
+                        categorySelected = false;
+                        break;
                 }
             }
 

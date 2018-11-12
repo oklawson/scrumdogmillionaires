@@ -35,8 +35,6 @@ public class RegistrationActivity extends AppCompatActivity  {
         private Button Cancel;
         private TextView invalidRegistration;
         private TextView invalidUsername;
-        private String usertype;
-        public User newUser;
 
         UserManagement umt = UserManagement.getInstance();
 
