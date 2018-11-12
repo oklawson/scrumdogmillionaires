@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Location {
 
-    public static ArrayList<Location> locations = new ArrayList<>();
+    public static final ArrayList<Location> locations = new ArrayList<>();
     private String _locationName;
     private String _locationType;
     private double _longitude;
@@ -109,14 +109,14 @@ public class Location {
         //legalLocations.add(this._locationName);
     }
 
-    /**
-     * No param constructor -- DO NOT CALL NORMALLY
-     * This constructor only for GUI use in edit/new student dialog
-     * Creates a new location
-     */
-    public Location() {
-        this("Enter new name", "Enter type", 0, 0, "Enter address", null);
-    }
+//    /**
+//     * No param constructor -- DO NOT CALL NORMALLY
+//     * This constructor only for GUI use in edit/new student dialog
+//     * Creates a new location
+//     */
+//    public Location() {
+//        this("Enter new name", "Enter type", 0, 0, "Enter address", null);
+//    }
 
     @Override
     public String toString() {

@@ -29,7 +29,7 @@ public class DonationManagement {
     /**
      * Singleton pattern
      */
-    private static DonationManagement instance = new DonationManagement();
+    private static final DonationManagement instance = new DonationManagement();
 
     /**
      * private constructor for facade pattern
@@ -111,7 +111,7 @@ public class DonationManagement {
      * @return true if the file is successfully loaded, false otherwise
      */
     @SuppressLint("LongLogTag")
-    public boolean loadJson(File file) {
+    public void loadJson(File file) {
         try {
             BufferedReader input = new BufferedReader(new FileReader(file));
             //Since we saved the json as a string, we just read in the string normally
@@ -125,10 +125,7 @@ public class DonationManagement {
             input.close();
         } catch (IOException e) {
             Log.e("DonationManagementFacade", "Failed to open/read the buffered reader for json");
-            return false;
         }
-
-        return true;
 
     }
 
@@ -138,7 +135,7 @@ public class DonationManagement {
      * @return true if the data is successfully saved to the file, false otherwise
      */
     @SuppressLint("LongLogTag")
-    public boolean saveJson(File file) {
+    public void saveJson(File file) {
 
         try {
             PrintWriter writer = new PrintWriter(file);
@@ -151,9 +148,7 @@ public class DonationManagement {
             writer.close();
         } catch (FileNotFoundException e) {
             Log.e("DonationManagementFacade", "Failed to open json file for output");
-            return false;
         }
 
-        return true;
     }
 }

@@ -9,7 +9,7 @@ import java.util.Date;
 public class Donation {
 
     //what are categories??
-    public static List<String> theCategories = Arrays.asList("Clothing", "Hat", "Kitchen", "Electronics", "Household", "Other");
+    public static final List<String> theCategories = Arrays.asList("Clothing", "Hat", "Kitchen", "Electronics", "Household", "Other");
 
     /** this items short description */
     private String _shortDescription;

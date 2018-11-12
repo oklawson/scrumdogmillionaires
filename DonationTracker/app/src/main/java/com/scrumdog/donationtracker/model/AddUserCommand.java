@@ -3,7 +3,7 @@ package com.scrumdog.donationtracker.model;
 
 
 public class AddUserCommand extends AbstractCommand {
-    private User user;
+    private final User user;
 
     /**
      * make a new user

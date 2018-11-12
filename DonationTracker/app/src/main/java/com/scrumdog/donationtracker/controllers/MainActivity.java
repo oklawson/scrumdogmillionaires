@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     static ArrayList<Location> locations;
 
-    private UserManagement umt = UserManagement.getInstance();
+    private final UserManagement umt = UserManagement.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

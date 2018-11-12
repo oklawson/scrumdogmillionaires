@@ -43,9 +43,9 @@ public class DonationEntryActivity extends AppCompatActivity {
     //make a LocationList Dropdown
     //add a picture upload category?
 
-    private DonationManagement dmt = DonationManagement.getInstance();
+    private final DonationManagement dmt = DonationManagement.getInstance();
 
-    public static ArrayList<Donation> donations = new ArrayList<>();
+    public static final ArrayList<Donation> donations = new ArrayList<>();
 
 
     @Override

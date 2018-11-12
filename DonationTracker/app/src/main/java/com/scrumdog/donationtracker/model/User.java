@@ -4,31 +4,30 @@ import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
 
 public class User implements Serializable {
 
     /** a demonstration of using something other than an enum for holding choices */
-    public static List<String> legalUsers = Arrays.asList("User", "Location Employee", "Admin");
+    public static final List<String> legalUsers = Arrays.asList("User", "Location Employee", "Admin");
 
     /** a demonstration of using something other than an enum for holding choices */
-    public static List<String> legalUsersLocations = Arrays.asList("AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
+    public static final List<String> legalUsersLocations = Arrays.asList("AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
 
     /** this users name */
-    private String name;
+    private final String name;
 
     /** this users ID - can be email or id */
-    private String ID;
+    private final String ID;
 
     /** this users type */
-    private String userType;
+    private final String userType;
 
     /** this users location */
     // using String for read/write purposes, will fix later
-    private String userLocation;
+    private final String userLocation;
 
     /** this users password */
-    private String password;
+    private final String password;
 
     /** this user */
     public static User currentUser;
@@ -49,12 +48,12 @@ public class User implements Serializable {
         password = p;
     }
 
+
     /**
-     * check an entered password for a match
+     *  check an entered password for a match
      *
-     * @pwd pwd is not null
-     * @param pwd the password to check
-     * @return true is passwords match, false otherwise
+     * @param pwd put in the password
+     * @return if correct or not
      */
     public boolean checkPassword(String pwd) {
         return getPassword().equals(pwd);

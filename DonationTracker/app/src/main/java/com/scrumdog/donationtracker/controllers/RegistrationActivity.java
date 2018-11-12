@@ -33,7 +33,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         private Spinner specificLocationSpinner;
     private TextView invalidUsername;
 
-        private UserManagement umt = UserManagement.getInstance();
+        private final UserManagement umt = UserManagement.getInstance();
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
