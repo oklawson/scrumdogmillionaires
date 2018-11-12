@@ -3,6 +3,7 @@ import com.scrumdog.donationtracker.controllers.MapsActivity;
 
 import android.content.Intent;
 import android.support.v7.view.menu.MenuView;
+import android.support.test.rule.ActivityTestRule;
 
 import com.scrumdog.donationtracker.controllers.HomeScreen;
 
@@ -13,6 +14,8 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
+import androidx.test.espresso.intent.Intents;
+
 public class MapActivityTest {
 
     @Rule
@@ -20,7 +23,7 @@ public class MapActivityTest {
             new ActivityTestRule<>(HomeScreen.class, true, false);
 
     /**
-     * Tests if LoginActivity properly transfers to RegistrationActivity
+     * Tests if HomeScreen properly transfers to MapsActivity
      * when the button is clicked
      */
     @Test

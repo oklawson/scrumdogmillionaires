@@ -41,6 +41,11 @@ dependencies {
     testImplementation 'androidx.test:core:1.0.0'
     // Optional -- Mockito framework
     testImplementation 'org.mockito:mockito-core:1.10.19'
+    // Espresso core
+    testImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    // Espresso intents
+    testImplementation 'com.android.support.test.espresso:espresso-intents:2.2'
+
 }
 
 configurations.all {
