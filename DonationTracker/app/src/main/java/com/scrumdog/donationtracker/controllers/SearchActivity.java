@@ -44,8 +44,8 @@ public class SearchActivity extends AppCompatActivity {
     public static boolean itemNameSelected = false;
     public static boolean nameSearch = false;
 
-    private static List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
-    private static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
+    private static final List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
+    private static final List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
 
 
     @Override

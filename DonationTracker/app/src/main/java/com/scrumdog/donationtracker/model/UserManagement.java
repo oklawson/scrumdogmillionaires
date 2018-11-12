@@ -30,7 +30,7 @@ public class UserManagement {
     /**
      * Singleton pattern
      */
-    private static UserManagement instance = new UserManagement();
+    private static final UserManagement instance = new UserManagement();
 
     /**
      * private constructor for facade pattern
@@ -139,7 +139,7 @@ public class UserManagement {
      * @param file the JSON file
      * @return true if the file is successfully loaded, false otherwise
      */
-    public boolean loadJson(File file) {
+    public void loadJson(File file) {
         try {
             BufferedReader input = new BufferedReader(new FileReader(file));
             //Since we saved the json as a string, we just read in the string normally
@@ -153,10 +153,7 @@ public class UserManagement {
             input.close();
         } catch (IOException e) {
             Log.e("UserManagementFacade", "Failed to open/read the buffered reader for json");
-            return false;
         }
-
-        return true;
 
     }
 
@@ -165,7 +162,7 @@ public class UserManagement {
      * @param file the JSON file
      * @return true if the data is successfully saved to the file, false otherwise
      */
-    public boolean saveJson(File file) {
+    public void saveJson(File file) {
 
         try {
             PrintWriter writer = new PrintWriter(file);
@@ -178,10 +175,8 @@ public class UserManagement {
             writer.close();
         } catch (FileNotFoundException e) {
             Log.e("UserManagementFacade", "Failed to open json file for output");
-            return false;
         }
 
-        return true;
     }
 
 }
