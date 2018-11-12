@@ -142,7 +142,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         br.readLine(); //get rid of header line
         while ((line = br.readLine()) != null) {
             String[] tokens = line.split(",");
-            Location newLocation = new Location();
+            Location newLocation = new Location(tokens[1], tokens[8], Double.parseDouble(tokens[3]), Double.parseDouble(tokens[2]), tokens[4], tokens[9]);
             newLocation.setName(tokens[1]);
             newLocation.setType(tokens[8]);
             newLocation.setLongitude(Double.parseDouble(tokens[3]));

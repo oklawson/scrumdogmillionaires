@@ -91,7 +91,6 @@ public class SearchList extends AppCompatActivity {
                 }
                 noItemsText.setVisibility(View.INVISIBLE);
             }
-            SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
             SearchActivity.categorySelected = false;
             SearchActivity.itemNameSelected = false;
@@ -131,7 +130,6 @@ public class SearchList extends AppCompatActivity {
                 }
 
             }
-            SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
             SearchActivity.categorySelected = false;
             SearchActivity.itemNameSelected = false;
@@ -172,7 +170,6 @@ public class SearchList extends AppCompatActivity {
                     System.out.println("somethings wrong");
                 }
             }
-            SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
             SearchActivity.categorySelected = false;
             SearchActivity.itemNameSelected = false;
@@ -214,7 +211,6 @@ public class SearchList extends AppCompatActivity {
                     noItemsText.setVisibility(View.VISIBLE);
                 }
             }
-            SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
             SearchActivity.categorySelected = false;
             SearchActivity.itemNameSelected = false;
@@ -261,7 +257,6 @@ public class SearchList extends AppCompatActivity {
                     noItemsText.setVisibility(View.VISIBLE);
                 }
             }
-            SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
             SearchActivity.categorySelected = false;
             SearchActivity.itemNameSelected = false;
@@ -305,7 +300,6 @@ public class SearchList extends AppCompatActivity {
                 }
             }
 
-            SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
             SearchActivity.categorySelected = false;
             SearchActivity.itemNameSelected = false;
@@ -314,11 +308,9 @@ public class SearchList extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        SearchActivity.userSearchEntered = false;
         SearchActivity.locationSelected = false;
         SearchActivity.categorySelected = false;
         SearchActivity.itemNameSelected = false;
-        SearchActivity.nameSearch = false;
         count = 0;
         Intent intent = new Intent(SearchList.this, SearchActivity.class);
         startActivity(intent);
