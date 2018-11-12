@@ -99,7 +99,7 @@ public class Location {
      * @param address the location's address
      * @param phoneNumber the location's phone number
      */
-    public Location(String name, String type, double longitude, double latitude, String address, String phoneNumber) {
+    private Location(String name, String type, double longitude, double latitude, String address, String phoneNumber) {
         _locationName = name;
         _locationType = type;
         _longitude = longitude;

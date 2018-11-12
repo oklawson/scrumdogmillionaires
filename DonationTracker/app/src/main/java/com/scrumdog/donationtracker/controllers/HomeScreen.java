@@ -37,8 +37,10 @@ public class HomeScreen extends AppCompatActivity {
     private User sm;
 
 
-    UserManagement umt = UserManagement.getInstance();
-    DonationManagement dmt = DonationManagement.getInstance();
+    private Button Login;
+    private Button Register;
+    private UserManagement umt = UserManagement.getInstance();
+    private DonationManagement dmt = DonationManagement.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +54,10 @@ public class HomeScreen extends AppCompatActivity {
         dmt.loadJson(file2);
         Log.d("MYAPP","Loaded json 2");
         Log.d("MYAPP", "donation list: " + dmt.getDonationsAsList());
-        Button login = (Button) findViewById(R.id.loginButton);
+        Login = (Button) findViewById(R.id.loginButton);
 
 
-        login.setOnClickListener(new View.OnClickListener() {
+        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeScreen.this, LoginActivity.class);
@@ -63,10 +65,10 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-        Button register = (Button) findViewById(R.id.registerButton);
+        Register = (Button) findViewById(R.id.registerButton);
 
 
-        register.setOnClickListener(new View.OnClickListener() {
+        Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeScreen.this, RegistrationActivity.class);

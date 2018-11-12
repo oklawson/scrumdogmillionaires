@@ -24,10 +24,12 @@ public class SearchList extends AppCompatActivity {
     public static String TimeStamp;
     public static String Comments;
 
-    public static int count = 0;
+    private TextView NoItemsText;
+
+    private static int count = 0;
 
 
-    View.OnClickListener getOnClickDoSomething(final Button button)  {
+    private View.OnClickListener getOnClickDoSomething(final Button button)  {
         return new View.OnClickListener() {
             public void onClick(View v) {
                 int id = button.getId();
@@ -57,11 +59,11 @@ public class SearchList extends AppCompatActivity {
         System.out.println(SearchActivity.itemNameSelected);
         System.out.println(SearchActivity.categorySelected);
 
-        TextView noItemsText = (TextView) findViewById(R.id.NoItemsText);
+        NoItemsText = (TextView) findViewById(R.id.NoItemsText);
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.LinearLayout);
         layout.setOrientation(LinearLayout.VERTICAL);  //Can also be done in xml by android:orientation="vertical"
-        noItemsText.setVisibility(View.INVISIBLE);
+        NoItemsText.setVisibility(View.INVISIBLE);
 
         //user doesn't select location or filter or enter any search -> SHOW ALL ITEMS
         // TODO need to check if something is in the search bar
@@ -90,7 +92,7 @@ public class SearchList extends AppCompatActivity {
                     layout.addView(row);
                     //}
                 }
-                noItemsText.setVisibility(View.INVISIBLE);
+                NoItemsText.setVisibility(View.INVISIBLE);
             }
             SearchActivity.userSearchEntered = false;
             SearchActivity.locationSelected = false;
@@ -126,9 +128,9 @@ public class SearchList extends AppCompatActivity {
                     }
                 }
                 if(count > 0) {
-                    noItemsText.setVisibility(View.INVISIBLE);
+                    NoItemsText.setVisibility(View.INVISIBLE);
                 } else {
-                    noItemsText.setVisibility(View.VISIBLE);
+                    NoItemsText.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -167,9 +169,9 @@ public class SearchList extends AppCompatActivity {
                     }
                 }
                 if(count > 0) {
-                    noItemsText.setVisibility(View.INVISIBLE);
+                    NoItemsText.setVisibility(View.INVISIBLE);
                 } else {
-                    noItemsText.setVisibility(View.VISIBLE);
+                    NoItemsText.setVisibility(View.VISIBLE);
                     System.out.println("somethings wrong");
                 }
             }
@@ -182,7 +184,7 @@ public class SearchList extends AppCompatActivity {
 //        //user only selects a category and location -> SHOW ALL ITEMS IN THAT CATEGORY AT THAT LOCATION
         if (SearchActivity.locationSelected && SearchActivity.categorySelected && !SearchActivity.itemNameSelected) {
             System.out.println("entered 4");
-            noItemsText.setVisibility(View.VISIBLE);
+            NoItemsText.setVisibility(View.VISIBLE);
             if (DonationEntryActivity.donations.size() > 0) {
 
                 for (int i = 0; i < DonationEntryActivity.donations.size(); i++) {
@@ -210,9 +212,9 @@ public class SearchList extends AppCompatActivity {
                     }
                 }
                 if(count > 0) {
-                    noItemsText.setVisibility(View.INVISIBLE);
+                    NoItemsText.setVisibility(View.INVISIBLE);
                 } else {
-                    noItemsText.setVisibility(View.VISIBLE);
+                    NoItemsText.setVisibility(View.VISIBLE);
                 }
             }
             SearchActivity.userSearchEntered = false;
@@ -224,7 +226,7 @@ public class SearchList extends AppCompatActivity {
         //user selects item name search and enters name in search bar -> SHOW ALL ITEMS WITH THAT NAME
         if (SearchActivity.itemNameSelected && !SearchActivity.locationSelected && !SearchActivity.categorySelected) {
             System.out.println("entered 5");
-            noItemsText.setVisibility(View.VISIBLE);
+            NoItemsText.setVisibility(View.VISIBLE);
             System.out.println("Entered if statement bc item name search is TRUE");
             if (DonationEntryActivity.donations.size() > 0) {
 
@@ -257,9 +259,9 @@ public class SearchList extends AppCompatActivity {
                 }
                 System.out.println(count);
                 if(count > 0) {
-                    noItemsText.setVisibility(View.INVISIBLE);
+                    NoItemsText.setVisibility(View.INVISIBLE);
                 } else {
-                    noItemsText.setVisibility(View.VISIBLE);
+                    NoItemsText.setVisibility(View.VISIBLE);
                 }
             }
             SearchActivity.userSearchEntered = false;
@@ -300,9 +302,9 @@ public class SearchList extends AppCompatActivity {
                     }
                 }
                 if(count > 0) {
-                    noItemsText.setVisibility(View.INVISIBLE);
+                    NoItemsText.setVisibility(View.INVISIBLE);
                 } else {
-                    noItemsText.setVisibility(View.VISIBLE);
+                    NoItemsText.setVisibility(View.VISIBLE);
                 }
             }
 

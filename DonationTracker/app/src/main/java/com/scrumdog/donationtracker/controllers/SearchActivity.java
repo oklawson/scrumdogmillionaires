@@ -26,8 +26,13 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
-    public EditText SearchBar;
+    private EditText SearchBar;
+    private Button SearchButton;
+    private TextView SearchTitle;
+    private Spinner FilterSpinner;
+    private TextView FilterByText;
     private Spinner LocationSpinner;
+    private TextView LocationFilterText;
     private TextView CategoryText;
     private Spinner CategorySpinner;
 
@@ -44,8 +49,8 @@ public class SearchActivity extends AppCompatActivity {
     public static boolean itemNameSelected = false;
     public static boolean nameSearch = false;
 
-    public static List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
-    public static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
+    private static List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
+    private static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
 
 
     @Override
@@ -54,12 +59,12 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         SearchBar = (EditText)findViewById(R.id.searchBar);
-        Button searchButton = (Button) findViewById(R.id.searchButton);
-        TextView searchTitle = (TextView) findViewById(R.id.SearchTitle);
-        Spinner filterSpinner = (Spinner) findViewById(R.id.filterSpinner);
-        TextView filterByText = (TextView) findViewById(R.id.filterByText);
+        SearchButton = (Button)findViewById(R.id.searchButton);
+        SearchTitle = (TextView) findViewById(R.id.SearchTitle);
+        FilterSpinner = (Spinner) findViewById(R.id.filterSpinner);
+        FilterByText = (TextView) findViewById(R.id.filterByText);
         LocationSpinner = (Spinner) findViewById(R.id.LocationSpinner);
-        TextView locationFilterText = (TextView) findViewById(R.id.locationFilterText);
+        LocationFilterText = (TextView) findViewById(R.id.locationFilterText);
         CategoryText = (TextView) findViewById(R.id.CategoryText);
         CategorySpinner = (Spinner) findViewById(R.id.CategorySpinner);
 
@@ -67,7 +72,7 @@ public class SearchActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, filterOptions);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        filterSpinner.setAdapter(adapter);
+        FilterSpinner.setAdapter(adapter);
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, locationOptions);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -93,7 +98,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        filterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        FilterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
@@ -134,7 +139,7 @@ public class SearchActivity extends AppCompatActivity {
 
         //read in user search from search bar
 
-        searchButton.setOnClickListener(new View.OnClickListener() {
+        SearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                     Intent intent = new Intent(SearchActivity.this, SearchList.class);

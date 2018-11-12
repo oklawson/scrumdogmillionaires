@@ -22,11 +22,11 @@ import java.util.Map;
 //import com.google.gson.Gson;
 import com.scrumdog.donationtracker.controllers.DonationEntryActivity;
 
-public class DonationManager {
+class DonationManager {
     /**
      * A list of donations
      */
-    public final List<Donation> donations = new ArrayList<>();
+    private final List<Donation> donations = new ArrayList<>();
 
     /**
      * A map of donations by Key == name of item Value == Donation object
@@ -35,7 +35,7 @@ public class DonationManager {
      * It is derived from the students collection above, so it does not
      * need to be serialized.
      */
-    public transient Map<String, Donation> donationMap = new HashMap<>();
+    private transient Map<String, Donation> donationMap = new HashMap<>();
 
     // do we need this?
     //private Donation currentDonation = null;
@@ -100,7 +100,7 @@ public class DonationManager {
         else
             donationMap = new HashMap<>();
         for (Donation d : donations) {
-            donationMap.put(d.getshortDescription(), d);
+            donationMap.put(d.getShortDescription(), d);
             DonationEntryActivity.donations.add(d);
         }
     }
@@ -112,7 +112,7 @@ public class DonationManager {
      */
     public void addDonation(Donation donation) {
         donations.add(donation);
-        donationMap.put(donation.getshortDescription(), donation);
+        donationMap.put(donation.getShortDescription(), donation);
     }
 
     /**
@@ -122,7 +122,7 @@ public class DonationManager {
      */
     public void removeDonation(Donation donation) {
         donations.remove(donation);
-        donationMap.remove(donation.getshortDescription());
+        donationMap.remove(donation.getShortDescription());
     }
 
 }
