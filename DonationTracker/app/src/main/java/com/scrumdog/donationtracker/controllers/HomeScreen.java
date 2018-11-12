@@ -37,8 +37,8 @@ public class HomeScreen extends AppCompatActivity {
     private User sm;
 
 
-    private UserManagement umt = UserManagement.getInstance();
-    private DonationManagement dmt = DonationManagement.getInstance();
+    private final UserManagement umt = UserManagement.getInstance();
+    private final DonationManagement dmt = DonationManagement.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

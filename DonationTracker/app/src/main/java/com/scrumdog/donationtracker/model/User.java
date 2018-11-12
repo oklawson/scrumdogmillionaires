@@ -29,8 +29,6 @@ public class User implements Serializable {
     /** this users password */
     private final String password;
 
-    /** this user */
-    public static User currentUser;
 
     /**
      * make a new user
@@ -108,15 +106,15 @@ public class User implements Serializable {
     }
 
 
-    /**
-     * Save this class in a custom save format
-     *
-     * @param writer the file to write this user to
-     */
-    public void saveAsText(PrintWriter writer) {
-        System.out.println("User saving user: " + name);
-        writer.println(name + "\t" + ID + "\t" + userType + "\t" + userLocation + "\t" + password);
-    }
+//    /**
+//     * Save this class in a custom save format
+//     *
+//     * @param writer the file to write this user to
+//     */
+//    public void saveAsText(PrintWriter writer) {
+//        System.out.println("User saving user: " + name);
+//        writer.println(name + "\t" + ID + "\t" + userType + "\t" + userLocation + "\t" + password);
+//    }
 
 
     /**

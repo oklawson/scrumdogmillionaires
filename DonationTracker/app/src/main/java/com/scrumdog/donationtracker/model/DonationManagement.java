@@ -24,7 +24,7 @@ public class DonationManagement {
     private DonationManager dm;
     //private DonationManager dm;
     //private LocationManager lm;
-    private Donation currentDonation = null;
+    //private Donation currentDonation = null;
 
     /**
      * Singleton pattern
@@ -53,15 +53,15 @@ public class DonationManagement {
         return donList;
     }
 
-    /**
-     * retrieves a donation by its name
-     * @param name the name of the donation
-     * @return don the donation
-     */
-    public Donation getDonationByName(final String name) {
-        Donation don = dm.getDonationByName(name);
-        return don;
-    }
+//    /**
+//     * retrieves a donation by its name
+//     * @param name the name of the donation
+//     * @return don the donation
+//     */
+//    public Donation getDonationByName(final String name) {
+//        Donation don = dm.getDonationByName(name);
+//        return don;
+//    }
 
     /**
      * adds a new donation

@@ -19,11 +19,11 @@ public class CommandManager {
      */
     private final List<AbstractCommand> donationHistory = new LinkedList<>();
 
-    /**
-     * This maintains a list of undo commands that have been undone
-     * Front of list is oldest command, tail is most recent
-     */
-    private List<AbstractCommand> redoList = new LinkedList<> ();
+//    /**
+//     * This maintains a list of undo commands that have been undone
+//     * Front of list is oldest command, tail is most recent
+//     */
+//    private List<AbstractCommand> redoList = new LinkedList<> ();
 
     /**
      * Execute a command and add to history if the command returned true

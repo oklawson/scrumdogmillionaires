@@ -33,16 +33,16 @@ public class SearchActivity extends AppCompatActivity {
 
 
     public static String userSearchWord;
-    public static String searchFilter;
+    //public static String searchFilter;
     public static String searchLocation;
-    private static Location searchLoc;
+    //private static Location searchLoc;
     public static String searchCategory;
 
-    public static boolean userSearchEntered = false;
+    //public static boolean userSearchEntered = false;
     public static boolean locationSelected = false;
     public static boolean categorySelected = false;
     public static boolean itemNameSelected = false;
-    public static boolean nameSearch = false;
+    //public static boolean nameSearch = false;
 
     private static final List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
     private static final List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
@@ -55,11 +55,11 @@ public class SearchActivity extends AppCompatActivity {
 
         SearchBar = (EditText)findViewById(R.id.searchBar);
         Button searchButton = (Button) findViewById(R.id.searchButton);
-        TextView searchTitle = (TextView) findViewById(R.id.SearchTitle);
+        //TextView searchTitle = (TextView) findViewById(R.id.SearchTitle);
         Spinner filterSpinner = (Spinner) findViewById(R.id.filterSpinner);
-        TextView filterByText = (TextView) findViewById(R.id.filterByText);
+        //TextView filterByText = (TextView) findViewById(R.id.filterByText);
         LocationSpinner = (Spinner) findViewById(R.id.LocationSpinner);
-        TextView locationFilterText = (TextView) findViewById(R.id.locationFilterText);
+        //TextView locationFilterText = (TextView) findViewById(R.id.locationFilterText);
         CategoryText = (TextView) findViewById(R.id.CategoryText);
         CategorySpinner = (Spinner) findViewById(R.id.CategorySpinner);
 
