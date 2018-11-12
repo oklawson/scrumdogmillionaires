@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.Donation;
-import com.scrumdog.donationtracker.model.Location;
 //import com.scrumdog.donationtracker.model.User;
 
 import android.view.View;

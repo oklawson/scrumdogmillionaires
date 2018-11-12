@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Spinner;
 //import android.widget.ArrayAdapter;
 
@@ -39,7 +38,7 @@ public class DonationEntryActivity extends AppCompatActivity {
     private Spinner location;
     private EditText dollarValue;
     private EditText comments;
-    private TextView addedMessage;
+    //private TextView addedMessage;
     //make a LocationList Dropdown
     //add a picture upload category?
 

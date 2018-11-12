@@ -47,7 +47,7 @@ public class RegistrationActivity extends AppCompatActivity  {
             specificLocationSpinner = (Spinner)findViewById(R.id.specificLocationSpinner);
             Button register = (Button) findViewById(R.id.btnRegister);
             Button cancel = (Button) findViewById(R.id.cancelButton);
-            TextView invalidRegistration = (TextView) findViewById(R.id.invalidRegistrationMessage);
+            //TextView invalidRegistration = (TextView) findViewById(R.id.invalidRegistrationMessage);
             invalidUsername =(TextView)findViewById(R.id.invalidUsernameMessage);
 
 

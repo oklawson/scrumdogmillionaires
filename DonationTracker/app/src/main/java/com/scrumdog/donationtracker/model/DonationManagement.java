@@ -108,7 +108,6 @@ public class DonationManagement {
     /**
      * loads the JSON file storing the donation data
      * @param file the JSON file
-     * @return true if the file is successfully loaded, false otherwise
      */
     @SuppressLint("LongLogTag")
     public void loadJson(File file) {
@@ -132,7 +131,6 @@ public class DonationManagement {
     /**
      * save data to the JSON file storing the donation data
      * @param file the JSON file
-     * @return true if the data is successfully saved to the file, false otherwise
      */
     @SuppressLint("LongLogTag")
     public void saveJson(File file) {

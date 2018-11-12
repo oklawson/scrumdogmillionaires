@@ -12,32 +12,32 @@ public class Donation {
     public static final List<String> theCategories = Arrays.asList("Clothing", "Hat", "Kitchen", "Electronics", "Household", "Other");
 
     /** this items short description */
-    private String _shortDescription;
+    private final String _shortDescription;
 
     /** this items price */
-    private String _dollarValue;
+    private final String _dollarValue;
 
     /** this items category */
-    private String _category;
+    private final String _category;
 
     /** this items description */
-    private String _fullDescription;
+    private final String _fullDescription;
 
     /** this items comment */
-    private String _comments;
+    private final String _comments;
 
     /** this items location */
     private Location _location;
 
     /** this items time-stamp */
-    private Date timeStamp;
+    private final Date timeStamp;
 
-    private String _locationS;
+    private final String _locationS;
 
-    private boolean _listed;
+    private final boolean _listed;
 
     // user management
-    UserManagement umt = UserManagement.getInstance();
+    //UserManagement umt = UserManagement.getInstance();
 
 
     //public static ArrayList<Donation> _donation = new ArrayList<>();
@@ -51,11 +51,11 @@ public class Donation {
      */
     public String getShortDescription() { return _shortDescription; }
 
-    /**
-     * set the donation's shortDescription
-     * @param shortDescription the shortDescription of the donation
-     */
-    public void setShortDescription(String shortDescription) { _shortDescription = shortDescription; }
+//    /**
+//     * set the donation's shortDescription
+//     * @param shortDescription the shortDescription of the donation
+//     */
+//    public void setShortDescription(String shortDescription) { _shortDescription = shortDescription; }
 
     /**
      * get the donation's dollarValue
@@ -63,11 +63,11 @@ public class Donation {
      */
     public String getDollarValue() { return _dollarValue; }
 
-    /**
-     * set the donation's dollarValue
-     * @param dollarValue the dollarValue of the donation
-     */
-    public void setDollarValue(String dollarValue) { _dollarValue = dollarValue; }
+//    /**
+//     * set the donation's dollarValue
+//     * @param dollarValue the dollarValue of the donation
+//     */
+//    public void setDollarValue(String dollarValue) { _dollarValue = dollarValue; }
 
     /**
      * get the donation's category
@@ -75,11 +75,11 @@ public class Donation {
      */
     public String getCategory() { return _category; }
 
-    /**
-     * set the donation's category
-     * @param category the category of the donation
-     */
-    public void setCategory(String category) { _category = category; }
+//    /**
+//     * set the donation's category
+//     * @param category the category of the donation
+//     */
+//    public void setCategory(String category) { _category = category; }
 
     /**
      * get the donation's fullDescription
@@ -87,11 +87,11 @@ public class Donation {
      */
     public String getFullDescription() { return _fullDescription; }
 
-    /**
-     * set the donation's fullDescription
-     * @param fullDescription the fullDescription of the donation
-     */
-    public void setFullDescription(String fullDescription) { _fullDescription = fullDescription; }
+//    /**
+//     * set the donation's fullDescription
+//     * @param fullDescription the fullDescription of the donation
+//     */
+//    public void setFullDescription(String fullDescription) { _fullDescription = fullDescription; }
 
     /**
      * get the donation's comments
@@ -99,11 +99,11 @@ public class Donation {
      */
     public String getComments() { return _comments; }
 
-    /**
-     * set the donation's comments
-     * @param comments the comments of the donation
-     */
-    public void setComments(String comments) { _comments = comments; }
+//    /**
+//     * set the donation's comments
+//     * @param comments the comments of the donation
+//     */
+//    public void setComments(String comments) { _comments = comments; }
 
     /**
      * get the location of a certain item
@@ -111,35 +111,35 @@ public class Donation {
      */
     public String getItemLocationS() { return _locationS; }
 
-    /**
-     * set the locations of a certain item
-     * @param location the locations of the item
-     */
-    public void setItemLocationS(String location) { _locationS = location; }
+//    /**
+//     * set the locations of a certain item
+//     * @param location the locations of the item
+//     */
+//    public void setItemLocationS(String location) { _locationS = location; }
 
-    /**
-     * get the donation's location
-     * @return _location the location of the donation
-     */
-    public Location getItemLocation() { return _location; }
-
-    /**
-     * set the donation's location
-     * @param location the location of the donation
-     */
-    public void setItemLocation(Location location) { _location = location; }
-
-    /**
-     * get the list of donations
-     * @return _listed the list of donations
-     */
-    public boolean getListed() { return _listed; }
-
-    /**
-     * set the list of donations
-     * @param listed the list of donations
-     */
-    public void setListed(boolean listed) { _listed = listed; }
+//    /**
+//     * get the donation's location
+//     * @return _location the location of the donation
+//     */
+//    public Location getItemLocation() { return _location; }
+//
+//    /**
+//     * set the donation's location
+//     * @param location the location of the donation
+//     */
+//    public void setItemLocation(Location location) { _location = location; }
+//
+//    /**
+//     * get the list of donations
+//     * @return _listed the list of donations
+//     */
+//    public boolean getListed() { return _listed; }
+//
+//    /**
+//     * set the list of donations
+//     * @param listed the list of donations
+//     */
+//    public void setListed(boolean listed) { _listed = listed; }
 
     /**
      * get the donation's timestamp
@@ -168,29 +168,29 @@ public class Donation {
         //_donation.add(this);
     }
 
-    /**
-     * No param constructor -- DO NOT CALL NORMALLY
-     * This constructor only for GUI use in edit/new student dialog
-     */
-    public Donation() {
-        this("enter new name" , "NA", "NA", "NA", "NA", "NA");
-        timeStamp = new Date();
-    }
+//    /**
+//     * No param constructor -- DO NOT CALL NORMALLY
+//     * This constructor only for GUI use in edit/new student dialog
+//     */
+//    public Donation() {
+//        this("enter new name" , "NA", "NA", "NA", "NA", "NA");
+//        timeStamp = new Date();
+//    }
 
 
-    /**
-     * Make a new donation
-     * @param location the location of the item name
-     * @return l the corresponding location if item name is found, null otherwise
-     */
-    public static Location findLocationByName(String location) {
-        for (Location l : Location.locations) {
-            if (location.equals(l.getName())) {
-                return l;
-            }
-        }
-        return null;
-    }
+//    /**
+//     * Make a new donation
+//     * @param location the location of the item name
+//     * @return l the corresponding location if item name is found, null otherwise
+//     */
+//    public static Location findLocationByName(String location) {
+//        for (Location l : Location.locations) {
+//            if (location.equals(l.getName())) {
+//                return l;
+//            }
+//        }
+//        return null;
+//    }
 
     /**
      *

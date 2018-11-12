@@ -74,18 +74,18 @@ class DonationManager {
     }
 
 
-    /**
-     * this is package vis because only model should be asking for this data
-     *
-     * @return list of donations
-     */
-    List<Donation> getDonations() {
-        return donations;
-    }
-
-    Donation getDonationByName(String name) {
-        return donationMap.get(name);
-    }
+//    /**
+//     * this is package vis because only model should be asking for this data
+//     *
+//     * @return list of donations
+//     */
+//    List<Donation> getDonations() {
+//        return donations;
+//    }
+//
+//    Donation getDonationByName(String name) {
+//        return donationMap.get(name);
+//    }
 
 
     /**

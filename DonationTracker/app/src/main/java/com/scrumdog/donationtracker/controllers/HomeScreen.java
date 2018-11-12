@@ -11,7 +11,6 @@ import android.content.Intent;
 
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.DonationManagement;
-import com.scrumdog.donationtracker.model.User;
 
 //import com.google.gson.Gson;
 import com.scrumdog.donationtracker.model.UserManagement;
@@ -31,11 +30,10 @@ import java.io.File;
 
 public class HomeScreen extends AppCompatActivity {
 
-    public final static String DEFAULT_BINARY_FILE_NAME = "data.bin";
-    public final static String DEFAULT_TEXT_FILE_NAME = "data.txt";
-    public final static String DEFAULT_JSON_FILE_NAME = "data.json";
-    private User sm;
-
+//    public final static String DEFAULT_BINARY_FILE_NAME = "data.bin";
+//    public final static String DEFAULT_TEXT_FILE_NAME = "data.txt";
+//    public final static String DEFAULT_JSON_FILE_NAME = "data.json";
+//    private User sm;
 
     private final UserManagement umt = UserManagement.getInstance();
     private final DonationManagement dmt = DonationManagement.getInstance();

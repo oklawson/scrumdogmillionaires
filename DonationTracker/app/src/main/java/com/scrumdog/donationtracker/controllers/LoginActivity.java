@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 //import android.widget.Spinner;
 
 import android.content.Intent;
@@ -37,8 +36,8 @@ public class LoginActivity extends AppCompatActivity {
             Password = (EditText)findViewById(R.id.etPassword);
             Button login = (Button) findViewById(R.id.btnLogin);
             Button cancel = (Button) findViewById(R.id.cancelButton);
-        TextView invalidLogin = (TextView) findViewById(R.id.invalidLoginMessage);
-            Button addDonation = (Button) findViewById(R.id.viewDonationEntryPage);
+        //TextView invalidLogin = (TextView) findViewById(R.id.invalidLoginMessage);
+            //Button addDonation = (Button) findViewById(R.id.viewDonationEntryPage);
 
 
             login.setOnClickListener(new View.OnClickListener() {

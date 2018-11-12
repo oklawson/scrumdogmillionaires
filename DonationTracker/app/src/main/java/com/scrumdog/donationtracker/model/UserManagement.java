@@ -137,7 +137,6 @@ public class UserManagement {
     /**
      * loads the JSON file storing the user data
      * @param file the JSON file
-     * @return true if the file is successfully loaded, false otherwise
      */
     public void loadJson(File file) {
         try {
@@ -160,7 +159,6 @@ public class UserManagement {
     /**
      * save data to the JSON file storing the user data
      * @param file the JSON file
-     * @return true if the data is successfully saved to the file, false otherwise
      */
     public void saveJson(File file) {
 

@@ -13,7 +13,7 @@ import com.scrumdog.donationtracker.R;
 //import com.scrumdog.donationtracker.model.Donation;
 //import com.scrumdog.donationtracker.model.User;
 //import com.scrumdog.donationtracker.model.Location;
-import com.scrumdog.donationtracker.model.UserManagement;
+
 
 //import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public class DonationList extends AppCompatActivity {
     public static String TimeStamp;
     public static String Comments;
 
-    UserManagement umt = UserManagement.getInstance();
+    //UserManagement umt = UserManagement.getInstance();
 
 
 //    public static void findNumDonations() {

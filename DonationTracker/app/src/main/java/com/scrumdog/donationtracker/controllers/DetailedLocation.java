@@ -15,11 +15,11 @@ public class DetailedLocation extends AppCompatActivity {
         setContentView(R.layout.activity_detailed_location);
 
         TextView locationName = (TextView) findViewById(R.id.LocationName);
-        TextView locationType = (TextView) findViewById(R.id.LocationType);
-        TextView latitude = (TextView) findViewById(R.id.Latitude);
-        TextView longitude = (TextView) findViewById(R.id.Longitude);
-        TextView address = (TextView) findViewById(R.id.Address);
-        TextView phoneNumber = (TextView) findViewById(R.id.PhoneNumber);
+//        TextView locationType = (TextView) findViewById(R.id.LocationType);
+//        TextView latitude = (TextView) findViewById(R.id.Latitude);
+//        TextView longitude = (TextView) findViewById(R.id.Longitude);
+//        TextView address = (TextView) findViewById(R.id.Address);
+//        TextView phoneNumber = (TextView) findViewById(R.id.PhoneNumber);
         TextView DLocationType = (TextView) findViewById(R.id.DLocationType);
         TextView DLatitude = (TextView) findViewById(R.id.DLocationLatitude);
         TextView DLongitude = (TextView) findViewById(R.id.DLocationLongitude);

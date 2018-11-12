@@ -8,10 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 //import android.util.Log;
 //import java.util.List;
-import java.util.ArrayList;
 
 import com.scrumdog.donationtracker.R;
-import com.scrumdog.donationtracker.model.Location;
 //import com.scrumdog.donationtracker.model.User;
 //import com.scrumdog.donationtracker.model.UserManager;
 import com.scrumdog.donationtracker.model.UserManagement;
@@ -31,7 +29,7 @@ import com.scrumdog.donationtracker.model.UserManagement;
 
 public class MainActivity extends AppCompatActivity {
 
-    static ArrayList<Location> locations;
+    //static ArrayList<Location> locations;
 
     private final UserManagement umt = UserManagement.getInstance();
 
