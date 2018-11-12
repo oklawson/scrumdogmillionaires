@@ -36,7 +36,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         private TextView invalidRegistration;
         private TextView invalidUsername;
 
-        UserManagement umt = UserManagement.getInstance();
+        private UserManagement umt = UserManagement.getInstance();
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {

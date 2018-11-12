@@ -61,15 +61,15 @@ public class DonationList extends AppCompatActivity {
      *               to display more information about the donation
      * @return v the a
      */
-    View.OnClickListener getOnClickDoSomething(final Button button)  {
+    private View.OnClickListener getOnClickDoSomething(final Button button)  {
         return new View.OnClickListener() {
             public void onClick(View v) {
                 int id = button.getId();
-                ShortDescription = DonationEntryActivity.donations.get(id).getshortDescription();
+                ShortDescription = DonationEntryActivity.donations.get(id).getShortDescription();
                 FullDescription = DonationEntryActivity.donations.get(id).getFullDescription();
                 Loc = DonationEntryActivity.donations.get(id).getItemLocationS();
                 Category = DonationEntryActivity.donations.get(id).getCategory();
-                Val = DonationEntryActivity.donations.get(id).getdollarValue();
+                Val = DonationEntryActivity.donations.get(id).getDollarValue();
                 TimeStamp = DonationEntryActivity.donations.get(id).getTimeStamp().toString();
                 Comments = DonationEntryActivity.donations.get(id).getComments();
 

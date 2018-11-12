@@ -44,7 +44,7 @@ public class DonationEntryActivity extends AppCompatActivity {
     //make a LocationList Dropdown
     //add a picture upload category?
 
-    DonationManagement dmt = DonationManagement.getInstance();
+    private DonationManagement dmt = DonationManagement.getInstance();
 
     public static ArrayList<Donation> donations = new ArrayList<>();
 
@@ -85,7 +85,7 @@ public class DonationEntryActivity extends AppCompatActivity {
                     String locationName = location.getSelectedItem().toString();
                     Donation newDonation = new Donation(shortDescription.getText().toString(), dollarValue.getText().toString(), categoryName, fullDescription.getText().toString(), comments.getText().toString(), locationName);
                     donations.add(newDonation);
-                    dmt.addNewDonation(newDonation.getshortDescription(), newDonation.getdollarValue(), newDonation.getCategory(), newDonation.getFullDescription(), newDonation.getComments(), newDonation.getItemLocationS());
+                    dmt.addNewDonation(newDonation.getShortDescription(), newDonation.getDollarValue(), newDonation.getCategory(), newDonation.getFullDescription(), newDonation.getComments(), newDonation.getItemLocationS());
                     dmt.saveJson(new File(getApplicationContext().getFilesDir(), DonationManagement.DEFAULT_JSON_FILE_NAME));
                     //display "added!"
                     //addedMessage.setVisibility(View.VISIBLE);

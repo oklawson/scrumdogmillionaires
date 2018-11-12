@@ -65,7 +65,7 @@ public class User implements Serializable {
      *
      * @return user's name
      */
-    public String getName() {
+    private String getName() {
         return name;
     }
 

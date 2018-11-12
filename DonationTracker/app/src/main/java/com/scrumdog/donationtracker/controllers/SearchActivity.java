@@ -26,7 +26,7 @@ import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
-    public EditText SearchBar;
+    private EditText SearchBar;
     private Button SearchButton;
     private TextView SearchTitle;
     private Spinner FilterSpinner;
@@ -49,8 +49,8 @@ public class SearchActivity extends AppCompatActivity {
     public static boolean itemNameSelected = false;
     public static boolean nameSearch = false;
 
-    public static List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
-    public static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
+    private static List<String> filterOptions = Arrays.asList("None", "Category", "Item Name");
+    private static List<String> locationOptions = Arrays.asList("All Locations", "AFD Station 4", "Boys & Girls Club", "Pathway Christian Ministries", "Pavilion of Hope Inc", "D&D Convenience Store", "Keep North Fulton Beautiful");
 
 
     @Override

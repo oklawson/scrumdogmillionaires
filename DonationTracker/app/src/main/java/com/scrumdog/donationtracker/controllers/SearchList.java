@@ -26,10 +26,10 @@ public class SearchList extends AppCompatActivity {
 
     private TextView NoItemsText;
 
-    public static int count = 0;
+    private static int count = 0;
 
 
-    View.OnClickListener getOnClickDoSomething(final Button button)  {
+    private View.OnClickListener getOnClickDoSomething(final Button button)  {
         return new View.OnClickListener() {
             public void onClick(View v) {
                 int id = button.getId();
