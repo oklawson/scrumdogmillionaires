@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
 
 public class User implements Serializable {
 
@@ -49,12 +48,12 @@ public class User implements Serializable {
         password = p;
     }
 
+
     /**
-     * check an entered password for a match
+     *  check an entered password for a match
      *
-     * @pwd pwd is not null
-     * @param pwd the password to check
-     * @return true is passwords match, false otherwise
+     * @param pwd
+     * @return
      */
     public boolean checkPassword(String pwd) {
         return getPassword().equals(pwd);
