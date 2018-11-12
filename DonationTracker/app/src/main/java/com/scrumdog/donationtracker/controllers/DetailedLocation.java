@@ -9,36 +9,24 @@ import com.scrumdog.donationtracker.R;
 
 public class DetailedLocation extends AppCompatActivity {
 
-    private TextView LocationName;
-    private TextView LocationType;
-    private TextView Latitude;
-    private TextView Longitude;
-    private TextView Address;
-    private TextView PhoneNumber;
-    private TextView DLocationType;
-    private TextView DLatitude;
-    private TextView DLongitude;
-    private TextView DAddress;
-    private TextView DPhoneNumber;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_location);
 
-        LocationName = (TextView) findViewById(R.id.LocationName);
-        LocationType = (TextView) findViewById(R.id.LocationType);
-        Latitude = (TextView) findViewById(R.id.Latitude);
-        Longitude = (TextView) findViewById(R.id.Longitude);
-        Address = (TextView) findViewById(R.id.Address);
-        PhoneNumber = (TextView) findViewById(R.id.PhoneNumber);
-        DLocationType = (TextView) findViewById(R.id.DLocationType);
-        DLatitude = (TextView) findViewById(R.id.DLocationLatitude);
-        DLongitude = (TextView) findViewById(R.id.DLocationLongitude);
-        DAddress = (TextView) findViewById(R.id.DLocationAddress);
-        DPhoneNumber = (TextView) findViewById(R.id.DLocationPhone);
+        TextView locationName = (TextView) findViewById(R.id.LocationName);
+        TextView locationType = (TextView) findViewById(R.id.LocationType);
+        TextView latitude = (TextView) findViewById(R.id.Latitude);
+        TextView longitude = (TextView) findViewById(R.id.Longitude);
+        TextView address = (TextView) findViewById(R.id.Address);
+        TextView phoneNumber = (TextView) findViewById(R.id.PhoneNumber);
+        TextView DLocationType = (TextView) findViewById(R.id.DLocationType);
+        TextView DLatitude = (TextView) findViewById(R.id.DLocationLatitude);
+        TextView DLongitude = (TextView) findViewById(R.id.DLocationLongitude);
+        TextView DAddress = (TextView) findViewById(R.id.DLocationAddress);
+        TextView DPhoneNumber = (TextView) findViewById(R.id.DLocationPhone);
 
-        LocationName.setText(LocationList.locationName);
+        locationName.setText(LocationList.locationName);
         DLocationType.setText(LocationList.locationType);
         DLatitude.setText(Double.toString(LocationList.latitude));
         DLongitude.setText(Double.toString(LocationList.longitude));

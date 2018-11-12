@@ -13,7 +13,6 @@ import static org.junit.Assert.*;
 public class RegistrationActivityTest {
 
     private RegistrationActivity testRegistrationActivity;
-    private UserManager testUserManager;
 
     /**
      * set up the UserManager to be tested
@@ -21,7 +20,7 @@ public class RegistrationActivityTest {
     @Before
     public void setUp() {
         testRegistrationActivity = new RegistrationActivity();
-        testUserManager = new UserManager();
+        UserManager testUserManager = new UserManager();
         testUserManager.addUser("Jackie", "jackie@gmail.com", "User","Boys & Girls Club", "jackie");
     }
 

@@ -19,19 +19,6 @@ import java.nio.charset.StandardCharsets;
 
 public class LocationList extends AppCompatActivity {
 
-    private TextView Location1;
-    private TextView Location2;
-    private TextView Location3;
-    private TextView Location4;
-    private TextView Location5;
-    private TextView Location6;
-    private Button Button1;
-    private Button Button2;
-    private Button Button3;
-    private Button Button4;
-    private Button Button5;
-    private Button Button6;
-
     public static String locationName;
     public static String locationType;
     public static double longitude;
@@ -56,28 +43,28 @@ public class LocationList extends AppCompatActivity {
         String location5 = Location.locations.get(4).getName();
         String location6 = Location.locations.get(5).getName();
 
-        Button1 = (Button) findViewById(R.id.button1);
-        Button2 = (Button) findViewById(R.id.button2);
-        Button3 = (Button) findViewById(R.id.button3);
-        Button4 = (Button) findViewById(R.id.button4);
-        Button5 = (Button) findViewById(R.id.button5);
-        Button6 = (Button) findViewById(R.id.button6);
-        Location1 = (TextView) findViewById(R.id.Location1);
-        Location2 = (TextView) findViewById(R.id.Location2);
-        Location3 = (TextView) findViewById(R.id.Location3);
-        Location4 = (TextView) findViewById(R.id.Location4);
-        Location5 = (TextView) findViewById(R.id.Location5);
-        Location6 = (TextView) findViewById(R.id.Location6);
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
+        Button button3 = (Button) findViewById(R.id.button3);
+        Button button4 = (Button) findViewById(R.id.button4);
+        Button button5 = (Button) findViewById(R.id.button5);
+        Button button6 = (Button) findViewById(R.id.button6);
+        TextView location11 = (TextView) findViewById(R.id.Location1);
+        TextView location21 = (TextView) findViewById(R.id.Location2);
+        TextView location31 = (TextView) findViewById(R.id.Location3);
+        TextView location41 = (TextView) findViewById(R.id.Location4);
+        TextView location51 = (TextView) findViewById(R.id.Location5);
+        TextView location61 = (TextView) findViewById(R.id.Location6);
 
-        Location1.setText(location1);
-        Location2.setText(location2);
-        Location3.setText(location3);
-        Location4.setText(location4);
-        Location5.setText(location5);
-        Location6.setText(location6);
+        location11.setText(location1);
+        location21.setText(location2);
+        location31.setText(location3);
+        location41.setText(location4);
+        location51.setText(location5);
+        location61.setText(location6);
 
 
-        Button1.setOnClickListener(new View.OnClickListener() {
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 locationName = Location.locations.get(0).getName();;
@@ -91,7 +78,7 @@ public class LocationList extends AppCompatActivity {
             }
         });
 
-        Button2.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 locationName = Location.locations.get(1).getName();;
@@ -105,7 +92,7 @@ public class LocationList extends AppCompatActivity {
             }
         });
 
-        Button3.setOnClickListener(new View.OnClickListener() {
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 locationName = Location.locations.get(2).getName();;
@@ -119,7 +106,7 @@ public class LocationList extends AppCompatActivity {
             }
         });
 
-        Button4.setOnClickListener(new View.OnClickListener() {
+        button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 locationName = Location.locations.get(3).getName();;
@@ -133,7 +120,7 @@ public class LocationList extends AppCompatActivity {
             }
         });
 
-        Button5.setOnClickListener(new View.OnClickListener() {
+        button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 locationName = Location.locations.get(4).getName();;
@@ -147,7 +134,7 @@ public class LocationList extends AppCompatActivity {
             }
         });
 
-        Button6.setOnClickListener(new View.OnClickListener() {
+        button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 locationName = Location.locations.get(5).getName();;

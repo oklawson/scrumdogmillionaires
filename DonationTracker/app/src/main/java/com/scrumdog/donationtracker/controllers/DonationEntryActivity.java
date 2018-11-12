@@ -40,7 +40,6 @@ public class DonationEntryActivity extends AppCompatActivity {
     private EditText dollarValue;
     private EditText comments;
     private TextView addedMessage;
-    private Button addButton;
     //make a LocationList Dropdown
     //add a picture upload category?
 
@@ -66,7 +65,7 @@ public class DonationEntryActivity extends AppCompatActivity {
         dollarValue = (EditText)findViewById(R.id.dollarValue);
         comments = (EditText)findViewById(R.id.comments);
 //        addedMessage = (TextView)findViewById(R.id.addedMessage);  //idk why not working?
-        addButton = (Button) findViewById(R.id.addButton);
+        Button addButton = (Button) findViewById(R.id.addButton);
 
         //make an array of available categories for drop down
         ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Donation.theCategories);

@@ -27,25 +27,21 @@ public class LoginActivity extends AppCompatActivity {
 
         private EditText Username;
         private EditText Password;
-        private Button Login;
-        private Button Cancel;
-        private Button AddDonation;
-        private TextView invalidLogin;
 
-        @Override
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
 
             Username = (EditText)findViewById(R.id.etUsername);
             Password = (EditText)findViewById(R.id.etPassword);
-            Login = (Button)findViewById(R.id.btnLogin);
-            Cancel = (Button) findViewById(R.id.cancelButton);
-            invalidLogin =(TextView)findViewById(R.id.invalidLoginMessage);
-            AddDonation = (Button) findViewById(R.id.viewDonationEntryPage);
+            Button login = (Button) findViewById(R.id.btnLogin);
+            Button cancel = (Button) findViewById(R.id.cancelButton);
+        TextView invalidLogin = (TextView) findViewById(R.id.invalidLoginMessage);
+            Button addDonation = (Button) findViewById(R.id.viewDonationEntryPage);
 
 
-            Login.setOnClickListener(new View.OnClickListener() {
+            login.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     UserManagement umt = UserManagement.getInstance();
@@ -60,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-            Cancel.setOnClickListener(new View.OnClickListener() {
+            cancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(LoginActivity.this, HomeScreen.class);

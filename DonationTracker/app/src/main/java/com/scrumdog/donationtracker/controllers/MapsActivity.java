@@ -23,7 +23,6 @@ import java.nio.charset.StandardCharsets;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
     private Marker m0;
     private Marker m1;
     private Marker m2;
@@ -63,7 +62,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             e.printStackTrace();
         }
 
-        mMap = googleMap;
+        GoogleMap mMap = googleMap;
 
          //Add a marker at location 0
 //        LatLng location0 = new LatLng(Location.locations.get(0).getLatitude(), Location.locations.get(0).getLongitude());
