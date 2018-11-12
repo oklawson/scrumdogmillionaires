@@ -11,22 +11,6 @@ import android.widget.TextView;
 
 public class DonationDetails extends AppCompatActivity {
 
-    private TextView ShortDescription;
-    private TextView FullDescription;
-    private TextView Location;
-    private TextView Category;
-    private TextView Value;
-    private TextView TimeStamp;
-    private TextView Comments;
-
-    private TextView sShortDescription;
-    private TextView sFullDescription;
-    private TextView sLocation;
-    private TextView sCategory;
-    private TextView sValue;
-    private TextView sTimeStamp;
-    private TextView sComments;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,29 +20,29 @@ public class DonationDetails extends AppCompatActivity {
         String source = getIntent().getStringExtra("Source");
 
         if (source.equals("from DonationList")) {
-            ShortDescription = (TextView) findViewById(R.id.shortDescription);
-            FullDescription = (TextView) findViewById(R.id.fullDescription);
-            Location = (TextView) findViewById(R.id.Location);
-            Category = (TextView) findViewById(R.id.category);
-            Value = (TextView) findViewById(R.id.price);
-            TimeStamp = (TextView) findViewById(R.id.timestamp);
-            Comments = (TextView) findViewById(R.id.comments);
+            TextView shortDescription = (TextView) findViewById(R.id.shortDescription);
+            TextView fullDescription = (TextView) findViewById(R.id.fullDescription);
+            TextView location = (TextView) findViewById(R.id.Location);
+            TextView category = (TextView) findViewById(R.id.category);
+            TextView value = (TextView) findViewById(R.id.price);
+            TextView timeStamp = (TextView) findViewById(R.id.timestamp);
+            TextView comments = (TextView) findViewById(R.id.comments);
 
-            ShortDescription.setText(DonationList.ShortDescription);
-            FullDescription.setText(DonationList.FullDescription);
-            Location.setText(DonationList.Loc);
-            Category.setText(DonationList.Category);
-            Value.setText(DonationList.Val);
-            TimeStamp.setText(DonationList.TimeStamp);
-            Comments.setText(DonationList.Comments);
+            shortDescription.setText(DonationList.ShortDescription);
+            fullDescription.setText(DonationList.FullDescription);
+            location.setText(DonationList.Loc);
+            category.setText(DonationList.Category);
+            value.setText(DonationList.Val);
+            timeStamp.setText(DonationList.TimeStamp);
+            comments.setText(DonationList.Comments);
         } else {
-            sShortDescription = (TextView) findViewById(R.id.shortDescription);
-            sFullDescription = (TextView) findViewById(R.id.fullDescription);
-            sLocation = (TextView) findViewById(R.id.Location);
-            sCategory = (TextView) findViewById(R.id.category);
-            sValue = (TextView) findViewById(R.id.price);
-            sTimeStamp = (TextView) findViewById(R.id.timestamp);
-            sComments = (TextView) findViewById(R.id.comments);
+            TextView sShortDescription = (TextView) findViewById(R.id.shortDescription);
+            TextView sFullDescription = (TextView) findViewById(R.id.fullDescription);
+            TextView sLocation = (TextView) findViewById(R.id.Location);
+            TextView sCategory = (TextView) findViewById(R.id.category);
+            TextView sValue = (TextView) findViewById(R.id.price);
+            TextView sTimeStamp = (TextView) findViewById(R.id.timestamp);
+            TextView sComments = (TextView) findViewById(R.id.comments);
 
             sShortDescription.setText(SearchList.ShortDescription);
             sFullDescription.setText(SearchList.FullDescription);

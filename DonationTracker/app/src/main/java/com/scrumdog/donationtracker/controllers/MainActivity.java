@@ -30,13 +30,6 @@ import com.scrumdog.donationtracker.model.UserManagement;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button Logout;
-    private Button ViewLocations;
-    private Button EnterDonations;
-    private Button ViewDonationList;
-    private Button Search;
-    private TextView textview;
-    private Button ViewMap;
 
     static ArrayList<Location> locations;
 
@@ -47,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textview = (TextView) findViewById(R.id.textView);
+        TextView textview = (TextView) findViewById(R.id.textView);
 
         // set currentUser within doLogin and doRegister as long as it's before this line of code
         // which it should be, can't do this in MainActivity until someone is logged in conceptually
@@ -55,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
             textview.setText("My Location: " + umt.getCurrentUser().getUserLocation());
         }
 
-        ViewLocations = (Button) findViewById(R.id.viewLocationsButton);
+        Button viewLocations = (Button) findViewById(R.id.viewLocationsButton);
 
         if(umt.getCurrentUser().getUserType().equals("Location Employee")) {
-            ViewLocations.setText("View Other Locations");
+            viewLocations.setText("View Other Locations");
         }
 
-        ViewLocations.setOnClickListener(new View.OnClickListener() {
+        viewLocations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LocationList.class);
@@ -69,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Search = (Button) findViewById(R.id.search);
+        Button search = (Button) findViewById(R.id.search);
 
-        Search.setOnClickListener(new View.OnClickListener() {
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SearchActivity.class);
@@ -80,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //adding middle button to access data entry for donations page
-        EnterDonations = (Button) findViewById(R.id.viewDonationEntryPage);
-        ViewDonationList = (Button) findViewById(R.id.viewDonationList);
+        Button enterDonations = (Button) findViewById(R.id.viewDonationEntryPage);
+        Button viewDonationList = (Button) findViewById(R.id.viewDonationList);
 
 //        if(umt.getCurrentUser().getUserType().equals("Admin")) {
 //            EnterDonations.setVisibility(View.VISIBLE);
@@ -89,14 +82,14 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         if(umt.getCurrentUser().getUserType().equals("Location Employee")) {
-            EnterDonations.setVisibility(View.VISIBLE);
-            ViewDonationList.setVisibility(View.VISIBLE);
+            enterDonations.setVisibility(View.VISIBLE);
+            viewDonationList.setVisibility(View.VISIBLE);
         } else {
-            EnterDonations.setVisibility(View.INVISIBLE);
-            ViewDonationList.setVisibility(View.INVISIBLE);
+            enterDonations.setVisibility(View.INVISIBLE);
+            viewDonationList.setVisibility(View.INVISIBLE);
         }
 
-        EnterDonations.setOnClickListener(new View.OnClickListener() {
+        enterDonations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, DonationEntryActivity.class);
@@ -104,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ViewDonationList.setOnClickListener(new View.OnClickListener() {
+        viewDonationList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, DonationList.class);
@@ -113,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        ViewLocations.setOnClickListener(new View.OnClickListener() {
+        viewLocations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LocationList.class);
@@ -121,9 +114,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ViewMap = (Button) findViewById(R.id.ViewMap);
+        Button viewMap = (Button) findViewById(R.id.ViewMap);
 
-        ViewMap.setOnClickListener(new View.OnClickListener() {
+        viewMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MapsActivity.class);
@@ -131,9 +124,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Logout = (Button) findViewById(R.id.logoutButton);
+        Button logout = (Button) findViewById(R.id.logoutButton);
 
-        Logout.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 umt.doLogout();

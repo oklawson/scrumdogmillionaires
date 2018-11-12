@@ -31,10 +31,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         private EditText userID;
         private Spinner accountTypeSpinner;
         private Spinner specificLocationSpinner;
-        private Button Register;
-        private Button Cancel;
-        private TextView invalidRegistration;
-        private TextView invalidUsername;
+    private TextView invalidUsername;
 
         UserManagement umt = UserManagement.getInstance();
 
@@ -48,9 +45,9 @@ public class RegistrationActivity extends AppCompatActivity  {
             userID = (EditText)findViewById(R.id.etID);
             accountTypeSpinner = (Spinner)findViewById(R.id.accountTypeSpinner);
             specificLocationSpinner = (Spinner)findViewById(R.id.specificLocationSpinner);
-            Register = (Button)findViewById(R.id.btnRegister);
-            Cancel = (Button) findViewById(R.id.cancelButton);
-            invalidRegistration =(TextView)findViewById(R.id.invalidRegistrationMessage);
+            Button register = (Button) findViewById(R.id.btnRegister);
+            Button cancel = (Button) findViewById(R.id.cancelButton);
+            TextView invalidRegistration = (TextView) findViewById(R.id.invalidRegistrationMessage);
             invalidUsername =(TextView)findViewById(R.id.invalidUsernameMessage);
 
 
@@ -79,7 +76,7 @@ public class RegistrationActivity extends AppCompatActivity  {
 
 
 
-            Register.setOnClickListener(new OnClickListener() {
+            register.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     String userLocation;
@@ -105,7 +102,7 @@ public class RegistrationActivity extends AppCompatActivity  {
             });
 
 
-            Cancel.setOnClickListener(new OnClickListener() {
+            cancel.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(RegistrationActivity.this, HomeScreen.class);
