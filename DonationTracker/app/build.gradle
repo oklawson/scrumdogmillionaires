@@ -44,8 +44,7 @@ dependencies {
     // Espresso core
     testImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
     // Espresso intents
-    testImplementation 'com.android.support.test.espresso:espresso-intents:2.2'
-
+    testImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1'
 }
 
 configurations.all {
