@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".controllers.DetailedLocation">
 
-    <EditText
-        android:labelFor="@+id/PhoneNumber"
+    <TextView
+        android:id="@+id/PhoneNumber"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
@@ -15,15 +15,14 @@
         android:layout_marginStart="26dp"
         android:layout_marginTop="30dp"
         android:ems="6"
-        android:inputType="textPersonName"
         android:text="Phone Number:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/DLocationPhone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Address" />
 
-    <EditText
-        android:labelFor="@+id/Address"
+    <TextView
+        android:id="@+id/Address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -31,15 +30,14 @@
         android:layout_marginStart="49dp"
         android:layout_marginTop="16dp"
         android:ems="5"
-        android:inputType="textPersonName"
         android:text="Address:"
         app:layout_constraintBottom_toTopOf="@+id/PhoneNumber"
         app:layout_constraintEnd_toStartOf="@+id/DLocationAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Longitude" />
 
-    <EditText
-        android:labelFor="@+id/Longitude"
+    <TextView
+        android:id="@+id/Longitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -47,15 +45,14 @@
         android:layout_marginStart="49dp"
         android:layout_marginTop="8dp"
         android:ems="5"
-        android:inputType="textPersonName"
         android:text="Longitude:"
         app:layout_constraintBottom_toTopOf="@+id/Address"
         app:layout_constraintEnd_toStartOf="@+id/DLocationLatitude"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Latitude" />
 
-    <EditText
-        android:labelFor="@+id/Latitude"
+    <TextView
+        android:id="@+id/Latitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
@@ -63,29 +60,27 @@
         android:layout_marginStart="49dp"
         android:layout_marginTop="16dp"
         android:ems="5"
-        android:inputType="textPersonName"
         android:text="Latitude:"
         app:layout_constraintBottom_toTopOf="@+id/Longitude"
         app:layout_constraintEnd_toStartOf="@+id/DLocationLongitude"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LocationType" />
 
-    <EditText
-        android:labelFor="@+id/LocationName"
+    <TextView
+        android:id="@+id/LocationName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="110dp"
         android:layout_marginStart="88dp"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:labelFor="@+id/LocationType"
+    <TextView
+        android:id="@+id/LocationType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -93,15 +88,14 @@
         android:layout_marginStart="49dp"
         android:layout_marginTop="41dp"
         android:ems="5"
-        android:inputType="textPersonName"
         android:text="Type: "
         app:layout_constraintBottom_toTopOf="@+id/Latitude"
         app:layout_constraintEnd_toStartOf="@+id/DLocationType"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LocationName" />
 
-    <EditText
-        android:labelFor="@+id/DLocationLatitude"
+    <TextView
+        android:id="@+id/DLocationLatitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -109,15 +103,14 @@
         android:layout_marginStart="43dp"
         android:layout_marginTop="24dp"
         android:ems="8"
-        android:inputType="textPersonName"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/DLocationAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Longitude"
         app:layout_constraintTop_toBottomOf="@+id/DLocationLongitude" />
 
-    <EditText
-        android:labelFor="@+id/DLocationLongitude"
+    <TextView
+        android:id="@+id/DLocationLongitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="11dp"
@@ -125,15 +118,14 @@
         android:layout_marginStart="43dp"
         android:layout_marginTop="13dp"
         android:ems="8"
-        android:inputType="textPersonName"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/DLocationLatitude"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Latitude"
         app:layout_constraintTop_toBottomOf="@+id/DLocationType" />
 
-    <EditText
-        android:labelFor="@+id/DLocationAddress"
+    <TextView
+        android:id="@+id/DLocationAddress"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_marginBottom="12dp"
@@ -141,15 +133,14 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/DLocationPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Address"
         app:layout_constraintTop_toBottomOf="@+id/DLocationLatitude" />
 
-    <EditText
-        android:labelFor="@+id/DLocationPhone"
+    <TextView
+        android:id="@+id/DLocationPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="37dp"
@@ -157,15 +148,14 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
         android:ems="8"
-        android:inputType="textPersonName"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/PhoneNumber"
         app:layout_constraintTop_toBottomOf="@+id/DLocationAddress" />
 
-    <EditText
-        android:labelFor="@+id/DLocationType"
+    <TextView
+        android:id="@+id/DLocationType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -173,7 +163,6 @@
         android:layout_marginStart="43dp"
         android:layout_marginTop="40dp"
         android:ems="8"
-        android:inputType="textPersonName"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/DLocationLongitude"
         app:layout_constraintEnd_toEndOf="parent"

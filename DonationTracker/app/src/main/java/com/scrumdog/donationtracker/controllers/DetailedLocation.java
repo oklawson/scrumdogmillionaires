@@ -28,8 +28,8 @@ public class DetailedLocation extends AppCompatActivity {
 
         locationName.setText(LocationList.locationName);
         DLocationType.setText(LocationList.locationType);
-        DLatitude.setText(Double.toString(LocationList.latitude));
-        DLongitude.setText(Double.toString(LocationList.longitude));
+        DLatitude.setText(String.format(String.valueOf(LocationList.latitude)));
+        DLongitude.setText(String.format(String.valueOf(LocationList.longitude)));
         DAddress.setText(LocationList.address);
         DPhoneNumber.setText(LocationList.phoneNumber);
     }

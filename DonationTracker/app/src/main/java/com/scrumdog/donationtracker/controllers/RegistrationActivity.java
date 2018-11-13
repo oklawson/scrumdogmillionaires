@@ -81,7 +81,7 @@ public class RegistrationActivity extends AppCompatActivity  {
                 public void onClick(View view) {
                     String userLocation;
                     //username doesn't exist, so create new user
-                    if(validate(userID.getText().toString()) == false) {
+                    if(!validate(userID.getText().toString())) {
                         String userType = accountTypeSpinner.getSelectedItem().toString();
                         if (!userType.equals("Location Employee")) {
                             userLocation = null;

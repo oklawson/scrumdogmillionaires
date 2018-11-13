@@ -121,7 +121,8 @@ public class DonationList extends AppCompatActivity {
                     row.addView(tvTag);
                     Button btnTag = new Button(this);
                     btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-                    btnTag.setText("View Details");
+                    String t = "View Details";
+                    btnTag.setText(t);
                     btnTag.setId(i);
                     row.addView(btnTag);
                     btnTag.setOnClickListener(getOnClickDoSomething(btnTag));

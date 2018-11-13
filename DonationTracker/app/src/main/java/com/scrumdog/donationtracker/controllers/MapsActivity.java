@@ -15,20 +15,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.scrumdog.donationtracker.R;
 import com.scrumdog.donationtracker.model.Location;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
-    private Marker m0;
-    private Marker m1;
-    private Marker m2;
-    private Marker m3;
-    private Marker m4;
-    private Marker m5;
 
     private static final int ZOOM_LEVEL = 10;
     private static final int TILT_LEVEL = 0;
@@ -112,7 +100,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Location location = Location.locations.get(i);
             Log.d("DEBUG", "Location: " + Location.locations.get(i));
             LatLng position = new LatLng(location.getLatitude(), location.getLongitude());
-            Marker marker = mMap.addMarker(new MarkerOptions()
+            mMap.addMarker(new MarkerOptions()
                     .position(position)
                     .title(location.getName())
                     .snippet(location.getPhoneNumber()));

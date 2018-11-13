@@ -43,13 +43,15 @@ public class MainActivity extends AppCompatActivity {
         // set currentUser within doLogin and doRegister as long as it's before this line of code
         // which it should be, can't do this in MainActivity until someone is logged in conceptually
         if (umt.getCurrentUser().getUserType().equals("Location Employee")) {
-            textview.setText("My Location: " + umt.getCurrentUser().getUserLocation());
+            String s = "My Location: " + umt.getCurrentUser().getUserLocation();
+            textview.setText(s);
         }
 
         Button viewLocations = (Button) findViewById(R.id.viewLocationsButton);
 
         if(umt.getCurrentUser().getUserType().equals("Location Employee")) {
-            viewLocations.setText("View Other Locations");
+            String s = "View Other Locations";
+            viewLocations.setText(s);
         }
 
         viewLocations.setOnClickListener(new View.OnClickListener() {
