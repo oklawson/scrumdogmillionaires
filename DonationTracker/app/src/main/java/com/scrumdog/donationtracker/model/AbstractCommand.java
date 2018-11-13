@@ -11,10 +11,4 @@ abstract class AbstractCommand {
      */
     public abstract boolean execute();
 
-    /**
-     * a function that undoes commands
-     *
-     * @return true when the command is undone
-     */
-    public abstract boolean undo();
 }

@@ -34,7 +34,7 @@ public class DonationManagement {
     /**
      * private constructor for facade pattern
      */
-    public DonationManagement() {
+    private DonationManagement() {
         dm = new DonationManager();
     }
 
@@ -49,8 +49,7 @@ public class DonationManagement {
      * @return donList list of donations
      */
     public List<Donation> getDonationsAsList() {
-        List<Donation> donList = dm.getDonations();
-        return donList;
+        return dm.getDonations();
     }
 
 //    /**
@@ -96,13 +95,13 @@ public class DonationManagement {
         dm.addDonation(d);
     }
 
-    /**
-     * removes a new donation
-     * @param donation the donation removed to the application
-     */
-    void removeDonation(Donation donation) {
-        dm.removeDonation(donation);
-    }
+//    /**
+//     * removes a new donation
+//     * @param donation the donation removed to the application
+//     */
+//    void removeDonation(Donation donation) {
+//        dm.removeDonation(donation);
+//    }
 
 
     /**

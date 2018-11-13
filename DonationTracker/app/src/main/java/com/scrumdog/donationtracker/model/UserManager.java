@@ -40,7 +40,7 @@ public class UserManager {
      * It is derived from the user collection above, so it does not
      * need to be serialized.
      */
-    public transient Map<String, User> userMap = new HashMap<>();
+    private transient Map<String, User> userMap = new HashMap<>();
 
 //    private User currentUser = null;
 
@@ -131,13 +131,13 @@ public class UserManager {
         userMap.put(user.getID(), user);
     }
 
-    /**
-     * removes a user
-     *
-     * @param user the user to remove
-     */
-    void removeUser(User user) {
-        users.remove(user);
-        userMap.remove(user.getID());
-    }
+//    /**
+//     * removes a user
+//     *
+//     * @param user the user to remove
+//     */
+//    void removeUser(User user) {
+//        users.remove(user);
+//        userMap.remove(user.getID());
+//    }
 }

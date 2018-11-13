@@ -12,16 +12,14 @@ import static org.junit.Assert.*;
 
 public class DonationManagerTest {
 
-    private DonationManager testDonationManager;
-    private DonationEntryActivity testDonationEntryActivity;
     private Donation d1;
     private Donation d2;
     private ArrayList<Donation> donationList;
 
     @Before
     public void setUp() {
-        testDonationManager = new DonationManager();
-        testDonationEntryActivity = new DonationEntryActivity();
+        DonationManager testDonationManager = new DonationManager();
+        DonationEntryActivity testDonationEntryActivity = new DonationEntryActivity();
         d1 = new Donation("Pink shoes", "40",
                 "Clothing","Pink shoes with 3 inch heels",
                 "Super cute!", "AFD Station 4");

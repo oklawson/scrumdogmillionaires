@@ -119,15 +119,6 @@ public class UserManagement {
     }
 
     /**
-     * removes a user
-     *
-     * @param user the user to be removed from the application
-     */
-    void removeUser(User user) {
-        um.removeUser(user);
-    }
-
-    /**
      * logs the current user out of the system
      */
     public void doLogout(){

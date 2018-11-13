@@ -156,12 +156,9 @@ public class User implements Serializable {
             return false;
         }
         User o = (User) other;
-        if (this.name.equals(o.getName()) && this.ID.equals(o.getID())
+        return this.name.equals(o.getName()) && this.ID.equals(o.getID())
                 && this.userType.equals(o.getUserType()) && this.userLocation.equals(o.getUserLocation())
-                && this.password.equals(o.getPassword())) {
-            return true;
-        }
-        return false;
+                && this.password.equals(o.getPassword());
     }
 
 }

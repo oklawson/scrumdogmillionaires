@@ -20,11 +20,4 @@ public class AddDonationCommand extends AbstractCommand {
         return true;
     }
 
-    @Override
-    public boolean undo() {
-        DonationManagement dmt = DonationManagement.getInstance();
-        dmt.removeDonation(donation);
-        return true;
-    }
-
 }

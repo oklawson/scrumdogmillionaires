@@ -26,15 +26,10 @@ public class Donation {
     /** this items comment */
     private final String _comments;
 
-    /** this items location */
-    private Location _location;
-
     /** this items time-stamp */
     private final Date timeStamp;
 
     private final String _locationS;
-
-    private final boolean _listed;
 
     // user management
     //UserManagement umt = UserManagement.getInstance();
@@ -163,7 +158,6 @@ public class Donation {
         _comments = comments;
        _locationS = location;
        // _location = findLocationByName(umt.getCurrentUser().getUserLocation());
-        _listed = false;
         timeStamp = new Date();
         //_donation.add(this);
     }

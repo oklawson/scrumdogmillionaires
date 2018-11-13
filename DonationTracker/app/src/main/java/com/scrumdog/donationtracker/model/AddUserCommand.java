@@ -21,12 +21,5 @@ public class AddUserCommand extends AbstractCommand {
         return true;
     }
 
-    @Override
-    public boolean undo() {
-        UserManagement umf = UserManagement.getInstance();
-        umf.removeUser(user);
-        return true;
-    }
-
 
 }

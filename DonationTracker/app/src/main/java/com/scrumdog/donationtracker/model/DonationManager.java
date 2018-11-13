@@ -56,22 +56,22 @@ public class DonationManager {
     }
 
 
-    /**
-     * Attempt to register a donation
-     *
-     * @param shortDescription name of donation
-     * @return  the Donation object exists successful, null otherwise
-     */
-    Donation registerDonation(String shortDescription) {
-        //first lookup the donation by the donation shortDescription
-        Donation d = donationMap.get(shortDescription);
-        //if that donation shortDescription not there, return null
-        if (d == null) {
-            System.out.println("donation does not exist");
-            return null;
-        }
-        return d;
-    }
+//    /**
+////     * Attempt to register a donation
+////     *
+////     * @param shortDescription name of donation
+////     * @return  the Donation object exists successful, null otherwise
+////     */
+////    Donation registerDonation(String shortDescription) {
+////        //first lookup the donation by the donation shortDescription
+////        Donation d = donationMap.get(shortDescription);
+////        //if that donation shortDescription not there, return null
+////        if (d == null) {
+////            System.out.println("donation does not exist");
+////            return null;
+////        }
+////        return d;
+////    }
 
 
     /**
@@ -115,14 +115,14 @@ public class DonationManager {
         donationMap.put(donation.getShortDescription(), donation);
     }
 
-    /**
-     * method that removes donation from donations map and array
-     *
-     * @param donation the inputted donation
-     */
-    public void removeDonation(Donation donation) {
-        donations.remove(donation);
-        donationMap.remove(donation.getShortDescription());
-    }
+//    /**
+//     * method that removes donation from donations map and array
+//     *
+//     * @param donation the inputted donation
+//     */
+//    public void removeDonation(Donation donation) {
+//        donations.remove(donation);
+//        donationMap.remove(donation.getShortDescription());
+//    }
 
 }
